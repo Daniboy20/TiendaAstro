@@ -1,0 +1,30 @@
+{
+  "id": "campera-azul-001",
+  "nombre": "Campera Azul Denim",
+  "descripcion": "Campera de mezclilla azul, ideal para looks casuales. Tiene dos bolsillos delanteros y cierre metálico.",
+  "precio": 59.99,
+  "imagen": "/images/campera-azul.jpg",
+  "tallas": ["S", "M", "L", "XL"],
+  "colores": ["Azul", "Negro"],
+  "marca": "UrbanStyle",
+  "categoria": "Camperas",
+  "reviews": [
+    {
+      "id": "rev1",
+      "autor": "Laura G.",
+      "calificacion": 5,
+      "comentario": "Excelente calidad, la recomiendo.",
+      "fecha": "2026-05-15T00:00:00.000Z"
+    },
+    {
+      "id": "rev2",
+      "autor": "Carlos M.",
+      "calificacion": 4,
+      "comentario": "Muy bonita, aunque la talla es un poco pequeña.",
+      "fecha": "2026-05-10T00:00:00.000Z"
+    }
+  ],
+  "promedioCalificacion": 4.5,
+  "stock": 15,
+  "destacado": true
+}

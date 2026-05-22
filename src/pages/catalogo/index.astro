@@ -1,0 +1,30 @@
+---
+// Importar el archivo JSON directamente
+import productosData from '../../data/productos.json';
+import Layout from '../../layouts/Base.astro';
+
+const productos = productosData.productos;
+---
+
+<Layout title="Catálogo - TiendaAstro">
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-8">Nuestros Productos</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {productos.map(producto => (
+        <a href={`/catalogo/${producto.slug}`} class="block border rounded-lg p-4 hover:shadow-lg">
+          <img src={producto.imagen} alt={producto.nombre} class="w-full h-48 object-cover rounded" />
+          <h3 class="text-xl font-bold mt-2">{producto.nombre}</h3>
+          <p class="text-gray-600">{producto.marca} - {producto.categoria}</p>
+          <p class="text-blue-600 font-bold mt-2">${producto.precio}</p>
+          {producto.promedioCalificacion > 0 && (
+            <div class="flex items-center gap-1 mt-1">
+              <span>⭐ {producto.promedioCalificacion}</span>
+              <span class="text-gray-400">({producto.reviews.length} opiniones)</span>
+            </div>
+          )}
+        </a>
+      ))}
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,22 @@
+---
+interface Props {
+  calificacion: number; // 1 a 5
+  totalEstrellas?: number; // por defecto 5
+}
+
+const { calificacion, totalEstrellas = 5 } = Props;
+---
+
+<div class="flex items-center gap-1">
+  {
+    Array.from({ length: totalEstrellas }).map((_, i) => {
+      const estrellaLlena = i < Math.floor(calificacion);
+      const medioLlena = !estrellaLlena && i < calificacion;
+      return (
+        <span class="text-xl">
+          {estrellaLlena ? '★' : medioLlena ? '½' : '☆'}
+        </span>
+      );
+    })
+  }
+</div>

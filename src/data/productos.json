@@ -1,0 +1,51 @@
+{
+  "productos": [
+    {
+      "slug": "campera-azul",
+      "id": "campera-azul-001",
+      "nombre": "Campera Azul Denim",
+      "descripcion": "Campera de mezclilla azul, ideal para looks casuales. Tiene dos bolsillos delanteros y cierre metálico.",
+      "precio": 59.99,
+      "imagen": "/images/campera-azul.jpg",
+      "tallas": ["S", "M", "L", "XL"],
+      "colores": ["Azul", "Negro"],
+      "marca": "UrbanStyle",
+      "categoria": "Camperas",
+      "reviews": [
+        {
+          "id": "rev1",
+          "autor": "Laura G.",
+          "calificacion": 5,
+          "comentario": "Excelente calidad, la recomiendo.",
+          "fecha": "2026-05-15"
+        },
+        {
+          "id": "rev2",
+          "autor": "Carlos M.",
+          "calificacion": 4,
+          "comentario": "Muy bonita, aunque la talla es un poco pequeña.",
+          "fecha": "2026-05-10"
+        }
+      ],
+      "promedioCalificacion": 4.5,
+      "stock": 15,
+      "destacado": true
+    },
+    {
+      "slug": "remera-blanca",
+      "id": "remera-blanca-002",
+      "nombre": "Remera Blanca Básica",
+      "descripcion": "Remera 100% algodón, corte clásico. Ideal para usar sola o debajo de camperas.",
+      "precio": 19.99,
+      "imagen": "/images/remera-blanca.jpg",
+      "tallas": ["S", "M", "L", "XL", "XXL"],
+      "colores": ["Blanco", "Negro", "Gris"],
+      "marca": "BasicWear",
+      "categoria": "Remeras",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 50,
+      "destacado": false
+    }
+  ]
+}
