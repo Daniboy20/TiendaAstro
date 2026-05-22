@@ -1,9 +1,18 @@
-import type { Product } from "@/lib/shopify/types";
 import React from "react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+
+type Product = {
+  id: string;
+  title: string;
+  description?: string;
+  handle?: string;
+  featuredImage?: {
+    url: string;
+  };
+};
 
 const HeroSlider = ({ products }: { products: Product[] }) => {
   return (
@@ -16,27 +25,29 @@ const HeroSlider = ({ products }: { products: Product[] }) => {
         }}
         modules={[Pagination]}
       >
-        {products?.map((item: Product) => (
+        {products?.map((item) => (
           <SwiperSlide key={item.id}>
             <div className="row items-center px-7 xl:px-16">
               <div className="sm:col-12 lg:col-6 order-2 lg:order-0">
                 <div className="text-center py-10 lg:py-0">
-                  {item?.description && (
+                  {item.description && (
                     <p className="mb-2 lg:mb-3 text-text-light dark:text-darkmode-text-light font-medium md:text-xl">
                       {item.description}
                     </p>
                   )}
+
                   <div className="row">
                     <h1 className="mb-4 lg:mb-10 col-10 sm:col-8 lg:col-12 mx-auto">
                       {item.title}
                     </h1>
                   </div>
+
                   {item.handle && (
                     <a
                       className="btn btn-sm md:btn-lg btn-primary font-medium"
-                      href={`products/${item.handle}`}
+                      href={`/products/${item.handle}`}
                     >
-                      Shop Now
+                      Ver producto
                     </a>
                   )}
                 </div>
@@ -47,9 +58,9 @@ const HeroSlider = ({ products }: { products: Product[] }) => {
                   <img
                     src={item.featuredImage.url}
                     className="mx-auto w-[388px] lg:w-full"
-                    width={"507"}
-                    height={"385"}
-                    alt="banner image"
+                    width="507"
+                    height="385"
+                    alt={item.title}
                   />
                 )}
               </div>

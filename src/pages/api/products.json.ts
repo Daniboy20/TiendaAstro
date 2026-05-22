@@ -1,32 +1,46 @@
 import type { APIRoute } from "astro";
-import { getProducts } from "@/lib/shopify";
 
-export const GET: APIRoute = async ({ request }) => {
-  const url = new URL(request.url);
-  const cursor = url.searchParams.get("cursor");
-  const sortKey = url.searchParams.get("sortKey") as string;
-  const reverse = url.searchParams.get("reverse") === "true";
+const demoProducts = [
+  {
+    id: "1",
+    title: "Producto Demo 1",
+    handle: "producto-demo-1",
+    description: "Producto de ejemplo para la plantilla.",
+    availableForSale: true,
+    featuredImage: {
+      url: "/images/product-placeholder.jpg",
+      altText: "Producto Demo 1",
+    },
+    variants: [{ id: "variant-1" }],
+    priceRange: {
+      minVariantPrice: {
+        amount: "25.00",
+        currencyCode: "USD",
+      },
+    },
+    compareAtPriceRange: {
+      maxVariantPrice: {
+        amount: "35.00",
+        currencyCode: "USD",
+      },
+    },
+  },
+];
 
-  try {
-    const { products, pageInfo } = await getProducts({
-      sortKey,
-      reverse,
-      cursor: cursor || undefined,
-    });
-
-    return new Response(JSON.stringify({ products, pageInfo }), {
+export const GET: APIRoute = async () => {
+  return new Response(
+    JSON.stringify({
+      products: demoProducts,
+      pageInfo: {
+        hasNextPage: false,
+        endCursor: null,
+      },
+    }),
+    {
       status: 200,
       headers: {
         "Content-Type": "application/json",
       },
-    });
-  } catch (error) {
-    console.error("Error fetching products:", error);
-    return new Response(JSON.stringify({ error: "Failed to fetch products" }), {
-      status: 500,
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-  }
+    }
+  );
 };

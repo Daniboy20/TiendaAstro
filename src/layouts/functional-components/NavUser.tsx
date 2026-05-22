@@ -1,44 +1,10 @@
-import { getUserDetails } from "@/lib/shopify";
-import type { user } from "@/lib/shopify/types";
-import Cookies from "js-cookie";
-import React, { useEffect, useState } from "react";
-import Gravatar from "react-gravatar";
+import React, { useState } from "react";
 import { BsPerson } from "react-icons/bs";
 
-export const fetchUser = async () => {
-  try {
-    const accessToken = Cookies.get("token");
-
-    if (!accessToken) {
-      return null;
-    } else {
-      const userDetails: user = await getUserDetails(accessToken);
-      const userInfo = userDetails.customer;
-      return userInfo;
-    }
-  } catch (error) {
-    // console.log("Error fetching user details:", error);
-    return null;
-  }
-};
-
 const NavUser = ({ pathname }: { pathname: string }) => {
-  const [user, setUser] = useState<any>();
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  useEffect(() => {
-    const getUser = async () => {
-      const userInfo = await fetchUser();
-      setUser(userInfo);
-    };
-    getUser();
-  }, [pathname]);
-
-  const handleLogout = () => {
-    Cookies.remove("token");
-    localStorage.removeItem("user");
-    setUser(null);
-  };
+  const user = null;
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
@@ -52,19 +18,18 @@ const NavUser = ({ pathname }: { pathname: string }) => {
           className="relative cursor-pointer text-left sm:text-xs flex items-center justify-center"
         >
           <div className="flex items-center gap-x-1">
-            <div className="h-6 w-6 border border-darkmode-border dark:border-border rounded-full">
-              <Gravatar
-                email={user?.email}
-                style={{ borderRadius: "50px" }}
-              />
+            <div className="h-6 w-6 border border-darkmode-border dark:border-border rounded-full flex items-center justify-center">
+              <BsPerson />
             </div>
+
             <div className="leading-none max-md:hidden">
               <div className="flex items-center">
                 <p className="block text-text-dark dark:text-darkmode-text-dark text-base truncate">
-                  {user?.firstName}
+                  Usuario
                 </p>
+
                 <svg
-                  className={`w-5 text-text-dark dark:text-darkmode-text-dark dark:hover:text-darkmode-text-primary`}
+                  className="w-5 text-text-dark dark:text-darkmode-text-dark dark:hover:text-darkmode-text-primary"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   aria-hidden="true"
@@ -91,7 +56,7 @@ const NavUser = ({ pathname }: { pathname: string }) => {
 
       {dropdownOpen && (
         <div className="z-20 text-center absolute w-full bg-white shadow-md rounded mt-2">
-          <button onClick={handleLogout} className="btn btn-primary max-md:btn-sm mt-2">
+          <button className="btn btn-primary max-md:btn-sm mt-2">
             Logout
           </button>
         </div>

@@ -1,16 +1,50 @@
 import config from "@/config/config.json";
 import { defaultSort, sorting } from "@/lib/constants";
-import type { PageInfo, Product } from '@/lib/shopify/types';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 import { BiLoaderAlt } from "react-icons/bi";
-import { AddToCart } from './cart/AddToCart';
+
+type Product = {
+  id: string;
+  title: string;
+  description?: string;
+  handle?: string;
+  availableForSale?: boolean;
+
+  featuredImage?: {
+    url?: string;
+    altText?: string;
+  };
+
+  variants?: {
+    id: string;
+  }[];
+
+  priceRange?: {
+    minVariantPrice?: {
+      amount?: string | number;
+      currencyCode?: string;
+    };
+  };
+
+  compareAtPriceRange?: {
+    maxVariantPrice?: {
+      amount?: string;
+      currencyCode?: string;
+    };
+  };
+};
+
+type PageInfo = {
+  hasNextPage: boolean;
+  endCursor?: string;
+};
 
 const ProductList = ({
   initialProducts,
   initialPageInfo,
   sortKey,
   reverse,
-  searchValue
+  searchValue,
 }: {
   initialProducts: Product[];
   initialPageInfo: PageInfo;
@@ -19,70 +53,115 @@ const ProductList = ({
   searchValue: string | null;
 }) => {
   const { currencySymbol } = config.shopify;
+
   const [products, setProducts] = useState(initialProducts);
-  const [pageInfo, setPageInfo] = useState(initialPageInfo);
+  const [pageInfo, setPageInfo] =
+    useState(initialPageInfo);
+
   const [loading, setLoading] = useState(false);
-  const [currentSortKey, setCurrentSortKey] = useState(sortKey);
-  const [currentReverse, setCurrentReverse] = useState(reverse);
-  const [sortChanged, setSortChanged] = useState(false);
-  const loaderRef = useRef(null);
+
+  const [currentSortKey, setCurrentSortKey] =
+    useState(sortKey);
+
+  const [currentReverse, setCurrentReverse] =
+    useState(reverse);
+
+  const [sortChanged, setSortChanged] =
+    useState(false);
+
+  const loaderRef = useRef<HTMLDivElement | null>(
+    null
+  );
 
   const getSortParams = (sortKey: string) => {
-    const sortOption = sorting.find((item) => item.slug === sortKey) || defaultSort;
-    return { sortKey: sortOption.sortKey, reverse: sortOption.reverse };
+    const sortOption =
+      sorting.find((item) => item.slug === sortKey) ||
+      defaultSort;
+
+    return {
+      sortKey: sortOption.sortKey,
+      reverse: sortOption.reverse,
+    };
   };
 
   const loadMoreProducts = async () => {
     if (loading || !pageInfo.hasNextPage) return;
 
     setLoading(true);
+
     try {
       const response = await fetch(
-        `/api/products.json?cursor=${pageInfo.endCursor || ''}&sortKey=${currentSortKey}&reverse=${currentReverse}`
+        `/api/products.json?cursor=${
+          pageInfo.endCursor || ""
+        }&sortKey=${currentSortKey}&reverse=${currentReverse}`
       );
-      if (!response.ok) throw new Error('Failed to fetch');
-      const { products: newProducts, pageInfo: newPageInfo } = await response.json();
 
-      setProducts((prevProducts) => [...prevProducts, ...newProducts]);
+      if (!response.ok)
+        throw new Error("Failed to fetch");
+
+      const {
+        products: newProducts,
+        pageInfo: newPageInfo,
+      } = await response.json();
+
+      setProducts((prevProducts) => [
+        ...prevProducts,
+        ...newProducts,
+      ]);
+
       setPageInfo(newPageInfo);
       setSortChanged(false);
     } catch (error) {
-      console.error('Error loading more products:', error);
+      console.error(
+        "Error loading more products:",
+        error
+      );
     } finally {
       setLoading(false);
     }
   };
 
   const updateStateFromURL = () => {
-    const params = new URLSearchParams(window.location.search);
-    const newSortKey = params.get("sortKey") || sortKey;
+    const params = new URLSearchParams(
+      window.location.search
+    );
 
-    const { sortKey: mappedSortKey, reverse: mappedReverse } = getSortParams(newSortKey);
+    const newSortKey =
+      params.get("sortKey") || sortKey;
 
-    // Update only if URL params differ from current state
-    if (mappedSortKey !== currentSortKey || mappedReverse !== currentReverse) {
+    const {
+      sortKey: mappedSortKey,
+      reverse: mappedReverse,
+    } = getSortParams(newSortKey);
+
+    if (
+      mappedSortKey !== currentSortKey ||
+      mappedReverse !== currentReverse
+    ) {
       setCurrentSortKey(mappedSortKey);
       setCurrentReverse(mappedReverse);
-      setProducts([]); // Clear products to load new set based on params
-      setPageInfo(initialPageInfo); // Reset page info
-      setSortChanged(true); // Set the flag to load products based on new sortKey and reverse
+      setProducts([]);
+      setPageInfo(initialPageInfo);
+      setSortChanged(true);
     }
   };
 
   useEffect(() => {
-    // Listen for URL changes and handle state updates
-    window.addEventListener("popstate", updateStateFromURL);
+    window.addEventListener(
+      "popstate",
+      updateStateFromURL
+    );
 
-    // Cleanup event listener on component unmount
     return () => {
-      window.removeEventListener("popstate", updateStateFromURL);
+      window.removeEventListener(
+        "popstate",
+        updateStateFromURL
+      );
     };
   }, [initialPageInfo]);
 
-  // Intersection observer to trigger loading more products
   useEffect(() => {
     if (sortChanged) {
-      // Load products if sorting has changed
       loadMoreProducts();
     } else {
       const observer = new IntersectionObserver(
@@ -104,9 +183,15 @@ const ProductList = ({
         }
       };
     }
-  }, [pageInfo?.endCursor, currentSortKey, currentReverse, sortChanged]);
+  }, [
+    pageInfo?.endCursor,
+    currentSortKey,
+    currentReverse,
+    sortChanged,
+  ]);
 
-  const resultsText = products.length > 1 ? "results" : "result";
+  const resultsText =
+    products.length > 1 ? "results" : "result";
 
   return (
     <div className="row mx-auto px-4">
@@ -115,7 +200,10 @@ const ProductList = ({
           {products.length === 0
             ? "There are no products that match "
             : `Showing ${products.length} ${resultsText} for `}
-          <span className="font-bold text-dark dark:text-darkmode-text-dark">&quot;{searchValue}&quot;</span>
+
+          <span className="font-bold text-dark dark:text-darkmode-text-dark">
+            &quot;{searchValue}&quot;
+          </span>
         </p>
       ) : null}
 
@@ -128,19 +216,23 @@ const ProductList = ({
             width={211}
             height={184}
           />
-          <h1 className="h2 mb-4">No Product Found!</h1>
+
+          <h1 className="h2 mb-4">
+            No Product Found!
+          </h1>
+
           <p>
-            We couldn&apos;t find what you filtered for. Try filtering again.
+            We couldn&apos;t find what you filtered
+            for. Try filtering again.
           </p>
         </div>
       )}
 
       <div className="space-y-10">
-        {products?.map((product: Product) => {
+        {products?.map((product) => {
           const {
             id,
             title,
-            variants,
             handle,
             featuredImage,
             priceRange,
@@ -148,58 +240,67 @@ const ProductList = ({
             compareAtPriceRange,
           } = product;
 
-          const defaultVariantId =
-            variants.length > 0 ? variants[0].id : undefined;
-
           return (
             <div className="col-12" key={id}>
               <div className="row">
                 <div className="col-4">
                   <img
-                    src={featuredImage?.url || "/images/product-placeholder.jpg"}
-                    // fallback={'/images/category-1.png'}
+                    src={
+                      featuredImage?.url ||
+                      "/images/product-placeholder.jpg"
+                    }
                     width={312}
                     height={269}
-                    alt={featuredImage?.altText || "fallback image"}
+                    alt={
+                      featuredImage?.altText ||
+                      "fallback image"
+                    }
                     className="w-[312px] h-[150px] md:h-[269px] object-cover border border-border dark:border-darkmode-border rounded-md"
                   />
                 </div>
 
                 <div className="col-8 py-3 max-md:pt-4">
                   <h2 className="font-bold md:font-normal h4">
-                    <a href={`/products/${handle}`}>{title}</a>
+                    <a href={`/products/${handle}`}>
+                      {title}
+                    </a>
                   </h2>
 
                   <div className="flex items-center gap-x-2 mt-2">
                     <span className="text-text-light dark:text-darkmode-text-light text-xs md:text-lg font-bold">
-                      ৳ {priceRange?.minVariantPrice?.amount}{" "}
-                      {priceRange?.minVariantPrice?.currencyCode}
+                      {currencySymbol}
+                      {" "}
+                      {
+                        priceRange?.minVariantPrice
+                          ?.amount
+                      }
                     </span>
-                    {parseFloat(
-                      compareAtPriceRange?.maxVariantPrice?.amount,
-                    ) > 0 ? (
+
+                    {Number(
+                      compareAtPriceRange
+                        ?.maxVariantPrice?.amount || 0
+                    ) > 0 && (
                       <s className="text-text-light dark:text-darkmode-text-light text-xs md:text-base font-medium">
-                        {currencySymbol}{" "}
-                        {compareAtPriceRange?.maxVariantPrice?.amount}{" "}
-                        {compareAtPriceRange?.maxVariantPrice?.currencyCode}
+                        {currencySymbol}
+                        {" "}
+                        {
+                          compareAtPriceRange
+                            ?.maxVariantPrice?.amount
+                        }
                       </s>
-                    ) : (
-                      ""
                     )}
                   </div>
 
                   <p className="max-md:text-xs text-text-light dark:text-darkmode-text-light my-4 md:mb-8 line-clamp-1 md:line-clamp-3">
                     {description}
                   </p>
-                  <AddToCart
-                    variants={product?.variants}
-                    availableForSale={product?.availableForSale}
-                    handle={product?.handle}
-                    defaultVariantId={defaultVariantId}
-                    stylesClass={
-                      "btn btn-outline-primary max-md:btn-sm drop-shadow-md"
-                    }
-                  />
+
+                  <a
+                    href={`/products/${handle}`}
+                    className="btn btn-outline-primary max-md:btn-sm drop-shadow-md"
+                  >
+                    Ver producto
+                  </a>
                 </div>
               </div>
             </div>
@@ -208,8 +309,18 @@ const ProductList = ({
       </div>
 
       {pageInfo?.hasNextPage && (
-        <div ref={loaderRef} className="text-center pt-10 pb-4 w-full">
-          {loading ? <BiLoaderAlt className={`animate-spin mx-auto`} size={30} /> : 'Scroll for more'}
+        <div
+          ref={loaderRef}
+          className="text-center pt-10 pb-4 w-full"
+        >
+          {loading ? (
+            <BiLoaderAlt
+              className="animate-spin mx-auto"
+              size={30}
+            />
+          ) : (
+            "Scroll for more"
+          )}
         </div>
       )}
     </div>

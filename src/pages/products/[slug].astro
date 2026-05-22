@@ -1,7 +1,6 @@
 ---
 import FeaturedProducts from "@/components/FeaturedProducts.astro";
 import config from "@/config/config.json";
-import { AddToCart } from "@/functional-components/cart/AddToCart";
 import ProductGallery from "@/functional-components/product/ProductGallery";
 import ShowTags from "@/functional-components/product/ShowTags";
 import Tabs from "@/functional-components/product/Tabs";
@@ -9,10 +8,11 @@ import { VariantSelector } from "@/functional-components/product/VariantSelector
 import SocialShare from "@/functional-components/SocialShare";
 import Base from "@/layouts/Base.astro";
 import { getListPage } from "@/lib/contentParser.astro";
-import { getProduct, getProductRecommendations } from "@/lib/shopify";
+import { products } from "@/data/products";
 
 const { slug } = Astro.params;
-const product = await getProduct(slug as string);
+
+const product = products.find((item) => item.handle === slug);
 
 const paymentSection = await getListPage(
   "paymentSection",
@@ -38,8 +38,7 @@ const {
   tags,
 } = product;
 
-const relatedProducts = await getProductRecommendations(id);
-const defaultVariantId = variants.length > 0 ? variants[0].id : undefined;
+const relatedProducts = products.filter((item) => item.id !== id).slice(0, 4);
 
 const { currencySymbol } = config.shopify;
 ---
@@ -48,64 +47,52 @@ const { currencySymbol } = config.shopify;
   <section class="md:section-sm">
     <div class="container">
       <div class="row justify-center">
-        {/* right side contents */}
         <div class="col-10 md:col-8 lg:col-6">
           <ProductGallery client:only="react" images={images} />
         </div>
 
-        {/* left side contents */}
         <div class="col-10 md:col-8 lg:col-5 md:ml-7 py-6 lg:py-0">
           <h1 class="text-3xl md:h2 mb-2 md:mb-6">{title}</h1>
 
           <div class="flex gap-2 items-center">
             <h4 class="text-text-light dark:text-darkmode-text-light max-md:h2">
               {currencySymbol}
-              {priceRange?.minVariantPrice.amount}{" "}
+              {priceRange?.minVariantPrice?.amount}{" "}
               {priceRange?.minVariantPrice?.currencyCode}
             </h4>
+
             {
-              parseFloat(compareAtPriceRange?.maxVariantPrice.amount) > 0 ? (
+              Number(compareAtPriceRange?.maxVariantPrice?.amount || 0) > 0 && (
                 <s class="text-text-light max-md:h3 dark:text-darkmode-text-light">
                   {currencySymbol}{" "}
                   {compareAtPriceRange?.maxVariantPrice?.amount}{" "}
                   {compareAtPriceRange?.maxVariantPrice?.currencyCode}
                 </s>
-              ) : (
-                ""
               )
             }
           </div>
 
           <div class="my-10 md:my-10 space-y-6 md:space-y-10">
-            <div>
-              {
-                options && (
-                  <VariantSelector
-                    client:only="react"
-                    options={options}
-                    variants={variants}
-                    images={images}
-                  />
-                )
-              }
-            </div>
+            {
+              options && variants && images && (
+                <VariantSelector
+                  client:only="react"
+                  options={options}
+                  variants={variants}
+                  images={images}
+                />
+              )
+            }
           </div>
 
           <div class="flex gap-4 mt-8 md:mt-10 mb-6">
-            <AddToCart
-              client:only="react"
-              variants={product?.variants}
-              availableForSale={product?.availableForSale}
-              stylesClass={"btn max-md:btn-sm btn-primary"}
-              handle={null}
-              defaultVariantId={defaultVariantId}
-            />
+            <a href="/products" class="btn max-md:btn-sm btn-primary">
+              Ver productos
+            </a>
           </div>
 
           <div class="mb-8 md:mb-10">
-            <p
-              class="p-2 max-md:text-sm rounded-md bg-light dark:bg-darkmode-light inline"
-            >
+            <p class="p-2 max-md:text-sm rounded-md bg-light dark:bg-darkmode-light inline">
               {estimated_delivery}
             </p>
           </div>
@@ -139,7 +126,7 @@ const { currencySymbol } = config.shopify;
           </div>
 
           {
-            tags.length > 0 && (
+            tags?.length > 0 && (
               <div class="flex flex-wrap gap-3 items-center">
                 <h5 class="max-md:text-base">Tags:</h5>
                 <ShowTags client:only="react" tags={tags} />
@@ -151,7 +138,6 @@ const { currencySymbol } = config.shopify;
     </div>
   </section>
 
-  {/* Description of a product  */}
   {
     description && (
       <section>
@@ -166,16 +152,16 @@ const { currencySymbol } = config.shopify;
     )
   }
 
-  {/* Recommended Products section  */}
   <section class="section">
     <div class="container">
       {
-        relatedProducts?.length > 0 && (
+        relatedProducts.length > 0 && (
           <>
             <div class="text-center mb-6 md:mb-14">
               <h2 class="mb-2">Related Products</h2>
             </div>
-            <FeaturedProducts products={relatedProducts.slice(0, 4)} />
+
+            <FeaturedProducts products={relatedProducts} />
           </>
         )
       }

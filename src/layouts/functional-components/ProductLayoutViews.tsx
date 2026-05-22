@@ -1,11 +1,9 @@
-import { layoutView } from '@/cartStore';
-import type { PageInfo, Product } from '@/lib/shopify/types';
-import { useStore } from '@nanostores/react';
-import React, { Suspense, lazy } from 'react';
-import SkeletonCards from './loadings/skeleton/SkeletonCards';
-
-const ProductGrid = lazy(() => import('./ProductGrid'));
-const ProductList = lazy(() => import('./ProductList'));
+import { layoutView } from "@/cartStore";
+import { useStore } from "@nanostores/react";
+import React from "react";
+import SkeletonCards from "./loadings/skeleton/SkeletonCards";
+import ProductGrid from "./ProductGrid";
+import ProductList from "./ProductList";
 
 const ProductLayoutViews = ({
   initialProducts,
@@ -14,8 +12,8 @@ const ProductLayoutViews = ({
   reverse,
   searchValue,
 }: {
-  initialProducts: Product[];
-  initialPageInfo: PageInfo;
+  initialProducts: any[];
+  initialPageInfo: any;
   sortKey: string;
   reverse: boolean;
   searchValue: string | null;
@@ -24,25 +22,23 @@ const ProductLayoutViews = ({
 
   return (
     <div className="col-12 lg:col-9">
-      <Suspense fallback={<SkeletonCards />}>
-        {layout === 'list' ? (
-          <ProductList
-            initialProducts={initialProducts}
-            initialPageInfo={initialPageInfo}
-            sortKey={sortKey}
-            reverse={reverse}
-            searchValue={searchValue}
-          />
-        ) : (
-          <ProductGrid
-            initialProducts={initialProducts}
-            initialPageInfo={initialPageInfo}
-            sortKey={sortKey}
-            reverse={reverse}
-            searchValue={searchValue}
-          />
-        )}
-      </Suspense>
+      {layout === "list" ? (
+        <ProductList
+          initialProducts={initialProducts}
+          initialPageInfo={initialPageInfo}
+          sortKey={sortKey}
+          reverse={reverse}
+          searchValue={searchValue}
+        />
+      ) : (
+        <ProductGrid
+          initialProducts={initialProducts}
+          initialPageInfo={initialPageInfo}
+          sortKey={sortKey}
+          reverse={reverse}
+          searchValue={searchValue}
+        />
+      )}
     </div>
   );
 };

@@ -1,9 +1,16 @@
-import type { ShopifyCollection } from "@/lib/shopify/types";
 import { slugify } from "@/lib/utils/textConverter";
 import React, { useState } from "react";
 import { BsCheckLg } from "react-icons/bs";
 import ShowTags from "./product/ShowTags";
 import RangeSlider from "./rangeSlider/RangeSlider";
+
+type ShopifyCollection = {
+  handle: string;
+  title: string;
+  products?: {
+    edges: any[];
+  };
+};
 
 const ProductFilters = ({
   categories,
@@ -44,6 +51,7 @@ const ProductFilters = ({
     } else {
       newParams.append("b", slugName);
     }
+
     updateSearchParams(newParams);
   };
 
@@ -55,6 +63,7 @@ const ProductFilters = ({
     } else {
       newParams.set("c", handle);
     }
+
     updateSearchParams(newParams);
   };
 
@@ -62,36 +71,53 @@ const ProductFilters = ({
     <div>
       <div>
         <h5 className="mb-2 lg:text-xl">Select Price Range</h5>
+
         <hr className="border-border dark:border-darkmode-border" />
+
         <div className="pt-4">
           <RangeSlider maxPriceData={maxPriceData} />
         </div>
       </div>
 
       <div>
-        <h5 className="mb-2 mt-4 lg:mt-6 lg:text-xl">Product Categories</h5>
+        <h5 className="mb-2 mt-4 lg:mt-6 lg:text-xl">
+          Product Categories
+        </h5>
+
         <hr className="border-border dark:border-darkmode-border" />
+
         <ul className="mt-4 space-y-4">
           {categories.map((category) => (
             <li
               key={category.handle}
-              className={`flex items-center justify-between cursor-pointer ${selectedCategory === category.handle
-                ? "text-text-dark dark:text-darkmode-text-dark font-semibold"
-                : "text-text-light dark:text-darkmode-text-light"
-                }`}
-              onClick={() => handleCategoryClick(category.handle)}
+              className={`flex items-center justify-between cursor-pointer ${
+                selectedCategory === category.handle
+                  ? "text-text-dark dark:text-darkmode-text-dark font-semibold"
+                  : "text-text-light dark:text-darkmode-text-light"
+              }`}
+              onClick={() =>
+                handleCategoryClick(category.handle)
+              }
             >
               {category.title}
-              {searchParams.has("c") && !searchParams.has("b") ? (
-                <span>({category?.products?.edges.length || 0})</span>
+
+              {searchParams.has("c") &&
+              !searchParams.has("b") ? (
+                <span>
+                  ({category?.products?.edges.length || 0})
+                </span>
               ) : (
                 <span>
                   {categoriesWithCounts.length > 0
-                    ? `(${categoriesWithCounts.find(
-                      (c) => c.category === category.title
-                    )?.productCount || 0
-                    })`
-                    : `(${category?.products?.edges.length || 0})`}
+                    ? `(${
+                        categoriesWithCounts.find(
+                          (c) =>
+                            c.category === category.title
+                        )?.productCount || 0
+                      })`
+                    : `(${
+                        category?.products?.edges.length || 0
+                      })`}
                 </span>
               )}
             </li>
@@ -101,38 +127,48 @@ const ProductFilters = ({
 
       {vendors && (
         <div>
-          <h5 className="mb-2 mt-8 lg:mt-10 lg:text-xl">Brands</h5>
+          <h5 className="mb-2 mt-8 lg:mt-10 lg:text-xl">
+            Brands
+          </h5>
+
           <hr className="border-border dark:border-darkmode-border" />
+
           <ul className="mt-4 space-y-4">
             {vendors.map((vendor) => (
               <li
                 key={vendor.vendor}
-                className={`flex items-center justify-between cursor-pointer text-text-light dark:text-darkmode-text-light`}
-                onClick={() => handleBrandClick(vendor.vendor)}
+                className="flex items-center justify-between cursor-pointer text-text-light dark:text-darkmode-text-light"
+                onClick={() =>
+                  handleBrandClick(vendor.vendor)
+                }
               >
                 {searchParams.has("b") &&
-                  !searchParams.has("c") &&
-                  !searchParams.has("minPrice") &&
-                  !searchParams.has("maxPrice") &&
-                  !searchParams.has("q") &&
-                  !searchParams.has("t") ? (
+                !searchParams.has("c") &&
+                !searchParams.has("minPrice") &&
+                !searchParams.has("maxPrice") &&
+                !searchParams.has("q") &&
+                !searchParams.has("t") ? (
                   <span>
-                    {vendor.vendor} ({vendor.productCount})
+                    {vendor.vendor} (
+                    {vendor.productCount})
                   </span>
                 ) : (
                   <span>
                     {vendorsWithCounts.length > 0
-                      ? `${vendor.vendor} (${vendorsWithCounts.find(
-                        (v) => v.vendor === vendor.vendor
-                      )?.productCount || 0
-                      })`
+                      ? `${vendor.vendor} (${
+                          vendorsWithCounts.find(
+                            (v) =>
+                              v.vendor === vendor.vendor
+                          )?.productCount || 0
+                        })`
                       : `${vendor.vendor} (${vendor.productCount})`}
                   </span>
                 )}
+
                 <div className="h-4 w-4 rounded-sm flex items-center justify-center border border-border dark:border-border/40">
-                  {selectedBrands.includes(slugify(vendor.vendor.toLowerCase())) && (
-                    <BsCheckLg size={16} />
-                  )}
+                  {selectedBrands.includes(
+                    slugify(vendor.vendor.toLowerCase())
+                  ) && <BsCheckLg size={16} />}
                 </div>
               </li>
             ))}
@@ -142,8 +178,12 @@ const ProductFilters = ({
 
       {tags.length > 0 && (
         <div>
-          <h5 className="mb-2 mt-8 lg:mt-10 lg:text-xl">Tags</h5>
+          <h5 className="mb-2 mt-8 lg:mt-10 lg:text-xl">
+            Tags
+          </h5>
+
           <hr className="border-border dark:border-darkmode-border" />
+
           <div className="mt-4">
             <ShowTags tags={tags} />
           </div>

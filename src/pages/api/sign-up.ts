@@ -1,45 +1,45 @@
-import { createCustomer, getCustomerAccessToken } from "@/lib/shopify";
 import type { APIRoute } from "astro";
 
 export const POST: APIRoute = async ({ request }) => {
   try {
     const formData = await request.formData();
+
     const firstName = formData.get("firstName")?.toString();
     const email = formData.get("email")?.toString();
     const password = formData.get("password")?.toString();
 
     if (!email || !password || !firstName) {
-      return new Response("Email and password are required", { status: 400 });
-    }
-
-    // Create customer via Shopify API
-    const { customer, customerCreateErrors } = await createCustomer({
-      email,
-      password,
-      firstName,
-    });
-
-    if (customerCreateErrors && customerCreateErrors.length > 0) {
-      return new Response(JSON.stringify({ errors: customerCreateErrors }), {
+      return new Response("Email, password and first name are required", {
         status: 400,
-        headers: { "Content-Type": "application/json" },
       });
     }
 
-    // Generate token
-    const { token } = await getCustomerAccessToken({ email, password });
+    const demoCustomer = {
+      id: "demo-customer",
+      firstName,
+      email,
+    };
 
-    const response = new Response(JSON.stringify({ customer, token }), {
-      status: 200,
-      headers: { "Content-Type": "application/json" },
-    });
+    const token = "demo-token";
 
-    // Set the authentication token in a cookie without HttpOnly
-    response.headers.set("Set-Cookie", `token=${token}; Path=/; SameSite=Lax`);
+    const response = new Response(
+      JSON.stringify({
+        customer: demoCustomer,
+        token,
+      }),
+      {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+
+    response.headers.set(
+      "Set-Cookie",
+      `token=${token}; Path=/; SameSite=Lax`
+    );
 
     return response;
   } catch (error: any) {
-    console.error("Error in API:", error);
     return new Response(
       JSON.stringify({
         errors: [
@@ -52,7 +52,7 @@ export const POST: APIRoute = async ({ request }) => {
       {
         status: 500,
         headers: { "Content-Type": "application/json" },
-      },
+      }
     );
   }
 };
