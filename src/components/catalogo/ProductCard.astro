@@ -1,13 +1,66 @@
 ---
 const { producto, slug } = Astro.props;
+
+const colorMap: Record<string, string> = {
+  'Azul': '#2563EB',
+  'Negro': '#1F2937',
+  'Gris': '#9CA3AF',
+  'Blanco': '#F3F4F6',
+  'Rojo': '#DC2626',
+  'Verde': '#10B981',
+  'Amarillo': '#EAB308',
+  'Rosa': '#EC4899',
+  'Morado': '#8B5CF6',
+  'Naranja': '#F97316',
+  'Café': '#92400E',
+  'Beige': '#D4B896',
+};
+
+const coloresPreview = (producto.colores ?? []).slice(0, 4).map((color: string) => ({
+  nombre: color,
+  hex: colorMap[color] ?? '#CBD5E1',
+  esClaro: color === 'Blanco' || color === 'Beige',
+}));
 ---
 
-<a href={`/catalogo/${slug}`} class="block border rounded-lg p-4 hover:shadow-lg transition-shadow">
-  <img src={producto.imagen} alt={producto.nombre} class="w-full h-48 object-cover rounded" />
-  <h3 class="text-xl font-bold mt-2">{producto.nombre}</h3>
-  <p class="text-gray-600">{producto.marca}</p>
-  <p class="text-blue-600 font-bold mt-2">${producto.precio}</p>
-  <div class="mt-2">
-    <ValoracionEstrellas calificacion={producto.promedioCalificacion || 0} />
-  </div>
+<a href={`/productos/${slug}`} class="block border rounded-lg p-4 hover:shadow-lg transition-all hover:-translate-y-1 bg-white">
+  
+  {/* Imagen */}
+  <img
+    src={producto.imagen}
+    alt={producto.nombre}
+    class="w-full h-48 object-cover rounded"
+  />
+
+  {/* Nombre */}
+  <h3 class="text-xl font-bold mt-3">{producto.nombre}</h3>
+
+  {/* Marca */}
+  <p class="text-gray-500 text-sm">{producto.marca}</p>
+
+  {/* Resumen de tallas */}
+  {producto.tallas && producto.tallas.length > 0 && (
+    <div class="mt-2 text-xs text-gray-500">
+      📏 Tallas: {producto.tallas.join(', ')}
+    </div>
+  )}
+
+  {/* Resumen de colores como círculos */}
+  {coloresPreview.length > 0 && (
+    <div class="flex gap-1 mt-2 items-center">
+      {coloresPreview.map(({ nombre, hex, esClaro }) => (
+        <span
+          class="w-4 h-4 rounded-full border border-gray-300"
+          style={`background-color: ${hex}${esClaro ? '; box-shadow: inset 0 0 0 1px #ccc' : ''}`}
+          title={nombre}
+        />
+      ))}
+      {producto.colores.length > 4 && (
+        <span class="text-xs text-gray-500">+{producto.colores.length - 4}</span>
+      )}
+    </div>
+  )}
+
+  {/* Precio */}
+  <p class="text-blue-600 font-bold mt-3 text-lg">L. {producto.precio.toFixed(2)}</p>
 </a>

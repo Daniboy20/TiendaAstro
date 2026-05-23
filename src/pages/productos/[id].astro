@@ -1,0 +1,181 @@
+---
+import Layout from '../../layouts/Base.astro';
+import productosData from '../../data/productos.json';
+import ValoracionEstrellas from '../../components/catalogo/ValoracionEstrellas.astro';
+import ListaReviews from '../../components/catalogo/Reviews.astro';
+
+const { id } = Astro.params;
+const producto = productosData.productos.find(p => p.slug === id);
+
+if (!producto) {
+  return Astro.redirect("/404");
+}
+
+const colorMap: Record<string, string> = {
+  'Azul': '#2563EB',
+  'Negro': '#1F2937',
+  'Gris': '#9CA3AF',
+  'Blanco': '#F3F4F6',
+  'Rojo': '#DC2626',
+  'Verde': '#10B981',
+  'Amarillo': '#EAB308',
+  'Rosa': '#EC4899',
+  'Morado': '#8B5CF6',
+  'Naranja': '#F97316',
+  'Café': '#92400E',
+  'Beige': '#D4B896',
+};
+
+const coloresConHex = (producto.colores ?? []).map(color => ({
+  nombre: color,
+  hex: colorMap[color] ?? '#CBD5E1',
+  esClaro: color === 'Blanco' || color === 'Beige',
+}));
+
+// Piezas individuales si es un conjunto
+const piezas = (producto.piezas ?? []).map(
+  (slug: string) => productosData.productos.find(p => p.slug === slug)
+).filter(Boolean);
+---
+
+<Layout title={`${producto.nombre} - TiendaAstro`}>
+  <main class="container mx-auto px-4 py-8">
+    <div class="flex flex-col md:flex-row gap-8">
+
+      {/* Imagen del producto */}
+      <img
+        src={producto.imagen}
+        alt={producto.nombre}
+        id="imagen-principal"
+        class="w-full md:w-1/2 rounded-lg object-cover"
+      />
+
+      {/* Detalles del producto */}
+      <div class="flex-1">
+        <h1 class="text-3xl font-bold mb-2">{producto.nombre}</h1>
+
+        {/* Calificación */}
+        <div class="flex items-center gap-2 mb-4">
+          <ValoracionEstrellas calificacion={producto.promedioCalificacion || 0} />
+          <span class="text-gray-600">({producto.reviews.length} opiniones)</span>
+        </div>
+
+        {/* Descripción */}
+        <p class="text-gray-600 mb-4 whitespace-pre-line">{producto.descripcion}</p>
+
+        {/* Precio */}
+        <p class="text-2xl font-bold text-blue-600 mb-6">L. {producto.precio.toFixed(2)}</p>
+
+        {/* SELECTOR DE TALLAS */}
+        {producto.tallas && producto.tallas.length > 0 && (
+          <div class="mb-6">
+            <span class="font-bold block mb-2">
+              Talla: <span id="talla-seleccionada" class="font-normal text-gray-600">—</span>
+            </span>
+            <div class="flex flex-wrap gap-2">
+              {producto.tallas.map((talla) => (
+                <button
+                  class="talla-btn px-4 py-2 border rounded-md hover:bg-blue-500 hover:text-white hover:border-blue-500 transition-colors"
+                  data-talla={talla}
+                >
+                  {talla}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* SELECTOR DE COLORES */}
+        {coloresConHex.length > 0 && (
+          <div class="mb-6">
+            <span class="font-bold block mb-2">
+              Color: <span id="color-seleccionado-label" class="font-normal text-gray-600">—</span>
+            </span>
+            <div class="flex flex-wrap gap-3">
+              {coloresConHex.map(({ nombre, hex, esClaro }) => (
+                <div class="flex flex-col items-center gap-1">
+                  <button
+                    class="color-btn w-10 h-10 rounded-full border-2 border-gray-300 hover:scale-110 transition-transform focus:outline-none"
+                    style={`background-color: ${hex}${esClaro ? '; box-shadow: inset 0 0 0 1px #ccc' : ''}`}
+                    title={nombre}
+                    data-color={nombre}
+                    data-imagenes={JSON.stringify((producto.imagenes ?? {})[nombre] ?? [])}
+                  />
+                  <span class="text-xs">{nombre}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Marca y categoría */}
+        <p class="mb-2"><span class="font-bold">Marca:</span> {producto.marca}</p>
+        <p class="mb-4"><span class="font-bold">Categoría:</span> {producto.categoria}</p>
+
+        {/* Stock */}
+        <p class={`mb-4 ${producto.stock > 0 ? 'text-green-600' : 'text-red-600'}`}>
+          {producto.stock > 0 ? `✅ Stock disponible: ${producto.stock} unidades` : '❌ Sin stock'}
+        </p>
+
+        {/* Botón agregar al carrito */}
+        <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors w-full md:w-auto">
+          Agregar al carrito
+        </button>
+
+        {/* Piezas individuales si es un conjunto */}
+        {piezas.length > 0 && (
+          <div class="mt-6 p-4 bg-gray-50 rounded-lg border">
+            <p class="font-bold mb-2">¿Solo quieres una pieza?</p>
+            <div class="flex flex-col gap-2">
+              {piezas.map((pieza) => pieza && (
+                <a
+                  href={`/productos/${pieza.slug}`}
+                  class="text-blue-600 hover:underline"
+                >
+                  → {pieza.nombre} — L. {pieza.precio.toFixed(2)}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+      </div>
+    </div>
+
+    {/* Sección de opiniones */}
+    <ListaReviews reviews={producto.reviews} />
+  </main>
+</Layout>
+
+<script>
+  // Selector de tallas
+  const tallaBtns = document.querySelectorAll<HTMLButtonElement>('.talla-btn');
+  const tallaLabel = document.getElementById('talla-seleccionada');
+
+  tallaBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tallaBtns.forEach(b => b.classList.remove('bg-blue-500', 'text-white', 'border-blue-500'));
+      btn.classList.add('bg-blue-500', 'text-white', 'border-blue-500');
+      if (tallaLabel) tallaLabel.textContent = btn.dataset.talla ?? '—';
+    });
+  });
+
+  // Selector de colores con cambio de imagen
+  const colorBtns = document.querySelectorAll<HTMLButtonElement>('.color-btn');
+  const colorLabel = document.getElementById('color-seleccionado-label');
+  const imagenPrincipal = document.getElementById('imagen-principal') as HTMLImageElement;
+
+  colorBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      colorBtns.forEach(b => b.classList.remove('ring-2', 'ring-blue-500', 'ring-offset-2'));
+      btn.classList.add('ring-2', 'ring-blue-500', 'ring-offset-2');
+      if (colorLabel) colorLabel.textContent = btn.dataset.color ?? '—';
+
+      // Cambiar imagen si hay imágenes asociadas al color
+      const imagenes: string[] = JSON.parse(btn.dataset.imagenes ?? '[]');
+      if (imagenes.length > 0 && imagenPrincipal) {
+        imagenPrincipal.src = imagenes[0];
+      }
+    });
+  });
+</script>

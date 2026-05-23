@@ -1,19 +1,18 @@
 ---
-import ValoracionEstrellas from './ValoracionEstrellas.astro';
-
 interface Review {
   id: string;
   autor: string;
   calificacion: number;
   comentario?: string;
-  fecha?: Date;
+  fecha?: string;
 }
 
 const { reviews } = Astro.props as { reviews: Review[] };
 ---
 
-<div class="mt-8">
+<div class="mt-8 border-t pt-8">
   <h3 class="text-xl font-bold mb-4">Opiniones de clientes</h3>
+  
   {reviews.length === 0 ? (
     <p class="text-gray-500">Aún no hay opiniones para este producto.</p>
   ) : (
@@ -21,7 +20,13 @@ const { reviews } = Astro.props as { reviews: Review[] };
       <div class="border-b pb-4 mb-4">
         <div class="flex justify-between items-center">
           <p class="font-semibold">{review.autor}</p>
-          <ValoracionEstrellas calificacion={review.calificacion} />
+          <div class="flex">
+            {[...Array(5)].map((_, i) => (
+              <span class={i < review.calificacion ? "text-yellow-500" : "text-gray-300"}>
+                ★
+              </span>
+            ))}
+          </div>
         </div>
         {review.comentario && <p class="text-gray-700 mt-2">{review.comentario}</p>}
         {review.fecha && <p class="text-xs text-gray-400 mt-1">{new Date(review.fecha).toLocaleDateString()}</p>}

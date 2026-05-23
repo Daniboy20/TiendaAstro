@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Base.astro';
+import productosData from '../../data/productos.json';
+import ProductCard from '../../components/catalogo/ProductCard.astro';
+
+const productos = productosData.productos;
+const productosOrdenados = productos.sort((a, b) => a.nombre.localeCompare(b.nombre));
+---
+
+<Layout title="Catálogo - TiendaAstro">
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-8">Nuestros Productos</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {productosOrdenados.map(producto => (
+        <ProductCard producto={producto} slug={producto.slug} />
+      ))}
+    </div>
+  </main>
+</Layout>
