@@ -36,13 +36,14 @@ const { data } = call_to_action;
             </div>
 
             <div class="mx-auto lg:col-5 mb-6 lg:mb-0">
-              <ImageMod
-                src={data.image}
-                width={543}
-                height={390}
-                alt="cta-image"
-                class="mx-auto"
-              />
+                <img
+                  src={data.image}
+                  width="543"
+                  height="390"
+                  alt="cta-image"
+                  class="mx-auto max-h-[390px] w-full max-w-[543px] rounded-xl object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>

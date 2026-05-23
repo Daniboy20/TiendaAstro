@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "Storeplate",
+    "title": "Brightness",
     "base_url": "https://storeplate.vercel.app/",
     "base_path": "/",
     "trailing_slash": false,
@@ -9,12 +9,12 @@
     "logo_darkmode": "/images/logo-darkmode.png",
     "logo_width": "150",
     "logo_height": "33",
-    "logo_text": "Storeplate"
+    "logo_text": "Brightness"
   },
 
   "announcement": {
     "enable": true,
-    "content": "<span class='text-center block'>♥️ Loving Storeplate? <a class='underline' href='https://github.com/zeon-studio/storeplate' target='_blank' rel='noopener'>Please ⭐️ on Github</a></span>",
+    "content": "<span class='text-center block'>♥️ Loving Brightness? <a class='underline' href='https://github.com/zeon-studio/storeplate' target='_blank' rel='noopener'>Please ⭐️ on Github</a></span>",
     "expire_days": 7
   },
 
@@ -28,12 +28,12 @@
 
   "params": {
     "contact_form_action": "#",
-    "copyright": "Designed And Developed by [Zeon Studio](https://zeon.studio)"
+    "copyright": "Desarrollado y Disenado por [Zeon Studio](https://zeon.studio), Daniboy & Silvia"
   },
 
   "navigation_button": {
     "enable": true,
-    "label": "Get Started",
+    "label": "Empecemos",
     "link": "https://github.com/zeon-studio/storeplate"
   },
 

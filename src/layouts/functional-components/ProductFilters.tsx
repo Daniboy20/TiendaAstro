@@ -70,7 +70,7 @@ const ProductFilters = ({
   return (
     <div>
       <div>
-        <h5 className="mb-2 lg:text-xl">Select Price Range</h5>
+        <h5 className="mb-2 lg:text-xl">Escoja un rango de precio</h5>
 
         <hr className="border-border dark:border-darkmode-border" />
 
@@ -81,7 +81,7 @@ const ProductFilters = ({
 
       <div>
         <h5 className="mb-2 mt-4 lg:mt-6 lg:text-xl">
-          Product Categories
+          Categorías de Productos
         </h5>
 
         <hr className="border-border dark:border-darkmode-border" />
@@ -128,7 +128,7 @@ const ProductFilters = ({
       {vendors && (
         <div>
           <h5 className="mb-2 mt-8 lg:mt-10 lg:text-xl">
-            Brands
+            Marcas
           </h5>
 
           <hr className="border-border dark:border-darkmode-border" />

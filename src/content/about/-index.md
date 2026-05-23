@@ -1,5 +1,5 @@
 ---
-title: "About Us"
+title: "Sobre nosotros"
 meta_title: "About"
 description: ""
 image: ""
@@ -7,79 +7,73 @@ draft: false
 
 #About Us
 about_us:
-  - title: "Our Company"
-    image: "/images/aboutUs.png"
-    content: "Welcome to **Storeplate** where brilliance meets innovation. We take pride in being your ultimate destination for exquisite lighting solutions that illuminate spaces and lives alike. With a passion for creating luminous experiences, we curate a diverse range of cutting-edge light fixtures designed to elevate any environment. Our commitment to quality craftsmanship and a keen eye for aesthetic appeal ensures that each product we offer is not just a source of light,<br/><br/> but a work of art in its own right. Whether you're seeking ambient elegance for your home or functional brilliance for a commercial space, [Your Company Name] is dedicated to bringing your vision to light. Explore our collection and let your surroundings shine with a touch of our radiant expertise. Elevate your space, embrace the light, only with **Storeplate**."
+  - title: "Nuestra empresa"
+    image: "/images/dyfne-mujer/conjunto-azul-2.webp"
+    content: "Bienvenido a <strong>Brightness</strong>, donde el estilo, la calidad y la confianza se unen. Nos apasiona ofrecerte las mejores marcas de ropa con calidad premium al mejor precio. Nuestra misión es ayudarte a expresar tu personalidad a través de la moda sin sacrificar comodidad ni accesibilidad. En <strong>Brightness</strong>, cada colección es cuidadosamente seleccionada para brindarte tendencias modernas, diseños auténticos y prendas duraderas para cualquier estilo de vida. Ya sea que busques ropa casual, deportiva o prendas esenciales para el día a día, estamos comprometidos en ofrecerte una experiencia de compra excepcional con productos que destacan tanto por su estilo como por su valor. Descubre tu próximo outfit favorito y eleva tu estilo con <strong>Brightness</strong>."
 
-  - title: "Who We Are ?"
-    image: "/images/aboutUs.png"
-    content: "At **Storeplate** we illuminate your world with a curated collection of exceptional lighting solutions. Established with a passion for transforming spaces and creating ambiance, we stand as a beacon of quality and style in the realm of lighting. With a keen eye for design and a commitment to sourcing the finest materials, we pride ourselves on offering a diverse range of work that not only brighten spaces but also elevate aesthetics. <br/><br/> Committed to delivering excellence, we prioritize customer satisfaction and provide expert guidance to help you find the perfect lighting solution for any setting. Welcome to **Storeplate** where light meets inspiration. Illuminate your world today!"
+  - title: "Quienes somos?"
+    image: "/images/dyfne-mujer/conjunto-beige-1.webp"
+    content: "En <strong>Brightness</strong> nos dedicamos a ofrecer las mejores marcas de ropa con la combinación perfecta entre estilo, calidad y precio. Nacimos con la visión de brindar a nuestros clientes una experiencia de compra moderna y confiable, ofreciendo prendas auténticas, cómodas y alineadas con las últimas tendencias de la moda. Creemos que vestir bien no debería ser un lujo, por eso trabajamos para acercarte productos de excelente calidad a precios accesibles. <br/><br/> Nuestro compromiso es garantizar satisfacción en cada compra, seleccionando cuidadosamente cada colección para adaptarse a diferentes estilos y necesidades. Ya sea ropa casual, deportiva o urbana, en <strong>Brightness</strong> encontrarás piezas que destacan por su diseño, durabilidad y comodidad. Bienvenido a <strong>Brightness</strong>, donde la moda y la confianza brillan juntas."
 
 # Frequently Asked Questions
-faq_section_title: "Frequently Asked Questions"
-faq_section_subtitle: "Our expertly crafted FAQ guide provides valuable insights on selecting the perfect table lamp to complement your decor and meet your specific lighting needs."
+faq_section_title: "Preguntas mas frecuentes"
+faq_section_subtitle: "Nuestra sección de preguntas frecuentes está diseñada para ayudarte a resolver dudas sobre envíos, pagos, tallas, devoluciones y todo lo relacionado con tu experiencia de compra en <strong>Brightness</strong>. Queremos brindarte información clara y rápida para que compres con total confianza."
 button:
   enable: true
-  label: "Contact Us"
+  label: "Contactanos"
   link: "/contact"
 faqs:
-  - title: "Can I customize lamps for client projects?"
-    content: "Yes, our platform allows customization for client projects, ensuring unique and tailored solutions. Yes, our platform allows customization for client projects, ensuring unique and tailored solutions."
+  - title: "¿Qué marcas de ropa venden?"
+    content: "En Brightness ofrecemos ropa de marcas reconocidas, seleccionadas por su calidad, estilo y durabilidad."
 
-  - title: "Where are your lamps crafted?"
-    content: "Our lamps are meticulously crafted, combining quality materials and skilled workmanship to deliver exceptional products. Our lamps are meticulously crafted, combining quality materials and skilled workmanship to deliver exceptional products."
+  - title: "¿Cómo puedo saber mi talla?"
+    content: "Puedes revisar la guía de tallas de cada producto o contactarnos para ayudarte a elegir la mejor opción."
 
-  - title: "What's included in the 'free updates' policy?"
-    content: "Free updates encompass enhancements to lamp designs and features, ensuring your collection stays current and appealing. Free updates encompass enhancements to lamp designs and features, ensuring your collection stays current and appealing"
+  - title: "¿Realizan envíos?"
+    content: "Sí, realizamos envíos según la zona disponible. Al momento de comprar te brindamos la información del tiempo y costo de entrega."
 
-  - title: "Can I use your lamps for open source projects?"
-    content: "Certainly! Our lamps are open for integration into various projects, fostering creativity and innovation. Certainly! Our lamps are open for integration into various projects, fostering creativity and innovation."
+  - title: "¿Los productos son originales?"
+    content: "Sí, trabajamos para ofrecer prendas auténticas y de excelente calidad al mejor precio."
 
-  - title: "Can I retail themes featuring your lamps?"
-    content: "Absolutely! You can sell themes created with our lamps, providing stylish solutions for diverse design needs. Absolutely! You can sell themes created with our lamps, providing stylish solutions for diverse design needs."
+  - title: "¿Puedo cambiar o devolver una prenda?"
+    content: "Sí, aceptamos cambios o devoluciones según nuestras políticas, siempre que la prenda esté en buen estado y cumpla las condiciones establecidas."
 
 # Testimonials
 testimonials_section_enable: true
-testimonials_section_title: "What Our Client Says"
+testimonials_section_title: "Que dicen nuestros clientes?"
 testimonials:
-  - name: "Ava Sinclair"
-    designation: "Lead Frontend Architect"
+  - name: "Carlos Mendoza"
+    designation: "Cliente frecuente"
     avatar: "/images/avatar-sm.png"
-    content: "Storeplate has been a game-changer for our e-commerce setup. This Astro-Shopify boilerplate blends the speed and flexibility of Astro with the powerful e-commerce capabilities of Shopify, giving us the perfect foundation for a high-performance, modern storefront. Setup was smooth, and it’s optimized for seamless integration with Shopify’s API, so we were able to get our site up and running quickly without compromising on customizations or functionality. Storeplate’s clean codebase and scalability make it an ideal solution for any team looking to leverage Astro’s benefits in an e-commerce context. Highly recommended for anyone looking to streamline their Shopify store with the speed of Astro!"
+    content: "Brightness se ha convertido en una de mis tiendas favoritas. La calidad de la ropa es excelente y los precios realmente valen la pena. Siempre encuentro prendas modernas y cómodas para cualquier ocasión."
 
-  - name: "Jordan Patel"
-    designation: "E-commerce Solutions Strategist"
+  - name: "Sofía Ramírez"
+    designation: "Compradora online"
     avatar: "/images/avatar-sm.png"
-    content: "Storeplate has been a game-changer for our e-commerce setup. This Astro-Shopify boilerplate blends the speed and flexibility of Astro with the powerful e-commerce capabilities of Shopify, giving us the perfect foundation for a high-performance, modern storefront. Setup was smooth, and it’s optimized for seamless integration with Shopify’s API, so we were able to get our site up and running quickly without compromising on customizations or functionality. Storeplate’s clean codebase and scalability make it an ideal solution for any team looking to leverage Astro’s benefits in an e-commerce context. Highly recommended for anyone looking to streamline their Shopify store with the speed of Astro!"
+    content: "Me encantó la experiencia de compra en Brightness. El proceso fue rápido, los productos llegaron en perfecto estado y la calidad superó mis expectativas. Definitivamente volveré a comprar."
 
-  - name: "Lena Brooks"
-    designation: "Digital Experience Specialist"
+  - name: "Daniel Ortega"
+    designation: "Amante de la moda urbana"
     avatar: "/images/avatar-sm.png"
-    content: "Storeplate has been a game-changer for our e-commerce setup. This Astro-Shopify boilerplate blends the speed and flexibility of Astro with the powerful e-commerce capabilities of Shopify, giving us the perfect foundation for a high-performance, modern storefront. Setup was smooth, and it’s optimized for seamless integration with Shopify’s API, so we were able to get our site up and running quickly without compromising on customizations or functionality. Storeplate’s clean codebase and scalability make it an ideal solution for any team looking to leverage Astro’s benefits in an e-commerce context. Highly recommended for anyone looking to streamline their Shopify store with the speed of Astro!"
+    content: "Brightness ofrece marcas increíbles y ropa auténtica con diseños muy modernos. Me gustó mucho la variedad de estilos y lo fácil que fue encontrar exactamente lo que buscaba."
 
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
+  - name: "Valeria Cruz"
+    designation: "Cliente satisfecha"
     avatar: "/images/avatar-sm.png"
-    content: "Storeplate has been a game-changer for our e-commerce setup. This Astro-Shopify boilerplate blends the speed and flexibility of Astro with the powerful e-commerce capabilities of Shopify, giving us the perfect foundation for a high-performance, modern storefront. Setup was smooth, and it’s optimized for seamless integration with Shopify’s API, so we were able to get our site up and running quickly without compromising on customizations or functionality. Storeplate’s clean codebase and scalability make it an ideal solution for any team looking to leverage Astro’s benefits in an e-commerce context. Highly recommended for anyone looking to streamline their Shopify store with the speed of Astro!"
+    content: "La atención al cliente fue excelente y las prendas tienen una calidad impresionante. Se nota que Brightness selecciona cuidadosamente cada producto para ofrecer lo mejor a sus clientes."
 
 # Our Staff
 staff_section_enable: true
 staff:
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
-    avatar: "/images/staff/staff.png"
 
-  - name: "Noah Anderson"
+  - name: "Daniel Antonio"
     designation: "Java Engineer"
     avatar: "/images/staff/staff.png"
 
-  - name: "Olivia Harper"
+  - name: "Silvia"
     designation: "UI Designer"
     avatar: "/images/staff/staff.png"
 
-  - name: "Benjamin Clarke"
-    designation: "Product Marketer"
-    avatar: "/images/staff/staff.png"
 ---
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis illum nesciunt commodi vel nisi ut alias excepturi ipsum, totam, labore tempora, odit ex iste tempore sed. Fugit voluptatibus perspiciatis assumenda nulla ad nihil, omnis vel, doloremque sit quam autem optio maiores, illum eius facilis et quo consectetur provident dolor similique! Enim voluptatem dicta expedita veritatis repellat dolorum impedit, provident quasi at.
