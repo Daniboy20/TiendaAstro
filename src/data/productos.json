@@ -1,923 +1,1436 @@
 {
   "productos": [
     {
-    "slug": "buzo-mujer-gs",
-    "id": "001",
-    "nombre": "Buzo deportivo",
-    "descripcion": "Corte regular, largo regular \n80% algodón, 20% poliéster reciclado",
-    "precio": 878.27,
-    "imagen": "/images/gymshark/mujer/buzo-gris-1.webp",
-    "imagenes": {
-      "Gris": ["/images/gymshark/mujer/buzo-gris-2.webp"]
-    },
-    "tallas": ["S", "M", "L", "XL"],
-    "colores": ["Gris"],
-    "marca": "GymShark",
-    "categoria": "Buzos",
-    "genero": "Mujer",
-    "reviews": [],
-    "promedioCalificacion": 4.5,
-    "stock": 10,
-    "destacado": false
+      "slug": "buzo-mujer-gs",
+      "id": "001",
+      "nombre": "Buzo deportivo",
+      "descripcion": "Corte regular, largo regular \n80% algodón, 20% poliéster reciclado",
+      "precio": 878.27,
+      "imagenes": {
+        "Gris": [
+          "/images/gymshark/mujer/buzo-gris-1.webp",
+          "/images/gymshark/mujer/buzo-gris-2.webp"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Gris"
+      ],
+      "marca": "GymShark",
+      "categoria": "Buzos",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 4.5,
+      "stock": 10,
+      "destacado": false,
+      "tipo": "Inferior"
     },
     {
-    "slug": "leggins-mujer-gs",
-    "id": "002",
-    "nombre": "Leggins",
-    "descripcion": "Cintura alta, sin costuras \n93% nailon, 7% elastano \nLavar a máquina con agua fría y colores iguales o similares \nNo lavar en seco, planchar, usar suavizante ni lejía",
-    "precio": 1330.71,
-    "imagen": "/images/gymshark/mujer/leggins-negro-1.webp",
-     "imagenes": {
-      "Negro": ["/images/gymshark/mujer/leggins-negro-2.webp"]
+      "slug": "leggins-mujer-gs",
+      "id": "002",
+      "nombre": "Leggins",
+      "descripcion": "Cintura alta, sin costuras \n93% nailon, 7% elastano \nLavar a máquina con agua fría y colores iguales o similares \nNo lavar en seco, planchar, usar suavizante ni lejía",
+      "precio": 1330.71,
+      "imagenes": {
+        "Negro": [
+          "/images/gymshark/mujer/leggins-negro-1.webp",
+          "/images/gymshark/mujer/leggins-negro-2.webp"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L"
+      ],
+      "colores": [
+        "Negro"
+      ],
+      "marca": "GymShark",
+      "categoria": "Leggings",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 5,
+      "stock": 18,
+      "destacado": false,
+      "tipo": "Inferior"
     },
-    "tallas": ["S", "M", "L"],
-    "colores": ["Negro"],
-    "marca": "GymShark",
-    "categoria": "Leggins",
-    "genero": "Mujer",
-    "reviews": [],
-    "promedioCalificacion": 5,
-    "stock": 18,
-    "destacado": false
-  },
-  {
-    "slug": "camisa-mujer-gs",
-    "id": "003",
-    "nombre": "Camisa compresión",
-    "descripcion": "Talle compresión, sin costuras \n96% nailon, 4% elastano \nLavar a máquina con agua fría y colores iguales o similares \nNo lavar en seco, planchar, usar suavizante ni lejía",
-    "precio": 825.04,
-    "imagen": "/images/gymshark/mujer/camisa-gris-1.webp",
-     "imagenes": {
-      "Gris": ["/images/gymshark/mujer/camisa-gris-2.webp"]
+    {
+      "slug": "camisa-mujer-gs",
+      "id": "003",
+      "nombre": "Camisa compresión",
+      "descripcion": "Talle compresión, sin costuras \n96% nailon, 4% elastano \nLavar a máquina con agua fría y colores iguales o similares \nNo lavar en seco, planchar, usar suavizante ni lejía",
+      "precio": 825.04,
+      "imagenes": {
+        "Gris": [
+          "/images/gymshark/mujer/camisa-gris-1.webp",
+          "/images/gymshark/mujer/camisa-gris-2.webp"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Gris"
+      ],
+      "marca": "GymShark",
+      "categoria": "Camisas",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 4.7,
+      "stock": 9,
+      "destacado": true,
+      "tipo": "Superior"
     },
-    "tallas": ["S", "M", "L", "XL"],
-    "colores": ["Gris"],
-    "marca": "GymShark",
-    "categoria": "Camisas",
-    "genero": "Mujer",
-    "reviews": [],
-    "promedioCalificacion": 4.7,
-    "stock": 9,
-    "destacado": true
-  },
-   {
-    "slug": "short-mujer-gs",
-    "id": "004",
-    "nombre": "Short",
-    "descripcion": "Sin costuras \n96% nailon, 4% elastano \nLavar a máquina con agua fría y colores iguales o similares \nNo lavar en seco, planchar, usar suavizante ni lejía",
-    "precio": 563.09,
-    "imagen": "/images/gymshark/mujer/shorts-azul-1.webp",
-     "imagenes": {
-      "Azul": ["/images/gymshark/mujer/shorts-azul-2.webp"]
+    {
+      "slug": "short-mujer-gs",
+      "id": "004",
+      "nombre": "Short",
+      "descripcion": "Sin costuras \n96% nailon, 4% elastano \nLavar a máquina con agua fría y colores iguales o similares \nNo lavar en seco, planchar, usar suavizante ni lejía",
+      "precio": 563.09,
+      "imagenes": {
+        "Azul": [
+          "/images/gymshark/mujer/shorts-azul-1.webp",
+          "/images/gymshark/mujer/shorts-azul-2.webp"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M"
+      ],
+      "colores": [
+        "Azul"
+      ],
+      "marca": "GymShark",
+      "categoria": "Shorts",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 4.8,
+      "stock": 13,
+      "destacado": false,
+      "tipo": "Inferior"
     },
-    "tallas": ["S", "M"],
-    "colores": ["Azul"],
-    "marca": "GymShark",
-    "categoria": "Shorts",
-    "genero": "Mujer",
-    "reviews": [],
-    "promedioCalificacion": 4.8,
-    "stock": 13,
-    "destacado": false
-  },
-   {
-    "slug": "top-mujer-gs",
-    "id": "005",
-    "nombre": "Brasier deportivo",
-    "descripcion": "Talle compresión, sin costuras \n96% nailon, 4% elastano \nLavar a máquina con agua fría y colores iguales o similares \nNo lavar en seco, planchar, usar suavizante ni lejía",
-    "precio": 629.04,
-    "imagen": "/images/gymshark/mujer/top-cafe-1.webp",
-     "imagenes": {
-      "Café": ["/images/gymshark/mujer/top-cafe-2.webp"]
+    {
+      "slug": "top-mujer-gs",
+      "id": "005",
+      "nombre": "Brasier deportivo",
+      "descripcion": "Talle compresión, sin costuras \n96% nailon, 4% elastano \nLavar a máquina con agua fría y colores iguales o similares \nNo lavar en seco, planchar, usar suavizante ni lejía",
+      "precio": 629.04,
+      "imagenes": {
+        "Café": [
+          "/images/gymshark/mujer/top-cafe-1.webp",
+          "/images/gymshark/mujer/top-cafe-2.webp"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Café"
+      ],
+      "marca": "GymShark",
+      "categoria": "Tops",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 4.0,
+      "stock": 6,
+      "destacado": false,
+      "tipo": "Superior"
     },
-    "tallas": ["S", "M", "L", "XL"],
-    "colores": ["Café"],
-    "marca": "GymShark",
-    "categoria": "Bra",
-    "genero": "Mujer",
-    "reviews": [],
-    "promedioCalificacion": 4.0,
-    "stock": 6,
-    "destacado": false
-  },
-
-
-
-  {
-  "slug": "calzoneta-hombre-gs",
-  "id": "006",
-  "nombre": "Calzoneta",
-  "descripcion": "Corte recto con longitud hasta la rodilla.\n100% poliéster reciclado.\nElástico interno con cordón ajustable.\nLavar a máquina con agua fría.",
-  "precio": 649.00,
-  "imagen": "/images/gymshark/hombre/calzoneta-azul-1.webp",
-  "imagenes": {
-    "Azul": ["/images/gymshark/hombre/calzoneta-azul-1.webp", "/images/gymshark/hombre/calzoneta-azul-2.webp"]
-  },
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Azul"],
-  "marca": "GymShark",
-  "categoria": "Calzonetas",
-  "genero": "Hombre",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 20,
-  "destacado": false
-},
-{
-  "slug": "camisa-oversize-hombre-gs",
-  "id": "007",
-  "nombre": "Camisa Oversize",
-  "descripcion": "Corte holgado con caída natural.\n100% algodón peinado.\nCuello redondo reforzado.\nLavar a máquina con colores similares.",
-  "precio": 769.00,
-  "imagen": "/images/gymshark/hombre/camisa-blanca-oversize-1.webp",
-  "imagenes": {
-    "Blanco": ["/images/gymshark/hombre/camisa-blanca-oversize-1.webp", "/images/gymshark/hombre/camisa-blanca-oversize-2.webp"]
-  },
-  "tallas": ["S", "M", "L", "XL", "XXL"],
-  "colores": ["Blanco"],
-  "marca": "GymShark",
-  "categoria": "Camisas",
-  "genero": "Hombre",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 25,
-  "destacado": false
-},
-{
-  "slug": "camisa-compresion-hombre-gs",
-  "id": "008",
-  "nombre": "Camisa de Compresión",
-  "descripcion": "Tejido de compresión de segunda piel.\n79% poliéster, 21% elastano.\nManga corta con costuras planas anti-roce.\nLavar a máquina con agua fría.",
-  "precio": 849.00,
-  "imagen": "/images/gymshark/hombre/camisa-negra-compresion-1.webp",
-  "imagenes": {
-    "Negro": ["/images/gymshark/hombre/camisa-negra-compresion-1.webp", "/images/gymshark/hombre/camisa-negra-compresion-2.webp"]
-  },
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Negro"],
-  "marca": "GymShark",
-  "categoria": "Camisas",
-  "genero": "Hombre",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 18,
-  "destacado": true
-},
-{
-  "slug": "hoodie-hombre-gs",
-  "id": "009",
-  "nombre": "Hoodie",
-  "descripcion": "Capucha ajustable con cordón plano.\n80% algodón, 20% poliéster.\nBolsillo canguro frontal.\nLavar a máquina con colores similares.",
-  "precio": 1299.00,
-  "imagen": "/images/gymshark/hombre/hoodie-azul-1.webp",
-  "imagenes": {
-    "Azul": ["/images/gymshark/hombre/hoodie-azul-1.webp", "/images/gymshark/hombre/hoodie-azul-2.webp"]
-  },
-  "tallas": ["S", "M", "L", "XL", "XXL"],
-  "colores": ["Azul"],
-  "marca": "GymShark",
-  "categoria": "Hoodies",
-  "genero": "Hombre",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 15,
-  "destacado": false
-},
-{
-  "slug": "sueter-quartzip-hombre-gs",
-  "id": "010",
-  "nombre": "Suéter Quarter Zip",
-  "descripcion": "Cierre corto en el cuello para ventilación.\n100% poliéster con acabado suave al tacto.\nManga larga con puños elásticos.\nLavar a máquina con agua fría.",
-  "precio": 1099.00,
-  "imagen": "/images/gymshark/hombre/sueter-quarterzip-gris-1.webp",
-  "imagenes": {
-    "Gris": ["/images/gymshark/hombre/sueter-quarterzip-gris-1.webp", "/images/gymshark/hombre/sueter-quarterzip-gris-2.webp"]
-  },
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Gris"],
-  "marca": "GymShark",
-  "categoria": "Suéteres",
-  "genero": "Hombre",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 12,
-  "destacado": false
-},
-
-
-
-
-{
-  "slug": "camisa-crop-mujer-on",
-  "id": "011",
-  "nombre": "Camisa Crop con Estampado",
-  "descripcion": "Crop top de manga corta con estampado gráfico frontal.\n100% algodón suave.\nCorte relajado con dobladillo recto.\nLavar a máquina con colores similares.",
-  "precio": 449.00,
-  "imagen": "/images/oldnavy/mujer/camisa-blanca-1.avif",
-  "imagenes": {
-    "Blanco": ["/images/oldnavy/mujer/camisa-blanca-1.avif", "/images/oldnavy/mujer/camisa-blanca-2.avif"]
-  },
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Blanco"],
-  "marca": "Old Navy",
-  "categoria": "Camisas",
-  "genero": "Mujer",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 20,
-  "destacado": false
-},
-{
-  "slug": "camisa-tejida-mujer-on",
-  "id": "012",
-  "nombre": "Camisa Tejida de Punto",
-  "descripcion": "Camisa de punto abierto con textura tejida.\nTela liviana ideal para clima cálido.\nCorte recto con cuello redondo.\nLavar a mano con agua fría.",
-  "precio": 529.00,
-  "imagen": "/images/oldnavy/mujer/camisa-blanca-2.avif",
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Blanco"],
-  "marca": "Old Navy",
-  "categoria": "Camisas",
-  "genero": "Mujer",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 15,
-  "destacado": false
-},
-{
-  "slug": "tank-cafe-mujer-on",
-  "id": "013",
-  "nombre": "Tank Top de Tirantes",
-  "descripcion": "Top corto de tirantes finos con espalda recta.\n92% nailon, 8% elastano.\nTela de segunda piel con soporte interno.\nLavar a máquina con agua fría.",
-  "precio": 379.00,
-  "imagen": "/images/oldnavy/mujer/camisa-cafe-2.webp",
-  "tallas": ["S", "M", "L", "XL", "XXL"],
-  "colores": ["Café"],
-  "marca": "Old Navy",
-  "categoria": "Tops",
-  "genero": "Mujer",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 22,
-  "destacado": false
-},
-{
-  "slug": "falda-mujer-on",
-  "id": "014",
-  "nombre": "Falda Plisada Corta",
-  "descripcion": "Falda con pliegues y cintura elástica.\n100% poliéster reciclado.\nCorte por encima de la rodilla.\nLavar a máquina con colores similares.",
-  "precio": 499.00,
-  "imagen": "/images/oldnavy/mujer/falda-blanca-1.avif",
-  "imagenes": {
-    "Blanco": ["/images/oldnavy/mujer/falda-blanca-1.avif"],
-    "Café": ["/images/oldnavy/mujer/falda-cafe-1.avif"]
-  },
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Blanco", "Café"],
-  "marca": "Old Navy",
-  "categoria": "Faldas",
-  "genero": "Mujer",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 18,
-  "destacado": false
-},
-
-{
-  "slug": "leggins-mujer-on",
-  "id": "016",
-  "nombre": "Leggings de Cintura Alta",
-  "descripcion": "Cintura alta con banda elástica ancha.\n78% poliéster, 22% elastano.\nTela opaca con compresión suave.\nLavar a máquina con agua fría.",
-  "precio": 649.00,
-  "imagen": "/images/oldnavy/mujer/leggins-moradas-1.avif",
-  "imagenes": {
-    "Morado": ["/images/oldnavy/mujer/leggins-moradas-1.avif", "/images/oldnavy/mujer/leggins-moradas-2.avif"]
-  },
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Morado"],
-  "marca": "Old Navy",
-  "categoria": "Leggings",
-  "genero": "Mujer",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 25,
-  "destacado": false
-},
-{
-  "slug": "sueter-mujer-on",
-  "id": "017",
-  "nombre": "Suéter Quarter Zip Cropped",
-  "descripcion": "Suéter corto con cierre en el cuello para ventilación.\n80% algodón, 20% poliéster.\nManga larga con puños acanalados.\nLavar a máquina con colores similares.",
-  "precio": 899.00,
-  "imagen": "/images/oldnavy/mujer/sueter-morado.avif",
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Morado"],
-  "marca": "Old Navy",
-  "categoria": "Suéteres",
-  "genero": "Mujer",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 14,
-  "destacado": false
-},
-{
-  "slug": "buzo-mujer-on",
-  "id": "018",
-  "nombre": "Buzo Jogger",
-  "descripcion": "Pantalón jogger con cintura elástica y cordón ajustable.\n80% algodón, 20% poliéster.\nPuños acanalados en los tobillos.\nLavar a máquina con colores similares.",
-  "precio": 849.00,
-  "imagen": "/images/oldnavy/mujer/buzo-morado.avif",
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Morado"],
-  "marca": "Old Navy",
-  "categoria": "Buzos",
-  "genero": "Mujer",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 14,
-  "destacado": false
-},
-{
-  "slug": "conjunto-cafe-mujer-on",
-  "id": "019",
-  "nombre": "Conjunto Tank Top y Falda Plisada",
-  "descripcion": "Conjunto coordinado de tank top de tirantes y falda plisada corta.\nIdeal para entrenamiento o uso casual.\nVendido como conjunto completo.",
-  "precio": 799.00,
-  "imagen": "/images/oldnavy/mujer/conjunto-cafe.avif",
-  "tallas": ["S", "M", "L", "XL", "XXL"],
-  "colores": ["Café"],
-  "marca": "Old Navy",
-  "categoria": "Conjuntos",
-  "genero": "Mujer",
-"piezas": ["tank-cafe-mujer-on", "falda-mujer-on"],
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 12,
-  "destacado": true
-},
-{
-  "slug": "conjunto-morado-mujer-on",
-  "id": "020",
-  "nombre": "Conjunto Suéter y Buzo Jogger",
-  "descripcion": "Conjunto coordinado de suéter quarter zip cropped y jogger a juego.\nTela suave con acabado cepillado por dentro.\nVendido como conjunto completo.",
-  "precio": 1649.00,
-  "imagen": "/images/oldnavy/mujer/conjunto-morado-1.avif",
-  "imagenes": {
-    "Morado": ["/images/oldnavy/mujer/conjunto-morado-1.avif", "/images/oldnavy/mujer/conjunto-morado-2.avif"]
-  },
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Morado"],
-  "marca": "Old Navy",
-  "categoria": "Conjuntos",
-  "genero": "Mujer",
-  "piezas": ["sueter-mujer-on", "buzo-mujer-on"],
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 10,
-  "destacado": true
-},
-
-
-
-{
-  "slug": "buzo-hombre-on",
-  "id": "021",
-  "nombre": "Buzo Jogger Fleece",
-  "descripcion": "Pantalón jogger con interior de felpa suave.\n80% algodón, 20% poliéster.\nCintura elástica con cordón ajustable y puños acanalados.\nLavar a máquina con colores similares.",
-  "precio": 899.00,
-  "imagen": "/images/oldnavy/hombre/buzo-verde-1.avif",
-  "imagenes": {
-    "Verde": ["/images/oldnavy/hombre/buzo-verde-1.avif", "/images/oldnavy/hombre/buzo-verde-2.avif"]
-  },
-  "tallas": ["S", "M", "L", "XL", "XXL"],
-  "colores": ["Verde"],
-  "marca": "Old Navy",
-  "categoria": "Buzos",
-  "genero": "Hombre",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 16,
-  "destacado": false
-},
-{
-  "slug": "calzoneta-hombre-on",
-  "id": "022",
-  "nombre": "Calzoneta con Forro Interno",
-  "descripcion": "Short con forro interno de malla para mayor soporte.\n100% poliéster reciclado.\nBolsillos laterales con cierre y cintura elástica.\nLavar a máquina con agua fría.",
-  "precio": 649.00,
-  "imagen": "/images/oldnavy/hombre/calzoneta-cafe-1.webp",
-  "imagenes": {
-    "Café": ["/images/oldnavy/hombre/calzoneta-cafe-1.webp", "/images/oldnavy/hombre/calzoneta-cafe-2.avif"]
-  },
-  "tallas": ["S", "M", "L", "XL", "XXL"],
-  "colores": ["Café"],
-  "marca": "Old Navy",
-  "categoria": "Calzonetas",
-  "genero": "Hombre",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 20,
-  "destacado": false
-},
-{
-  "slug": "camisa-hombre-on",
-  "id": "023",
-  "nombre": "Camisa Básica Cuello Redondo",
-  "descripcion": "Camiseta de manga corta con cuello redondo reforzado.\n100% algodón peinado.\nCorte regular con dobladillo recto.\nLavar a máquina con colores similares.",
-  "precio": 449.00,
-  "imagen": "/images/oldnavy/hombre/camisa-blanca-1.avif",
-  "imagenes": {
-    "Blanco": ["/images/oldnavy/hombre/camisa-blanca-1.avif", "/images/oldnavy/hombre/camisa-blanca-2.avif"]
-  },
-  "tallas": ["S", "M", "L", "XL", "XXL"],
-  "colores": ["Blanco"],
-  "marca": "Old Navy",
-  "categoria": "Camisas",
-  "genero": "Hombre",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 30,
-  "destacado": false
-},
-{
-  "slug": "short-hombre-on",
-  "id": "024",
-  "nombre": "Short de Entrenamiento",
-  "descripcion": "Short de corte recto por encima de la rodilla.\n100% poliéster con tela de secado rápido.\nCintura elástica con cordón ajustable y bolsillos laterales.\nLavar a máquina con agua fría.",
-  "precio": 549.00,
-  "imagen": "/images/oldnavy/hombre/short1-negro.avif",
-  "imagenes": {
-    "Negro": ["/images/oldnavy/hombre/short1-negro.avif"],
-    "Verde": ["/images/oldnavy/hombre/short1-verde.avif"]
-  },
-  "tallas": ["S", "M", "L", "XL", "XXL"],
-  "colores": ["Negro", "Verde"],
-  "marca": "Old Navy",
-  "categoria": "Shorts",
-  "genero": "Hombre",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 24,
-  "destacado": false
-},
-{
-  "slug": "sueter-hombre-on",
-  "id": "025",
-  "nombre": "Suéter Hoodie de Manga Larga",
-  "descripcion": "Hoodie ligero sin bolsillo canguro, ideal para capas.\n100% poliéster con tela de secado rápido.\nCapucha fija sin cordón y puños acanalados.\nLavar a máquina con agua fría.",
-  "precio": 999.00,
-  "imagen": "/images/oldnavy/hombre/sueter-azul-1.avif",
-  "imagenes": {
-    "Azul": ["/images/oldnavy/hombre/sueter-azul-1.avif", "/images/oldnavy/hombre/sueter-azul-2.avif"]
-  },
-  "tallas": ["S", "M", "L", "XL", "XXL"],
-  "colores": ["Azul"],
-  "marca": "Old Navy",
-  "categoria": "Suéteres",
-  "genero": "Hombre",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 18,
-  "destacado": false
-},
-
-
-
-{
-  "slug": "3pack-camisetas-hombre-yl",
-  "id": "026",
-  "nombre": "Pack x3 Camisetas de Tirantes",
-  "descripcion": "Set de 3 camisetas de tirantes en colores combinables.\n95% algodón, 5% elastano.\nCorte ajustado con cuello redondo.\nLavar a máquina con colores similares.",
-  "precio": 1099.00,
-  "imagen": "/images/youngla/hombre/3-pack-camisetas.webp",
-  "tallas": ["S", "M", "L", "XL", "XXL"],
-  "colores": ["Negro", "Blanco", "Azul"],
-  "marca": "YoungLA",
-  "categoria": "Camisetas",
-  "genero": "Hombre",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 20,
-  "destacado": true
-},
-{
-  "slug": "buzo1-hombre-yl",
-  "id": "027",
-  "nombre": "Buzo Jogger Wide Leg",
-  "descripcion": "Pantalón jogger de pierna ancha con caída holgada.\n80% algodón, 20% poliéster.\nCintura elástica con cordón y bolsillos laterales.\nLavar a máquina con colores similares.",
-  "precio": 1249.00,
-  "imagen": "/images/youngla/hombre/buzo1-blanco.webp",
-  "imagenes": {
-    "Blanco": ["/images/youngla/hombre/buzo1-blanco.webp"],
-    "Rojo": ["/images/youngla/hombre/buzo1-rojo.webp"]
-  },
-  "tallas": ["S", "M", "L", "XL", "XXL"],
-  "colores": ["Blanco", "Rojo"],
-  "marca": "YoungLA",
-  "categoria": "Buzos",
-  "genero": "Hombre",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 18,
-  "destacado": false
-},
-{
-  "slug": "buzo2-hombre-yl",
-  "id": "028",
-  "nombre": "Buzo Jogger Relaxed Fit",
-  "descripcion": "Pantalón jogger de corte relajado con tela liviana.\n100% poliéster con acabado suave.\nCintura elástica con cordón y puños acanalados.\nLavar a máquina con agua fría.",
-  "precio": 1149.00,
-  "imagen": "/images/youngla/hombre/buzo2-azul.webp",
-  "imagenes": {
-    "Azul": ["/images/youngla/hombre/buzo2-azul.webp"],
-    "Gris": ["/images/youngla/hombre/buzo2-gris.webp"]
-  },
-  "tallas": ["S", "M", "L", "XL", "XXL"],
-  "colores": ["Azul", "Gris"],
-  "marca": "YoungLA",
-  "categoria": "Buzos",
-  "genero": "Hombre",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 16,
-  "destacado": false
-},
-{
-  "slug": "camisabat-hombre-yl",
-  "id": "029",
-  "nombre": "Camisa Batman Manga Corta",
-  "descripcion": "Camiseta de manga corta con gráfico en el pecho.\n100% algodón pesado de primera calidad.\nCorte regular con cuello redondo reforzado.\nLavar a máquina con colores similares.",
-  "precio": 749.00,
-  "imagen": "/images/youngla/hombre/camisabat-gris.webp",
-  "imagenes": {
-    "Gris": ["/images/youngla/hombre/camisabat-gris.webp"],
-    "Negro": ["/images/youngla/hombre/camisabat-negro.webp"]
-  },
-  "tallas": ["S", "M", "L", "XL", "XXL"],
-  "colores": ["Gris", "Negro"],
-  "marca": "YoungLA",
-  "categoria": "Camisas",
-  "genero": "Hombre",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 22,
-  "destacado": false
-},
-{
-  "slug": "camisaoversize-hombre-yl",
-  "id": "030",
-  "nombre": "Camisa Oversize Básica",
-  "descripcion": "Camiseta de corte holgado con caída natural.\n100% algodón peinado de peso medio.\nManga corta con cuello redondo y dobladillo recto.\nLavar a máquina con colores similares.",
-  "precio": 849.00,
-  "imagen": "/images/youngla/hombre/camisaoversize-azul.webp",
-  "imagenes": {
-    "Azul": ["/images/youngla/hombre/camisaoversize-azul.webp"],
-    "Rojo": ["/images/youngla/hombre/camisaoversize-rojo.webp"]
-  },
-  "tallas": ["S", "M", "L", "XL", "XXL"],
-  "colores": ["Azul", "Rojo"],
-  "marca": "YoungLA",
-  "categoria": "Camisas",
-  "genero": "Hombre",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 25,
-  "destacado": false
-},
-{
-  "slug": "tanksuper-hombre-yl",
-  "id": "031",
-  "nombre": "Tank Top de Compresión",
-  "descripcion": "Camiseta sin mangas de compresión de segunda piel.\n82% poliéster, 18% elastano.\nCorte ajustado con cuello alto y espalda nadador.\nLavar a máquina con agua fría.",
-  "precio": 699.00,
-  "imagen": "/images/youngla/hombre/tanksuper-negro.webp",
-  "imagenes": {
-    "Negro": ["/images/youngla/hombre/tanksuper-negro.webp"],
-    "Azul": ["/images/youngla/hombre/tanksuper-azul.webp"]
-  },
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Negro", "Azul"],
-  "marca": "YoungLA",
-  "categoria": "Tops",
-  "genero": "Hombre",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 20,
-  "destacado": false
-},
-
-
-
-{
-  "slug": "buzo-mujer-yl",
-  "id": "032",
-  "nombre": "Buzo Jogger Wide Leg",
-  "descripcion": "Pantalón jogger de pierna ancha con cintura elástica.\n80% algodón, 20% poliéster.\nAcabado suave con costuras reforzadas y bolsillos laterales.\nLavar a máquina con colores similares.",
-  "precio": 1149.00,
-  "imagen": "/images/youngla/mujer/buzo-gris-1.webp",
-  "imagenes": {
-    "Gris": ["/images/youngla/mujer/buzo-gris-1.webp", "/images/youngla/mujer/buzo-gris-2.jpg"]
-  },
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Gris"],
-  "marca": "YoungLA",
-  "categoria": "Buzos",
-  "genero": "Mujer",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 16,
-  "destacado": false
-},
-{
-  "slug": "camisa-mujer-yl",
-  "id": "033",
-  "nombre": "Camisa Tank de Tirantes con Espalda Abierta",
-  "descripcion": "Top de tirantes con espalda cruzada y tela de compresión suave.\n92% nailon, 8% elastano.\nCorte ajustado con soporte interno.\nLavar a máquina con agua fría.",
-  "precio": 749.00,
-  "imagen": "/images/youngla/mujer/camisa-roja-1.webp",
-  "imagenes": {
-    "Rojo": ["/images/youngla/mujer/camisa-roja-1.webp", "/images/youngla/mujer/camisa-roja-2.webp"]
-  },
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Rojo"],
-  "marca": "YoungLA",
-  "categoria": "Tops",
-  "genero": "Mujer",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 20,
-  "destacado": false
-},
-{
-  "slug": "mono-mujer-yl",
-  "id": "034",
-  "nombre": "Mono Deportivo de Tirantes",
-  "descripcion": "Mono de una pieza con tirantes finos y corte ajustado.\n80% nailon, 20% elastano.\nTela de segunda piel con soporte integrado.\nLavar a máquina con agua fría.",
-  "precio": 1299.00,
-  "imagen": "/images/youngla/mujer/mono-rosa-1.webp",
-  "imagenes": {
-    "Rosa": ["/images/youngla/mujer/mono-rosa-1.webp", "/images/youngla/mujer/mono-rosa-2.webp"]
-  },
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Rosa"],
-  "marca": "YoungLA",
-  "categoria": "Monos",
-  "genero": "Mujer",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 14,
-  "destacado": true
-},
-{
-  "slug": "vestido-mujer-yl",
-  "id": "035",
-  "nombre": "Vestido Tenis con Falda Plisada",
-  "descripcion": "Vestido deportivo con falda plisada y short interior integrado.\n90% poliéster, 10% elastano.\nEspalda con detalle abierto y tirantes ajustables.\nLavar a máquina con agua fría.",
-  "precio": 1349.00,
-  "imagen": "/images/youngla/mujer/vestido-azul-1.webp",
-  "imagenes": {
-    "Azul": ["/images/youngla/mujer/vestido-azul-1.webp", "/images/youngla/mujer/vestido-azul-2.webp"]
-  },
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Azul"],
-  "marca": "YoungLA",
-  "categoria": "Vestidos",
-  "genero": "Mujer",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 12,
-  "destacado": true
-},
-{
-  "slug": "windbreaker-mujer-yl",
-  "id": "036",
-  "nombre": "Windbreaker con Capucha",
-  "descripcion": "Chaqueta cortaviento con capucha y cierre frontal completo.\n100% poliéster con tela resistente al viento.\nBolsillos laterales con cierre y puños elásticos.\nLavar a máquina con agua fría.",
-  "precio": 1549.00,
-  "imagen": "/images/youngla/mujer/windbreaker1-rojo.webp",
-  "imagenes": {
-    "Rojo": ["/images/youngla/mujer/windbreaker1-rojo.webp"],
-    "Verde": ["/images/youngla/mujer/windbreaker1-verde.webp"]
-  },
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Rojo", "Verde"],
-  "marca": "YoungLA",
-  "categoria": "Chaquetas",
-  "genero": "Mujer",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 15,
-  "destacado": false
-},
-
-
-{
-  "slug": "camisa-azul-mujer-oa",
-  "id": "037",
-  "nombre": "Camisa Off Shoulder de Manga Larga",
-  "descripcion": "Top de manga larga con escote off shoulder.\n90% nailon, 10% elastano.\nTela sin costuras con compresión suave.\nLavar a máquina con agua fría.",
-  "precio": 899.00,
-  "imagen": "/images/oner/mujer/camisa-azul-1.webp",
-  "imagenes": {
-    "Azul": ["/images/oner/mujer/camisa-azul-1.webp", "/images/oner/mujer/camisa-azul-2.webp"]
-  },
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Azul"],
-  "marca": "Oner Active",
-  "categoria": "Camisas",
-  "genero": "Mujer",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 18,
-  "destacado": false
-},
-{
-  "slug": "camisa-rosa-mujer-oa",
-  "id": "038",
-  "nombre": "Camisa de Tirantes con Espalda Cruzada",
-  "descripcion": "Top de tirantes con detalle de espalda cruzada.\n92% nailon, 8% elastano.\nSoporte interno integrado y tela de compresión.\nLavar a máquina con agua fría.",
-  "precio": 749.00,
-  "imagen": "/images/oner/mujer/camisa-rosa-1.webp",
-  "imagenes": {
-    "Rosa": ["/images/oner/mujer/camisa-rosa-1.webp", "/images/oner/mujer/camisa-rosa-2.webp"]
-  },
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Rosa"],
-  "marca": "Oner Active",
-  "categoria": "Tops",
-  "genero": "Mujer",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 20,
-  "destacado": false
-},
-{
-  "slug": "leggins-rosa-mujer-oa",
-  "id": "039",
-  "nombre": "Leggings de Cintura Alta sin Costuras",
-  "descripcion": "Leggings sin costuras con cintura alta y tela de compresión.\n90% nailon, 10% elastano.\nAcabado suave con textura sutil.\nLavar a máquina con agua fría.",
-  "precio": 999.00,
-  "imagen": "/images/oner/mujer/leggins-rosa.webp",
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Rosa"],
-  "marca": "Oner Active",
-  "categoria": "Leggings",
-  "genero": "Mujer",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 22,
-  "destacado": false
-},
-{
-  "slug": "top-amarillo-mujer-oa",
-  "id": "040",
-  "nombre": "Top Deportivo con Soporte",
-  "descripcion": "Top deportivo con soporte medio y tira trasera ajustable.\n92% nailon, 8% elastano.\nBordes sin costuras y tela de secado rápido.\nLavar a máquina con agua fría.",
-  "precio": 749.00,
-  "imagen": "/images/oner/mujer/top-amarillo.webp",
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Amarillo"],
-  "marca": "Oner Active",
-  "categoria": "Tops",
-  "genero": "Mujer",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 18,
-  "destacado": false
-},
-{
-  "slug": "falda-short-amarillo-mujer-oa",
-  "id": "041",
-  "nombre": "Falda Short con Short Interior",
-  "descripcion": "Falda con short interior integrado y cintura elástica.\n90% poliéster, 10% elastano.\nCorte por encima de la rodilla con tela ligera.\nLavar a máquina con agua fría.",
-  "precio": 849.00,
-  "imagen": "/images/oner/mujer/falda-short-amarillo.webp",
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Amarillo"],
-  "marca": "Oner Active",
-  "categoria": "Faldas",
-  "genero": "Mujer",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 16,
-  "destacado": false
-},
-{
-  "slug": "top-gris-mujer-oa",
-  "id": "042",
-  "nombre": "Top Deportivo Minimalista",
-  "descripcion": "Top deportivo de corte limpio con soporte ligero.\n92% nailon, 8% elastano.\nTela sin costuras con acabado mate.\nLavar a máquina con agua fría.",
-  "precio": 699.00,
-  "imagen": "/images/oner/mujer/top-gris.webp",
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Gris"],
-  "marca": "Oner Active",
-  "categoria": "Tops",
-  "genero": "Mujer",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 20,
-  "destacado": false
-},
-{
-  "slug": "short-gris-mujer-oa",
-  "id": "043",
-  "nombre": "Short de Ciclista",
-  "descripcion": "Short estilo ciclista con cintura alta y tela de compresión.\n90% nailon, 10% elastano.\nCorte por encima de la rodilla sin costuras laterales.\nLavar a máquina con agua fría.",
-  "precio": 799.00,
-  "imagen": "/images/oner/mujer/short-gris.webp",
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Gris"],
-  "marca": "Oner Active",
-  "categoria": "Shorts",
-  "genero": "Mujer",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 18,
-  "destacado": false
-},
-{
-  "slug": "mono-negro-mujer-oa",
-  "id": "044",
-  "nombre": "Mono Deportivo de Tirantes",
-  "descripcion": "Mono de una pieza con tirantes finos y espalda abierta.\n80% nailon, 20% elastano.\nTela de segunda piel con soporte integrado y short interior.\nLavar a máquina con agua fría.",
-  "precio": 1299.00,
-  "imagen": "/images/oner/mujer/mono-negro-1.webp",
-  "imagenes": {
-    "Negro": ["/images/oner/mujer/mono-negro-1.webp", "/images/oner/mujer/mono-negro-2.webp"]
-  },
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Negro"],
-  "marca": "Oner Active",
-  "categoria": "Monos",
-  "genero": "Mujer",
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 14,
-  "destacado": false
-},
-{
-  "slug": "conjunto-rosa-mujer-oa",
-  "id": "045",
-  "nombre": "Conjunto Top y Leggings",
-  "descripcion": "Conjunto coordinado de top de tirantes con espalda cruzada y leggings de cintura alta.\nTela sin costuras con compresión suave.\nVendido como conjunto completo.",
-  "precio": 1649.00,
-  "imagen": "/images/oner/mujer/conjunto-rosa-1.webp",
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Rosa"],
-  "marca": "Oner Active",
-  "categoria": "Conjuntos",
-  "genero": "Mujer",
-  "piezas": ["camisa-rosa-mujer-oa", "leggins-rosa-mujer-oa"],
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 12,
-  "destacado": true
-},
-{
-  "slug": "conjunto-amarillo-mujer-oa",
-  "id": "046",
-  "nombre": "Conjunto Top y Falda Short",
-  "descripcion": "Conjunto coordinado de top deportivo y falda short con short interior.\nTela ligera de secado rápido ideal para entrenamiento.\nVendido como conjunto completo.",
-  "precio": 1499.00,
-  "imagen": "/images/oner/mujer/conjunto-amarillo.webp",
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Amarillo"],
-  "marca": "Oner Active",
-  "categoria": "Conjuntos",
-  "genero": "Mujer",
-  "piezas": ["top-amarillo-mujer-oa", "falda-short-amarillo-mujer-oa"],
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 14,
-  "destacado": true
-},
-{
-  "slug": "conjunto-gris-mujer-oa",
-  "id": "047",
-  "nombre": "Conjunto Top y Short de Ciclista",
-  "descripcion": "Conjunto coordinado de top minimalista y short de ciclista.\nTela sin costuras con acabado mate y compresión suave.\nVendido como conjunto completo.",
-  "precio": 1399.00,
-  "imagen": "/images/oner/mujer/conjunto-gris-1.webp",
-  "imagenes": {
-    "Gris": ["/images/oner/mujer/conjunto-gris-1.webp", "/images/oner/mujer/conjunto-gris-2.webp"]
-  },
-  "tallas": ["S", "M", "L", "XL"],
-  "colores": ["Gris"],
-  "marca": "Oner Active",
-  "categoria": "Conjuntos",
-  "genero": "Mujer",
-  "piezas": ["top-gris-mujer-oa", "short-gris-mujer-oa"],
-  "reviews": [],
-  "promedioCalificacion": 0,
-  "stock": 10,
-  "destacado": true
-}
-
-
-
-
-
-
+    {
+      "slug": "calzoneta-hombre-gs",
+      "id": "006",
+      "nombre": "Calzoneta",
+      "descripcion": "Corte recto con longitud hasta la rodilla.\n100% poliéster reciclado.\nElástico interno con cordón ajustable.\nLavar a máquina con agua fría.",
+      "precio": 649.0,
+      "imagenes": {
+        "Azul": [
+          "/images/gymshark/hombre/calzoneta-azul-1.webp",
+          "/images/gymshark/hombre/calzoneta-azul-2.webp"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Azul"
+      ],
+      "marca": "GymShark",
+      "categoria": "Calzonetas",
+      "genero": "Hombre",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 20,
+      "destacado": false,
+      "tipo": "Inferior"
+    },
+    {
+      "slug": "camisa-oversize-hombre-gs",
+      "id": "007",
+      "nombre": "Camisa Oversize",
+      "descripcion": "Corte holgado con caída natural.\n100% algodón peinado.\nCuello redondo reforzado.\nLavar a máquina con colores similares.",
+      "precio": 769.0,
+      "imagenes": {
+        "Blanco": [
+          "/images/gymshark/hombre/camisa-blanca-oversize-1.webp",
+          "/images/gymshark/hombre/camisa-blanca-oversize-2.webp"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colores": [
+        "Blanco"
+      ],
+      "marca": "GymShark",
+      "categoria": "Camisas",
+      "genero": "Hombre",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 25,
+      "destacado": false,
+      "tipo": "Superior"
+    },
+    {
+      "slug": "camisa-compresion-hombre-gs",
+      "id": "008",
+      "nombre": "Camisa de Compresión",
+      "descripcion": "Tejido de compresión de segunda piel.\n79% poliéster, 21% elastano.\nManga corta con costuras planas anti-roce.\nLavar a máquina con agua fría.",
+      "precio": 849.0,
+      "imagenes": {
+        "Negro": [
+          "/images/gymshark/hombre/camisa-negra-compresion-1.webp",
+          "/images/gymshark/hombre/camisa-negra-compresion-2.webp"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Negro"
+      ],
+      "marca": "GymShark",
+      "categoria": "Camisas",
+      "genero": "Hombre",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 18,
+      "destacado": true,
+      "tipo": "Superior"
+    },
+    {
+      "slug": "hoodie-hombre-gs",
+      "id": "009",
+      "nombre": "Hoodie",
+      "descripcion": "Capucha ajustable con cordón plano.\n80% algodón, 20% poliéster.\nBolsillo canguro frontal.\nLavar a máquina con colores similares.",
+      "precio": 1299.0,
+      "imagenes": {
+        "Azul": [
+          "/images/gymshark/hombre/hoodie-azul-1.webp",
+          "/images/gymshark/hombre/hoodie-azul-2.webp"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colores": [
+        "Azul"
+      ],
+      "marca": "GymShark",
+      "categoria": "Hoodies",
+      "genero": "Hombre",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 15,
+      "destacado": false,
+      "tipo": "Superior"
+    },
+    {
+      "slug": "sueter-quartzip-hombre-gs",
+      "id": "010",
+      "nombre": "Suéter Quarter Zip",
+      "descripcion": "Cierre corto en el cuello para ventilación.\n100% poliéster con acabado suave al tacto.\nManga larga con puños elásticos.\nLavar a máquina con agua fría.",
+      "precio": 1099.0,
+      "imagenes": {
+        "Gris": [
+          "/images/gymshark/hombre/sueter-quarterzip-gris-1.webp",
+          "/images/gymshark/hombre/sueter-quarterzip-gris-2.webp"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Gris"
+      ],
+      "marca": "GymShark",
+      "categoria": "Suéteres",
+      "genero": "Hombre",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 12,
+      "destacado": false,
+      "tipo": "Superior"
+    },
+    {
+      "slug": "camisa-crop-mujer-on",
+      "id": "011",
+      "nombre": "Camisa Crop con Estampado",
+      "descripcion": "Crop top de manga corta con estampado gráfico frontal.\n100% algodón suave.\nCorte relajado con dobladillo recto.\nLavar a máquina con colores similares.",
+      "precio": 449.0,
+      "imagenes": {
+        "Blanco": [
+          "/images/oldnavy/mujer/camisa-blanca-1.avif",
+          "/images/oldnavy/mujer/camisa-blanca-2.avif"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Blanco"
+      ],
+      "marca": "Old Navy",
+      "categoria": "Camisas",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 20,
+      "destacado": false,
+      "tipo": "Superior"
+    },
+    {
+      "slug": "camisa-tejida-mujer-on",
+      "id": "012",
+      "nombre": "Camisa Tejida de Punto",
+      "descripcion": "Camisa de punto abierto con textura tejida.\nTela liviana ideal para clima cálido.\nCorte recto con cuello redondo.\nLavar a mano con agua fría.",
+      "precio": 529.0,
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Blanco"
+      ],
+      "marca": "Old Navy",
+      "categoria": "Camisas",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 15,
+      "destacado": false,
+      "imagenes": {
+        "Blanco": [
+          "/images/oldnavy/mujer/camisa-blanca-2.avif"
+        ]
+      },
+      "tipo": "Superior"
+    },
+    {
+      "slug": "tank-cafe-mujer-on",
+      "id": "013",
+      "nombre": "Tank Top de Tirantes",
+      "descripcion": "Top corto de tirantes finos con espalda recta.\n92% nailon, 8% elastano.\nTela de segunda piel con soporte interno.\nLavar a máquina con agua fría.",
+      "precio": 379.0,
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colores": [
+        "Café"
+      ],
+      "marca": "Old Navy",
+      "categoria": "Tops",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 22,
+      "destacado": false,
+      "imagenes": {
+        "Café": [
+          "/images/oldnavy/mujer/camisa-cafe-2.webp"
+        ]
+      },
+      "tipo": "Superior"
+    },
+    {
+      "slug": "falda-mujer-on",
+      "id": "014",
+      "nombre": "Falda Plisada Corta",
+      "descripcion": "Falda con pliegues y cintura elástica.\n100% poliéster reciclado.\nCorte por encima de la rodilla.\nLavar a máquina con colores similares.",
+      "precio": 499.0,
+      "imagenes": {
+        "Blanco": [
+          "/images/oldnavy/mujer/falda-blanca-1.avif"
+        ],
+        "Café": [
+          "/images/oldnavy/mujer/falda-blanca-1.avif",
+          "/images/oldnavy/mujer/falda-cafe-1.avif"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Blanco",
+        "Café"
+      ],
+      "marca": "Old Navy",
+      "categoria": "Faldas",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 18,
+      "destacado": false,
+      "tipo": "Inferior"
+    },
+    {
+      "slug": "leggins-mujer-on",
+      "id": "016",
+      "nombre": "Leggings de Cintura Alta",
+      "descripcion": "Cintura alta con banda elástica ancha.\n78% poliéster, 22% elastano.\nTela opaca con compresión suave.\nLavar a máquina con agua fría.",
+      "precio": 649.0,
+      "imagenes": {
+        "Morado": [
+          "/images/oldnavy/mujer/leggins-moradas-1.avif",
+          "/images/oldnavy/mujer/leggins-moradas-2.avif"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Morado"
+      ],
+      "marca": "Old Navy",
+      "categoria": "Leggings",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 25,
+      "destacado": false,
+      "tipo": "Inferior"
+    },
+    {
+      "slug": "sueter-mujer-on",
+      "id": "017",
+      "nombre": "Suéter Quarter Zip Cropped",
+      "descripcion": "Suéter corto con cierre en el cuello para ventilación.\n80% algodón, 20% poliéster.\nManga larga con puños acanalados.\nLavar a máquina con colores similares.",
+      "precio": 899.0,
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Morado"
+      ],
+      "marca": "Old Navy",
+      "categoria": "Suéteres",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 14,
+      "destacado": false,
+      "imagenes": {
+        "Morado": [
+          "/images/oldnavy/mujer/sueter-morado.avif"
+        ]
+      },
+      "tipo": "Superior"
+    },
+    {
+      "slug": "buzo-mujer-on",
+      "id": "018",
+      "nombre": "Buzo Jogger",
+      "descripcion": "Pantalón jogger con cintura elástica y cordón ajustable.\n80% algodón, 20% poliéster.\nPuños acanalados en los tobillos.\nLavar a máquina con colores similares.",
+      "precio": 849.0,
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Morado"
+      ],
+      "marca": "Old Navy",
+      "categoria": "Buzos",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 14,
+      "destacado": false,
+      "imagenes": {
+        "Morado": [
+          "/images/oldnavy/mujer/buzo-morado.avif"
+        ]
+      },
+      "tipo": "Inferior"
+    },
+    {
+      "slug": "conjunto-cafe-mujer-on",
+      "id": "019",
+      "nombre": "Conjunto Tank Top y Falda Plisada",
+      "descripcion": "Conjunto coordinado de tank top de tirantes y falda plisada corta.\nIdeal para entrenamiento o uso casual.\nVendido como conjunto completo.",
+      "precio": 799.0,
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colores": [
+        "Café"
+      ],
+      "marca": "Old Navy",
+      "categoria": "Conjuntos",
+      "genero": "Mujer",
+      "piezas": [
+        "tank-cafe-mujer-on",
+        "falda-mujer-on"
+      ],
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 12,
+      "destacado": true,
+      "imagenes": {
+        "Café": [
+          "/images/oldnavy/mujer/conjunto-cafe.avif"
+        ]
+      },
+      "tipo": "Completo"
+    },
+    {
+      "slug": "conjunto-morado-mujer-on",
+      "id": "020",
+      "nombre": "Conjunto Suéter y Buzo Jogger",
+      "descripcion": "Conjunto coordinado de suéter quarter zip cropped y jogger a juego.\nTela suave con acabado cepillado por dentro.\nVendido como conjunto completo.",
+      "precio": 1649.0,
+      "imagenes": {
+        "Morado": [
+          "/images/oldnavy/mujer/conjunto-morado-1.avif",
+          "/images/oldnavy/mujer/conjunto-morado-2.avif"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Morado"
+      ],
+      "marca": "Old Navy",
+      "categoria": "Conjuntos",
+      "genero": "Mujer",
+      "piezas": [
+        "sueter-mujer-on",
+        "buzo-mujer-on"
+      ],
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 10,
+      "destacado": true,
+      "tipo": "Completo"
+    },
+    {
+      "slug": "buzo-hombre-on",
+      "id": "021",
+      "nombre": "Buzo Jogger Fleece",
+      "descripcion": "Pantalón jogger con interior de felpa suave.\n80% algodón, 20% poliéster.\nCintura elástica con cordón ajustable y puños acanalados.\nLavar a máquina con colores similares.",
+      "precio": 899.0,
+      "imagenes": {
+        "Verde": [
+          "/images/oldnavy/hombre/buzo-verde-1.avif",
+          "/images/oldnavy/hombre/buzo-verde-2.avif"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colores": [
+        "Verde"
+      ],
+      "marca": "Old Navy",
+      "categoria": "Buzos",
+      "genero": "Hombre",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 16,
+      "destacado": false,
+      "tipo": "Inferior"
+    },
+    {
+      "slug": "calzoneta-hombre-on",
+      "id": "022",
+      "nombre": "Calzoneta con Forro Interno",
+      "descripcion": "Short con forro interno de malla para mayor soporte.\n100% poliéster reciclado.\nBolsillos laterales con cierre y cintura elástica.\nLavar a máquina con agua fría.",
+      "precio": 649.0,
+      "imagenes": {
+        "Café": [
+          "/images/oldnavy/hombre/calzoneta-cafe-1.webp",
+          "/images/oldnavy/hombre/calzoneta-cafe-2.avif"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colores": [
+        "Café"
+      ],
+      "marca": "Old Navy",
+      "categoria": "Calzonetas",
+      "genero": "Hombre",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 20,
+      "destacado": false,
+      "tipo": "Inferior"
+    },
+    {
+      "slug": "camisa-hombre-on",
+      "id": "023",
+      "nombre": "Camisa Básica Cuello Redondo",
+      "descripcion": "Camiseta de manga corta con cuello redondo reforzado.\n100% algodón peinado.\nCorte regular con dobladillo recto.\nLavar a máquina con colores similares.",
+      "precio": 449.0,
+      "imagenes": {
+        "Blanco": [
+          "/images/oldnavy/hombre/camisa-blanca-1.avif",
+          "/images/oldnavy/hombre/camisa-blanca-2.avif"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colores": [
+        "Blanco"
+      ],
+      "marca": "Old Navy",
+      "categoria": "Camisas",
+      "genero": "Hombre",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 30,
+      "destacado": false,
+      "tipo": "Superior"
+    },
+    {
+      "slug": "short-hombre-on",
+      "id": "024",
+      "nombre": "Short de Entrenamiento",
+      "descripcion": "Short de corte recto por encima de la rodilla.\n100% poliéster con tela de secado rápido.\nCintura elástica con cordón ajustable y bolsillos laterales.\nLavar a máquina con agua fría.",
+      "precio": 549.0,
+      "imagenes": {
+        "Negro": [
+          "/images/oldnavy/hombre/short1-negro.avif"
+        ],
+        "Verde": [
+          "/images/oldnavy/hombre/short1-negro.avif",
+          "/images/oldnavy/hombre/short1-verde.avif"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colores": [
+        "Negro",
+        "Verde"
+      ],
+      "marca": "Old Navy",
+      "categoria": "Shorts",
+      "genero": "Hombre",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 24,
+      "destacado": false,
+      "tipo": "Inferior"
+    },
+    {
+      "slug": "sueter-hombre-on",
+      "id": "025",
+      "nombre": "Suéter Hoodie de Manga Larga",
+      "descripcion": "Hoodie ligero sin bolsillo canguro, ideal para capas.\n100% poliéster con tela de secado rápido.\nCapucha fija sin cordón y puños acanalados.\nLavar a máquina con agua fría.",
+      "precio": 999.0,
+      "imagenes": {
+        "Azul": [
+          "/images/oldnavy/hombre/sueter-azul-1.avif",
+          "/images/oldnavy/hombre/sueter-azul-2.avif"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colores": [
+        "Azul"
+      ],
+      "marca": "Old Navy",
+      "categoria": "Suéteres",
+      "genero": "Hombre",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 18,
+      "destacado": false,
+      "tipo": "Superior"
+    },
+    {
+      "slug": "3pack-camisetas-hombre-yl",
+      "id": "026",
+      "nombre": "Pack x3 Camisetas de Tirantes",
+      "descripcion": "Set de 3 camisetas de tirantes en colores combinables.\n95% algodón, 5% elastano.\nCorte ajustado con cuello redondo.\nLavar a máquina con colores similares.",
+      "precio": 1099.0,
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colores": [
+        "Negro",
+        "Blanco",
+        "Azul"
+      ],
+      "marca": "YoungLA",
+      "categoria": "Camisetas",
+      "genero": "Hombre",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 20,
+      "destacado": true,
+      "imagenes": {
+        "Negro": [
+          "/images/youngla/hombre/3-pack-camisetas.webp"
+        ]
+      },
+      "tipo": "Superior"
+    },
+    {
+      "slug": "buzo1-hombre-yl",
+      "id": "027",
+      "nombre": "Buzo Jogger Wide Leg",
+      "descripcion": "Pantalón jogger de pierna ancha con caída holgada.\n80% algodón, 20% poliéster.\nCintura elástica con cordón y bolsillos laterales.\nLavar a máquina con colores similares.",
+      "precio": 1249.0,
+      "imagenes": {
+        "Blanco": [
+          "/images/youngla/hombre/buzo1-blanco.webp"
+        ],
+        "Rojo": [
+          "/images/youngla/hombre/buzo1-blanco.webp",
+          "/images/youngla/hombre/buzo1-rojo.webp"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colores": [
+        "Blanco",
+        "Rojo"
+      ],
+      "marca": "YoungLA",
+      "categoria": "Buzos",
+      "genero": "Hombre",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 18,
+      "destacado": false,
+      "tipo": "Inferior"
+    },
+    {
+      "slug": "buzo2-hombre-yl",
+      "id": "028",
+      "nombre": "Buzo Jogger Relaxed Fit",
+      "descripcion": "Pantalón jogger de corte relajado con tela liviana.\n100% poliéster con acabado suave.\nCintura elástica con cordón y puños acanalados.\nLavar a máquina con agua fría.",
+      "precio": 1149.0,
+      "imagenes": {
+        "Azul": [
+          "/images/youngla/hombre/buzo2-azul.webp"
+        ],
+        "Gris": [
+          "/images/youngla/hombre/buzo2-azul.webp",
+          "/images/youngla/hombre/buzo2-gris.webp"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colores": [
+        "Azul",
+        "Gris"
+      ],
+      "marca": "YoungLA",
+      "categoria": "Buzos",
+      "genero": "Hombre",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 16,
+      "destacado": false,
+      "tipo": "Inferior"
+    },
+    {
+      "slug": "camisabat-hombre-yl",
+      "id": "029",
+      "nombre": "Camisa Batman Manga Corta",
+      "descripcion": "Camiseta de manga corta con gráfico en el pecho.\n100% algodón pesado de primera calidad.\nCorte regular con cuello redondo reforzado.\nLavar a máquina con colores similares.",
+      "precio": 749.0,
+      "imagenes": {
+        "Gris": [
+          "/images/youngla/hombre/camisabat-gris.webp"
+        ],
+        "Negro": [
+          "/images/youngla/hombre/camisabat-gris.webp",
+          "/images/youngla/hombre/camisabat-negro.webp"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colores": [
+        "Gris",
+        "Negro"
+      ],
+      "marca": "YoungLA",
+      "categoria": "Camisas",
+      "genero": "Hombre",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 22,
+      "destacado": false,
+      "tipo": "Superior"
+    },
+    {
+      "slug": "camisaoversize-hombre-yl",
+      "id": "030",
+      "nombre": "Camisa Oversize Básica",
+      "descripcion": "Camiseta de corte holgado con caída natural.\n100% algodón peinado de peso medio.\nManga corta con cuello redondo y dobladillo recto.\nLavar a máquina con colores similares.",
+      "precio": 849.0,
+      "imagenes": {
+        "Azul": [
+          "/images/youngla/hombre/camisaoversize-azul.webp"
+        ],
+        "Rojo": [
+          "/images/youngla/hombre/camisaoversize-azul.webp",
+          "/images/youngla/hombre/camisaoversize-rojo.webp"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colores": [
+        "Azul",
+        "Rojo"
+      ],
+      "marca": "YoungLA",
+      "categoria": "Camisas",
+      "genero": "Hombre",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 25,
+      "destacado": false,
+      "tipo": "Superior"
+    },
+    {
+      "slug": "tanksuper-hombre-yl",
+      "id": "031",
+      "nombre": "Tank Top de Compresión",
+      "descripcion": "Camiseta sin mangas de compresión de segunda piel.\n82% poliéster, 18% elastano.\nCorte ajustado con cuello alto y espalda nadador.\nLavar a máquina con agua fría.",
+      "precio": 699.0,
+      "imagenes": {
+        "Negro": [
+          "/images/youngla/hombre/tanksuper-negro.webp"
+        ],
+        "Azul": [
+          "/images/youngla/hombre/tanksuper-negro.webp",
+          "/images/youngla/hombre/tanksuper-azul.webp"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Negro",
+        "Azul"
+      ],
+      "marca": "YoungLA",
+      "categoria": "Tops",
+      "genero": "Hombre",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 20,
+      "destacado": false,
+      "tipo": "Superior"
+    },
+    {
+      "slug": "buzo-mujer-yl",
+      "id": "032",
+      "nombre": "Buzo Jogger Wide Leg",
+      "descripcion": "Pantalón jogger de pierna ancha con cintura elástica.\n80% algodón, 20% poliéster.\nAcabado suave con costuras reforzadas y bolsillos laterales.\nLavar a máquina con colores similares.",
+      "precio": 1149.0,
+      "imagenes": {
+        "Gris": [
+          "/images/youngla/mujer/buzo-gris-1.webp",
+          "/images/youngla/mujer/buzo-gris-2.jpg"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Gris"
+      ],
+      "marca": "YoungLA",
+      "categoria": "Buzos",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 16,
+      "destacado": false,
+      "tipo": "Inferior"
+    },
+    {
+      "slug": "camisa-mujer-yl",
+      "id": "033",
+      "nombre": "Camisa Tank de Tirantes con Espalda Abierta",
+      "descripcion": "Top de tirantes con espalda cruzada y tela de compresión suave.\n92% nailon, 8% elastano.\nCorte ajustado con soporte interno.\nLavar a máquina con agua fría.",
+      "precio": 749.0,
+      "imagenes": {
+        "Rojo": [
+          "/images/youngla/mujer/camisa-roja-1.webp",
+          "/images/youngla/mujer/camisa-roja-2.webp"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Rojo"
+      ],
+      "marca": "YoungLA",
+      "categoria": "Tops",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 20,
+      "destacado": false,
+      "tipo": "Superior"
+    },
+    {
+      "slug": "mono-mujer-yl",
+      "id": "034",
+      "nombre": "Mono Deportivo de Tirantes",
+      "descripcion": "Mono de una pieza con tirantes finos y corte ajustado.\n80% nailon, 20% elastano.\nTela de segunda piel con soporte integrado.\nLavar a máquina con agua fría.",
+      "precio": 1299.0,
+      "imagenes": {
+        "Rosa": [
+          "/images/youngla/mujer/mono-rosa-1.webp",
+          "/images/youngla/mujer/mono-rosa-2.webp"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Rosa"
+      ],
+      "marca": "YoungLA",
+      "categoria": "Monos",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 14,
+      "destacado": true,
+      "tipo": "Completo"
+    },
+    {
+      "slug": "vestido-mujer-yl",
+      "id": "035",
+      "nombre": "Vestido Tenis con Falda Plisada",
+      "descripcion": "Vestido deportivo con falda plisada y short interior integrado.\n90% poliéster, 10% elastano.\nEspalda con detalle abierto y tirantes ajustables.\nLavar a máquina con agua fría.",
+      "precio": 1349.0,
+      "imagenes": {
+        "Azul": [
+          "/images/youngla/mujer/vestido-azul-1.webp",
+          "/images/youngla/mujer/vestido-azul-2.webp"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Azul"
+      ],
+      "marca": "YoungLA",
+      "categoria": "Vestidos",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 12,
+      "destacado": true,
+      "tipo": "Completo"
+    },
+    {
+      "slug": "windbreaker-mujer-yl",
+      "id": "036",
+      "nombre": "Windbreaker con Capucha",
+      "descripcion": "Chaqueta cortaviento con capucha y cierre frontal completo.\n100% poliéster con tela resistente al viento.\nBolsillos laterales con cierre y puños elásticos.\nLavar a máquina con agua fría.",
+      "precio": 1549.0,
+      "imagenes": {
+        "Rojo": [
+          "/images/youngla/mujer/windbreaker1-rojo.webp"
+        ],
+        "Verde": [
+          "/images/youngla/mujer/windbreaker1-rojo.webp",
+          "/images/youngla/mujer/windbreaker1-verde.webp"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Rojo",
+        "Verde"
+      ],
+      "marca": "YoungLA",
+      "categoria": "Chaquetas",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 15,
+      "destacado": false,
+      "tipo": "Superior"
+    },
+    {
+      "slug": "camisa-azul-mujer-oa",
+      "id": "037",
+      "nombre": "Camisa Off Shoulder de Manga Larga",
+      "descripcion": "Top de manga larga con escote off shoulder.\n90% nailon, 10% elastano.\nTela sin costuras con compresión suave.\nLavar a máquina con agua fría.",
+      "precio": 899.0,
+      "imagenes": {
+        "Azul": [
+          "/images/oner/mujer/camisa-azul-1.webp",
+          "/images/oner/mujer/camisa-azul-2.webp"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Azul"
+      ],
+      "marca": "Oner Active",
+      "categoria": "Camisas",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 18,
+      "destacado": false,
+      "tipo": "Superior"
+    },
+    {
+      "slug": "camisa-rosa-mujer-oa",
+      "id": "038",
+      "nombre": "Camisa de Tirantes con Espalda Cruzada",
+      "descripcion": "Top de tirantes con detalle de espalda cruzada.\n92% nailon, 8% elastano.\nSoporte interno integrado y tela de compresión.\nLavar a máquina con agua fría.",
+      "precio": 749.0,
+      "imagenes": {
+        "Rosa": [
+          "/images/oner/mujer/camisa-rosa-1.webp",
+          "/images/oner/mujer/camisa-rosa-2.webp"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Rosa"
+      ],
+      "marca": "Oner Active",
+      "categoria": "Tops",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 20,
+      "destacado": false,
+      "tipo": "Superior"
+    },
+    {
+      "slug": "leggins-rosa-mujer-oa",
+      "id": "039",
+      "nombre": "Leggings de Cintura Alta sin Costuras",
+      "descripcion": "Leggings sin costuras con cintura alta y tela de compresión.\n90% nailon, 10% elastano.\nAcabado suave con textura sutil.\nLavar a máquina con agua fría.",
+      "precio": 999.0,
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Rosa"
+      ],
+      "marca": "Oner Active",
+      "categoria": "Leggings",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 22,
+      "destacado": false,
+      "imagenes": {
+        "Rosa": [
+          "/images/oner/mujer/leggins-rosa.webp"
+        ]
+      },
+      "tipo": "Inferior"
+    },
+    {
+      "slug": "top-amarillo-mujer-oa",
+      "id": "040",
+      "nombre": "Top Deportivo con Soporte",
+      "descripcion": "Top deportivo con soporte medio y tira trasera ajustable.\n92% nailon, 8% elastano.\nBordes sin costuras y tela de secado rápido.\nLavar a máquina con agua fría.",
+      "precio": 749.0,
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Amarillo"
+      ],
+      "marca": "Oner Active",
+      "categoria": "Tops",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 18,
+      "destacado": false,
+      "imagenes": {
+        "Amarillo": [
+          "/images/oner/mujer/top-amarillo.webp"
+        ]
+      },
+      "tipo": "Superior"
+    },
+    {
+      "slug": "falda-short-amarillo-mujer-oa",
+      "id": "041",
+      "nombre": "Falda Short con Short Interior",
+      "descripcion": "Falda con short interior integrado y cintura elástica.\n90% poliéster, 10% elastano.\nCorte por encima de la rodilla con tela ligera.\nLavar a máquina con agua fría.",
+      "precio": 849.0,
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Amarillo"
+      ],
+      "marca": "Oner Active",
+      "categoria": "Faldas",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 16,
+      "destacado": false,
+      "imagenes": {
+        "Amarillo": [
+          "/images/oner/mujer/falda-short-amarillo.webp"
+        ]
+      },
+      "tipo": "Inferior"
+    },
+    {
+      "slug": "top-gris-mujer-oa",
+      "id": "042",
+      "nombre": "Top Deportivo Minimalista",
+      "descripcion": "Top deportivo de corte limpio con soporte ligero.\n92% nailon, 8% elastano.\nTela sin costuras con acabado mate.\nLavar a máquina con agua fría.",
+      "precio": 699.0,
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Gris"
+      ],
+      "marca": "Oner Active",
+      "categoria": "Tops",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 20,
+      "destacado": false,
+      "imagenes": {
+        "Gris": [
+          "/images/oner/mujer/top-gris.webp"
+        ]
+      },
+      "tipo": "Superior"
+    },
+    {
+      "slug": "short-gris-mujer-oa",
+      "id": "043",
+      "nombre": "Short de Ciclista",
+      "descripcion": "Short estilo ciclista con cintura alta y tela de compresión.\n90% nailon, 10% elastano.\nCorte por encima de la rodilla sin costuras laterales.\nLavar a máquina con agua fría.",
+      "precio": 799.0,
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Gris"
+      ],
+      "marca": "Oner Active",
+      "categoria": "Shorts",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 18,
+      "destacado": false,
+      "imagenes": {
+        "Gris": [
+          "/images/oner/mujer/short-gris.webp"
+        ]
+      },
+      "tipo": "Inferior"
+    },
+    {
+      "slug": "mono-negro-mujer-oa",
+      "id": "044",
+      "nombre": "Mono Deportivo de Tirantes",
+      "descripcion": "Mono de una pieza con tirantes finos y espalda abierta.\n80% nailon, 20% elastano.\nTela de segunda piel con soporte integrado y short interior.\nLavar a máquina con agua fría.",
+      "precio": 1299.0,
+      "imagenes": {
+        "Negro": [
+          "/images/oner/mujer/mono-negro-1.webp",
+          "/images/oner/mujer/mono-negro-2.webp"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Negro"
+      ],
+      "marca": "Oner Active",
+      "categoria": "Monos",
+      "genero": "Mujer",
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 14,
+      "destacado": false,
+      "tipo": "Completo"
+    },
+    {
+      "slug": "conjunto-rosa-mujer-oa",
+      "id": "045",
+      "nombre": "Conjunto Top y Leggings",
+      "descripcion": "Conjunto coordinado de top de tirantes con espalda cruzada y leggings de cintura alta.\nTela sin costuras con compresión suave.\nVendido como conjunto completo.",
+      "precio": 1649.0,
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Rosa"
+      ],
+      "marca": "Oner Active",
+      "categoria": "Conjuntos",
+      "genero": "Mujer",
+      "piezas": [
+        "camisa-rosa-mujer-oa",
+        "leggins-rosa-mujer-oa"
+      ],
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 12,
+      "destacado": true,
+      "imagenes": {
+        "Rosa": [
+          "/images/oner/mujer/conjunto-rosa-1.webp"
+        ]
+      },
+      "tipo": "Completo"
+    },
+    {
+      "slug": "conjunto-amarillo-mujer-oa",
+      "id": "046",
+      "nombre": "Conjunto Top y Falda Short",
+      "descripcion": "Conjunto coordinado de top deportivo y falda short con short interior.\nTela ligera de secado rápido ideal para entrenamiento.\nVendido como conjunto completo.",
+      "precio": 1499.0,
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Amarillo"
+      ],
+      "marca": "Oner Active",
+      "categoria": "Conjuntos",
+      "genero": "Mujer",
+      "piezas": [
+        "top-amarillo-mujer-oa",
+        "falda-short-amarillo-mujer-oa"
+      ],
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 14,
+      "destacado": true,
+      "imagenes": {
+        "Amarillo": [
+          "/images/oner/mujer/conjunto-amarillo.webp"
+        ]
+      },
+      "tipo": "Completo"
+    },
+    {
+      "slug": "conjunto-gris-mujer-oa",
+      "id": "047",
+      "nombre": "Conjunto Top y Short de Ciclista",
+      "descripcion": "Conjunto coordinado de top minimalista y short de ciclista.\nTela sin costuras con acabado mate y compresión suave.\nVendido como conjunto completo.",
+      "precio": 1399.0,
+      "imagenes": {
+        "Gris": [
+          "/images/oner/mujer/conjunto-gris-1.webp",
+          "/images/oner/mujer/conjunto-gris-2.webp"
+        ]
+      },
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colores": [
+        "Gris"
+      ],
+      "marca": "Oner Active",
+      "categoria": "Conjuntos",
+      "genero": "Mujer",
+      "piezas": [
+        "top-gris-mujer-oa",
+        "short-gris-mujer-oa"
+      ],
+      "reviews": [],
+      "promedioCalificacion": 0,
+      "stock": 10,
+      "destacado": true,
+      "tipo": "Completo"
+    }
   ]
 }

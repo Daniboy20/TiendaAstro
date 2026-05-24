@@ -16,6 +16,18 @@ const colorMap: Record<string, string> = {
   'Beige': '#D4B896',
 };
 
+const imagenesObj = (producto.imagenes ?? {}) as Record<string, string[]>;
+
+// Primera imagen disponible de cualquier color
+const imagenPortada: string = (() => {
+  for (const color of (producto.colores ?? [])) {
+    const imgs = imagenesObj[color];
+    if (imgs && imgs.length > 0) return imgs[0];
+  }
+  // fallback por si aún tiene campo imagen antiguo
+  return (producto as any).imagen ?? '';
+})();
+
 const coloresPreview = (producto.colores ?? []).slice(0, 4).map((color: string) => ({
   nombre: color,
   hex: colorMap[color] ?? '#CBD5E1',
@@ -23,29 +35,23 @@ const coloresPreview = (producto.colores ?? []).slice(0, 4).map((color: string) 
 }));
 ---
 
-<a href={`/productos/${slug}`} class="block border rounded-lg p-4 hover:shadow-lg transition-all hover:-translate-y-1 bg-white">
-  
-  {/* Imagen */}
+<a href={`/productos/${slug}`} class="block border rounded-lg p-4 hover:shadow-lg transition-all hover:-translate-y-1 bg-white text-gray-900">
+
   <img
-    src={producto.imagen}
+    src={imagenPortada}
     alt={producto.nombre}
     class="w-full h-48 object-cover rounded"
   />
 
-  {/* Nombre */}
-  <h3 class="text-xl font-bold mt-3">{producto.nombre}</h3>
-
-  {/* Marca */}
+  <h3 class="text-lg font-bold mt-3 text-gray-900">{producto.nombre}</h3>
   <p class="text-gray-500 text-sm">{producto.marca}</p>
 
-  {/* Resumen de tallas */}
   {producto.tallas && producto.tallas.length > 0 && (
     <div class="mt-2 text-xs text-gray-500">
       📏 Tallas: {producto.tallas.join(', ')}
     </div>
   )}
 
-  {/* Resumen de colores como círculos */}
   {coloresPreview.length > 0 && (
     <div class="flex gap-1 mt-2 items-center">
       {coloresPreview.map(({ nombre, hex, esClaro }) => (
@@ -61,6 +67,5 @@ const coloresPreview = (producto.colores ?? []).slice(0, 4).map((color: string) 
     </div>
   )}
 
-  {/* Precio */}
   <p class="text-blue-600 font-bold mt-3 text-lg">L. {producto.precio.toFixed(2)}</p>
 </a>

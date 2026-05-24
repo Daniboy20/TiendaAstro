@@ -26,58 +26,76 @@ const colorMap: Record<string, string> = {
   'Beige': '#D4B896',
 };
 
+// Fix error ts(2352): extraer imagenes como unknown primero
+const imagenesObj = (producto.imagenes as unknown as Record<string, string[]>) ?? {};
+
 const coloresConHex = (producto.colores ?? []).map(color => ({
   nombre: color,
   hex: colorMap[color] ?? '#CBD5E1',
   esClaro: color === 'Blanco' || color === 'Beige',
+  imagenes: imagenesObj[color] ?? [],
 }));
 
-// Piezas individuales si es un conjunto
+const imagenesIniciales: string[] = (() => {
+  for (const c of coloresConHex) {
+    if (c.imagenes.length > 0) return c.imagenes;
+  }
+  return [];
+})();
+
 const piezas = (producto.piezas ?? []).map(
   (slug: string) => productosData.productos.find(p => p.slug === slug)
 ).filter(Boolean);
+
+const coloresJSON = JSON.stringify(
+  coloresConHex.map(c => ({ nombre: c.nombre, imagenes: c.imagenes }))
+);
 ---
 
 <Layout title={`${producto.nombre} - TiendaAstro`}>
   <main class="container mx-auto px-4 py-8">
     <div class="flex flex-col md:flex-row gap-8">
 
-      {/* Imagen del producto */}
-      <img
-        src={producto.imagen}
-        alt={producto.nombre}
-        id="imagen-principal"
-        class="w-full md:w-1/2 rounded-lg object-cover"
-      />
+      {/* Galería */}
+      <div class="w-full md:w-1/2 flex flex-col gap-3">
+        <img
+          src={imagenesIniciales[0]}
+          alt={producto.nombre}
+          id="imagen-principal"
+          class="w-full rounded-lg object-cover aspect-square"
+        />
+        <div id="miniaturas" class="flex gap-2 flex-wrap">
+          {imagenesIniciales.map((img, i) => (
+            <img
+              src={img}
+              alt={`${producto.nombre} vista ${i + 1}`}
+              class={`miniatura w-20 h-20 object-cover rounded-md cursor-pointer border-2 transition-all ${i === 0 ? 'border-blue-500' : 'border-gray-200 opacity-60'}`}
+              data-src={img}
+            />
+          ))}
+        </div>
+      </div>
 
-      {/* Detalles del producto */}
+      {/* Detalles */}
       <div class="flex-1">
         <h1 class="text-3xl font-bold mb-2">{producto.nombre}</h1>
 
-        {/* Calificación */}
         <div class="flex items-center gap-2 mb-4">
           <ValoracionEstrellas calificacion={producto.promedioCalificacion || 0} />
-          <span class="text-gray-600">({producto.reviews.length} opiniones)</span>
+          <span class="text-gray-500">({producto.reviews.length} opiniones)</span>
         </div>
 
-        {/* Descripción */}
-        <p class="text-gray-600 mb-4 whitespace-pre-line">{producto.descripcion}</p>
-
-        {/* Precio */}
+        <p class="mb-4 whitespace-pre-line">{producto.descripcion}</p>
         <p class="text-2xl font-bold text-blue-600 mb-6">L. {producto.precio.toFixed(2)}</p>
 
-        {/* SELECTOR DE TALLAS */}
         {producto.tallas && producto.tallas.length > 0 && (
           <div class="mb-6">
             <span class="font-bold block mb-2">
-              Talla: <span id="talla-seleccionada" class="font-normal text-gray-600">—</span>
+              Talla: <span id="talla-seleccionada" class="font-normal text-gray-500">—</span>
             </span>
             <div class="flex flex-wrap gap-2">
               {producto.tallas.map((talla) => (
-                <button
-                  class="talla-btn px-4 py-2 border rounded-md hover:bg-blue-500 hover:text-white hover:border-blue-500 transition-colors"
-                  data-talla={talla}
-                >
+                <button class="talla-btn px-4 py-2 border border-gray-300 rounded-md transition-colors hover:border-blue-500" data-talla={talla}>
                   {talla}
                 </button>
               ))}
@@ -85,11 +103,10 @@ const piezas = (producto.piezas ?? []).map(
           </div>
         )}
 
-        {/* SELECTOR DE COLORES */}
         {coloresConHex.length > 0 && (
           <div class="mb-6">
             <span class="font-bold block mb-2">
-              Color: <span id="color-seleccionado-label" class="font-normal text-gray-600">—</span>
+              Color: <span id="color-seleccionado-label" class="font-normal text-gray-500">—</span>
             </span>
             <div class="flex flex-wrap gap-3">
               {coloresConHex.map(({ nombre, hex, esClaro }) => (
@@ -99,7 +116,6 @@ const piezas = (producto.piezas ?? []).map(
                     style={`background-color: ${hex}${esClaro ? '; box-shadow: inset 0 0 0 1px #ccc' : ''}`}
                     title={nombre}
                     data-color={nombre}
-                    data-imagenes={JSON.stringify((producto.imagenes ?? {})[nombre] ?? [])}
                   />
                   <span class="text-xs">{nombre}</span>
                 </div>
@@ -108,74 +124,98 @@ const piezas = (producto.piezas ?? []).map(
           </div>
         )}
 
-        {/* Marca y categoría */}
         <p class="mb-2"><span class="font-bold">Marca:</span> {producto.marca}</p>
         <p class="mb-4"><span class="font-bold">Categoría:</span> {producto.categoria}</p>
 
-        {/* Stock */}
         <p class={`mb-4 ${producto.stock > 0 ? 'text-green-600' : 'text-red-600'}`}>
           {producto.stock > 0 ? `✅ Stock disponible: ${producto.stock} unidades` : '❌ Sin stock'}
         </p>
 
-        {/* Botón agregar al carrito */}
-        <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors w-full md:w-auto">
+        <button id="btn-carrito" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors w-full md:w-auto">
           Agregar al carrito
         </button>
 
-        {/* Piezas individuales si es un conjunto */}
         {piezas.length > 0 && (
           <div class="mt-6 p-4 bg-gray-50 rounded-lg border">
             <p class="font-bold mb-2">¿Solo quieres una pieza?</p>
             <div class="flex flex-col gap-2">
               {piezas.map((pieza) => pieza && (
-                <a
-                  href={`/productos/${pieza.slug}`}
-                  class="text-blue-600 hover:underline"
-                >
+                <a href={`/productos/${pieza.slug}`} class="text-blue-600 hover:underline">
                   → {pieza.nombre} — L. {pieza.precio.toFixed(2)}
                 </a>
               ))}
             </div>
           </div>
         )}
-
       </div>
     </div>
 
-    {/* Sección de opiniones */}
     <ListaReviews reviews={producto.reviews} />
   </main>
 </Layout>
 
-<script>
-  // Selector de tallas
-  const tallaBtns = document.querySelectorAll<HTMLButtonElement>('.talla-btn');
+<script define:vars={{ coloresJSON }}>
+  const colores = JSON.parse(coloresJSON);
+  const imagenPrincipal = document.getElementById('imagen-principal');
+  const contenedorMiniaturas = document.getElementById('miniaturas');
   const tallaLabel = document.getElementById('talla-seleccionada');
+  const colorLabel = document.getElementById('color-seleccionado-label');
+  const tallaBtns = document.querySelectorAll('.talla-btn');
+  const colorBtns = document.querySelectorAll('.color-btn');
+
+  function seleccionarMiniatura(miniatura) {
+    if (!imagenPrincipal) return;
+    imagenPrincipal.src = miniatura.dataset.src;
+    document.querySelectorAll('.miniatura').forEach(m => {
+      m.classList.remove('border-blue-500');
+      m.classList.add('border-gray-200', 'opacity-60');
+    });
+    miniatura.classList.add('border-blue-500');
+    miniatura.classList.remove('border-gray-200', 'opacity-60');
+  }
+
+  function actualizarGaleria(imagenes) {
+    if (!contenedorMiniaturas || !imagenPrincipal || !imagenes?.length) return;
+    imagenPrincipal.src = imagenes[0];
+    contenedorMiniaturas.innerHTML = '';
+    imagenes.forEach((src, i) => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = `Vista ${i + 1}`;
+      img.dataset.src = src;
+      img.className = `miniatura w-20 h-20 object-cover rounded-md cursor-pointer border-2 transition-all ${i === 0 ? 'border-blue-500' : 'border-gray-200 opacity-60'}`;
+      img.addEventListener('click', () => seleccionarMiniatura(img));
+      contenedorMiniaturas.appendChild(img);
+    });
+  }
+
+  document.querySelectorAll('.miniatura').forEach(m => {
+    m.addEventListener('click', () => seleccionarMiniatura(m));
+  });
 
   tallaBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      tallaBtns.forEach(b => b.classList.remove('bg-blue-500', 'text-white', 'border-blue-500'));
+      tallaBtns.forEach(b => {
+        b.classList.remove('bg-blue-500', 'text-white', 'border-blue-500');
+        b.classList.add('border-gray-300');
+      });
       btn.classList.add('bg-blue-500', 'text-white', 'border-blue-500');
+      btn.classList.remove('border-gray-300');
       if (tallaLabel) tallaLabel.textContent = btn.dataset.talla ?? '—';
     });
   });
-
-  // Selector de colores con cambio de imagen
-  const colorBtns = document.querySelectorAll<HTMLButtonElement>('.color-btn');
-  const colorLabel = document.getElementById('color-seleccionado-label');
-  const imagenPrincipal = document.getElementById('imagen-principal') as HTMLImageElement;
 
   colorBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       colorBtns.forEach(b => b.classList.remove('ring-2', 'ring-blue-500', 'ring-offset-2'));
       btn.classList.add('ring-2', 'ring-blue-500', 'ring-offset-2');
       if (colorLabel) colorLabel.textContent = btn.dataset.color ?? '—';
-
-      // Cambiar imagen si hay imágenes asociadas al color
-      const imagenes: string[] = JSON.parse(btn.dataset.imagenes ?? '[]');
-      if (imagenes.length > 0 && imagenPrincipal) {
-        imagenPrincipal.src = imagenes[0];
-      }
+      const colorData = colores.find(c => c.nombre === btn.dataset.color);
+      if (colorData?.imagenes?.length) actualizarGaleria(colorData.imagenes);
     });
   });
+
+  // Auto-seleccionar primer color al cargar
+  const primerColorBtn = document.querySelector('.color-btn');
+  if (primerColorBtn) primerColorBtn.click();
 </script>

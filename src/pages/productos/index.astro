@@ -3,18 +3,176 @@ import Layout from '../../layouts/Base.astro';
 import productosData from '../../data/productos.json';
 import ProductCard from '../../components/catalogo/ProductCard.astro';
 
-const productos = productosData.productos;
-const productosOrdenados = productos.sort((a, b) => a.nombre.localeCompare(b.nombre));
+const { searchParams } = Astro.url;
+const genero    = searchParams.get('genero') ?? '';
+const marca     = searchParams.get('marca') ?? '';
+const categoria = searchParams.get('categoria') ?? '';
+const tipo      = searchParams.get('tipo') ?? '';
+
+
+// Filtrar productos
+let productos = productosData.productos as any[];
+productos = productos.filter(p => p.genero === genero);
+if (marca)     productos = productos.filter(p => p.marca === marca);
+if (categoria) productos = productos.filter(p => p.categoria === categoria);
+if (tipo)      productos = productos.filter(p => p.tipo === tipo);
+
+const todos = productosData.productos as any[];
+
+// Todas las categorías del género actual ordenadas
+const todasCategorias = [...new Set(todos.filter(p => p.genero === genero).map(p => p.categoria))].sort();
+
+// Marcas disponibles para el género actual
+const marcas = [...new Set(todos.filter(p => p.genero === genero).map(p => p.marca))].sort();
+
+// Tipos (solo mujer)
+const tipos = genero === 'Mujer' ? ['Superior', 'Inferior', 'Completo'] : ['Superior', 'Inferior'];
+
+// Título dinámico
+const partes: string[] = [genero];
+if (tipo)      partes.push(tipo);
+if (categoria) partes.push(categoria);
+if (marca)     partes.push(marca);
+const titulo = partes.join(' · ');
+
+function buildUrl(overrides: Record<string, string | null>) {
+  const current: Record<string, string> = { genero };
+  if (marca)     current.marca = marca;
+  if (categoria) current.categoria = categoria;
+  if (tipo)      current.tipo = tipo;
+
+  const merged = { ...current, ...overrides };
+  const params = new URLSearchParams();
+  for (const [k, v] of Object.entries(merged)) {
+    if (v !== null && v !== '') params.set(k, v);
+  }
+  return `/productos?${params.toString()}`;
+}
 ---
 
-<Layout title="Catálogo - TiendaAstro">
+<Layout title={`${titulo} - TiendaAstro`}>
   <main class="container mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold mb-8">Nuestros Productos</h1>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {productosOrdenados.map(producto => (
-        <ProductCard producto={producto} slug={producto.slug} />
-      ))}
+
+    {/* Breadcrumb */}
+    <nav class="text-sm text-gray-500 mb-6 flex items-center gap-2 flex-wrap">
+      <a href="/" class="hover:text-blue-600">Inicio</a>
+      <span>›</span>
+      <a href="/productos/genero" class="hover:text-blue-600">Categorías</a>
+      <span>›</span>
+      <a href={`/productos?genero=${genero}`} class={`hover:text-blue-600 ${!marca && !categoria && !tipo ? 'text-gray-900 font-semibold' : ''}`}>{genero}</a>
+      {tipo && <><span>›</span><span class="text-gray-900 font-semibold">{tipo}</span></>}
+      {categoria && <><span>›</span><span class="text-gray-900 font-semibold">{categoria}</span></>}
+      {marca && <><span>›</span><span class="text-gray-900 font-semibold">{marca}</span></>}
+    </nav>
+
+    <h1 class="text-3xl font-bold mb-8">{titulo}</h1>
+
+    <div class="flex flex-col md:flex-row gap-8">
+
+      {/* SIDEBAR */}
+      <aside class="w-full md:w-52 shrink-0">
+
+     {/* Cambiar género - solo si no hay género seleccionado */}
+{!genero && (
+  <div class="mb-6">
+    <h2 class="font-bold text-xs uppercase tracking-widest text-gray-400 mb-2">Género</h2>
+    <div class="flex gap-2">
+      <a href="/productos?genero=Mujer" class="flex-1 text-center text-sm py-2 rounded-lg border border-gray-300 hover:border-gray-900">Mujer</a>
+      <a href="/productos?genero=Hombre" class="flex-1 text-center text-sm py-2 rounded-lg border border-gray-300 hover:border-gray-900">Hombre</a>
+    </div>
+  </div>
+)}
+
+        {/* Tipo (solo mujer) */}
+        {tipos.length > 0 && (
+          <div class="mb-6">
+            <h2 class="font-bold text-xs uppercase tracking-widest text-gray-400 mb-2">Tipo</h2>
+            <ul class="flex flex-col gap-1">
+              <li>
+                <a href={buildUrl({ tipo: null, categoria: null })}
+                  class={`text-sm py-1 block hover:text-blue-600 ${!tipo ? 'text-blue-600 font-semibold' : ''}`}>
+                  Todos
+                </a>
+              </li>
+              {tipos.map(t => (
+                <li>
+                  <a href={buildUrl({ tipo: t, categoria: null })}
+                    class={`text-sm py-1 block hover:text-blue-600 ${tipo === t ? 'text-blue-600 font-semibold' : ''}`}>
+                    {t}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Categorías */}
+        {todasCategorias.length > 0 && (
+          <div class="mb-6">
+            <h2 class="font-bold text-xs uppercase tracking-widest text-gray-400 mb-2">Categoría</h2>
+            <ul class="flex flex-col gap-1">
+              <li>
+                <a href={buildUrl({ categoria: null })}
+                  class={`text-sm py-1 block hover:text-blue-600 ${!categoria ? 'text-blue-600 font-semibold' : ''}`}>
+                  Todas
+                </a>
+              </li>
+              {todasCategorias.map(c => (
+                <li>
+                  <a href={buildUrl({ categoria: c })}
+                    class={`text-sm py-1 block hover:text-blue-600 ${categoria === c ? 'text-blue-600 font-semibold' : ''}`}>
+                    {c}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Marca */}
+        <div class="mb-6">
+          <h2 class="font-bold text-xs uppercase tracking-widest text-gray-400 mb-2">Marca</h2>
+          <ul class="flex flex-col gap-1">
+            <li>
+              <a href={buildUrl({ marca: null })}
+                class={`text-sm py-1 block hover:text-blue-600 ${!marca ? 'text-blue-600 font-semibold' : ''}`}>
+                Todas
+              </a>
+            </li>
+            {marcas.map(m => (
+              <li>
+                <a href={buildUrl({ marca: m })}
+                  class={`text-sm py-1 block hover:text-blue-600 ${marca === m ? 'text-blue-600 font-semibold' : ''}`}>
+                  {m}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Limpiar filtros */}
+        {(marca || categoria || tipo) && (
+          <a href={`/productos?genero=${genero}`} class="text-sm text-red-500 hover:underline">
+            ✕ Limpiar filtros
+          </a>
+        )}
+
+      </aside>
+
+      {/* GRID */}
+      <div class="flex-1">
+        <p class="text-sm text-gray-500 mb-4">{productos.length} producto{productos.length !== 1 ? 's' : ''}</p>
+        {productos.length === 0 ? (
+          <p class="text-gray-500">No se encontraron productos con los filtros seleccionados.</p>
+        ) : (
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {productos.map(producto => (
+              <ProductCard producto={producto} slug={producto.slug} />
+            ))}
+          </div>
+        )}
+      </div>
+
     </div>
   </main>
 </Layout>
