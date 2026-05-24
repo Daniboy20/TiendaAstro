@@ -9,34 +9,46 @@ const marca     = searchParams.get('marca') ?? '';
 const categoria = searchParams.get('categoria') ?? '';
 const tipo      = searchParams.get('tipo') ?? '';
 
+const todos = productosData.productos as any[];
 
-// Filtrar productos
-let productos = productosData.productos as any[];
-productos = productos.filter(p => p.genero === genero);
+// Filtrar productos por parámetros URL (género, marca, categoría, tipo)
+let productos = todos;
+if (genero)    productos = productos.filter(p => p.genero === genero);
 if (marca)     productos = productos.filter(p => p.marca === marca);
 if (categoria) productos = productos.filter(p => p.categoria === categoria);
 if (tipo)      productos = productos.filter(p => p.tipo === tipo);
 
-const todos = productosData.productos as any[];
+// Base para opciones del sidebar
+const base = genero ? todos.filter(p => p.genero === genero) : todos;
+const todasCategorias = [...new Set(base.map(p => p.categoria))].sort();
+const marcas = [...new Set(base.map(p => p.marca))].sort();
 
-// Todas las categorías del género actual ordenadas
-const todasCategorias = [...new Set(todos.filter(p => p.genero === genero).map(p => p.categoria))].sort();
+// Colores únicos del conjunto filtrado actual
+const coloresUnicos = [...new Set(productos.flatMap(p => p.colores ?? []))].sort();
 
-// Marcas disponibles para el género actual
-const marcas = [...new Set(todos.filter(p => p.genero === genero).map(p => p.marca))].sort();
+// Rango de precios del conjunto filtrado actual
+const precios = productos.map(p => p.precio);
+const precioMin = precios.length > 0 ? Math.floor(Math.min(...precios)) : 0;
+const precioMax = precios.length > 0 ? Math.ceil(Math.max(...precios)) : 9999;
 
-// Tipos (solo mujer)
-const tipos = genero === 'Mujer' ? ['Superior', 'Inferior', 'Completo'] : ['Superior', 'Inferior'];
+// Tipos según género
+const tipos = genero === 'Mujer'
+  ? ['Superior', 'Inferior', 'Completo']
+  : genero === 'Hombre'
+  ? ['Superior', 'Inferior']
+  : [];
 
 // Título dinámico
-const partes: string[] = [genero];
+const partes: string[] = [];
+if (genero)    partes.push(genero);
 if (tipo)      partes.push(tipo);
 if (categoria) partes.push(categoria);
 if (marca)     partes.push(marca);
-const titulo = partes.join(' · ');
+const titulo = partes.length > 0 ? partes.join(' · ') : 'Todos los Productos';
 
 function buildUrl(overrides: Record<string, string | null>) {
-  const current: Record<string, string> = { genero };
+  const current: Record<string, string> = {};
+  if (genero)    current.genero = genero;
   if (marca)     current.marca = marca;
   if (categoria) current.categoria = categoria;
   if (tipo)      current.tipo = tipo;
@@ -46,8 +58,23 @@ function buildUrl(overrides: Record<string, string | null>) {
   for (const [k, v] of Object.entries(merged)) {
     if (v !== null && v !== '') params.set(k, v);
   }
-  return `/productos?${params.toString()}`;
+  const str = params.toString();
+  return `/productos${str ? '?' + str : ''}`;
 }
+
+const colorMap: Record<string, string> = {
+  'Azul': '#2563EB', 'Negro': '#1F2937', 'Gris': '#9CA3AF',
+  'Blanco': '#F3F4F6', 'Rojo': '#DC2626', 'Verde': '#10B981',
+  'Amarillo': '#EAB308', 'Rosa': '#EC4899', 'Morado': '#8B5CF6',
+  'Naranja': '#F97316', 'Café': '#92400E', 'Beige': '#D4B896',
+};
+
+// Pasar datos de productos al cliente para filtrado dinámico
+const productosJSON = JSON.stringify(productos.map(p => ({
+  slug: p.slug,
+  colores: p.colores ?? [],
+  precio: p.precio,
+})));
 ---
 
 <Layout title={`${titulo} - TiendaAstro`}>
@@ -57,9 +84,8 @@ function buildUrl(overrides: Record<string, string | null>) {
     <nav class="text-sm text-gray-500 mb-6 flex items-center gap-2 flex-wrap">
       <a href="/" class="hover:text-blue-600">Inicio</a>
       <span>›</span>
-      <a href="/productos/genero" class="hover:text-blue-600">Categorías</a>
-      <span>›</span>
-      <a href={`/productos?genero=${genero}`} class={`hover:text-blue-600 ${!marca && !categoria && !tipo ? 'text-gray-900 font-semibold' : ''}`}>{genero}</a>
+      <a href="/productos" class={`hover:text-blue-600 ${!genero && !marca && !categoria && !tipo ? 'text-gray-900 font-semibold' : ''}`}>Productos</a>
+      {genero && <><span>›</span><a href={`/productos?genero=${genero}`} class={`hover:text-blue-600 ${!marca && !categoria && !tipo ? 'text-gray-900 font-semibold' : ''}`}>{genero}</a></>}
       {tipo && <><span>›</span><span class="text-gray-900 font-semibold">{tipo}</span></>}
       {categoria && <><span>›</span><span class="text-gray-900 font-semibold">{categoria}</span></>}
       {marca && <><span>›</span><span class="text-gray-900 font-semibold">{marca}</span></>}
@@ -72,18 +98,18 @@ function buildUrl(overrides: Record<string, string | null>) {
       {/* SIDEBAR */}
       <aside class="w-full md:w-52 shrink-0">
 
-     {/* Cambiar género - solo si no hay género seleccionado */}
-{!genero && (
-  <div class="mb-6">
-    <h2 class="font-bold text-xs uppercase tracking-widest text-gray-400 mb-2">Género</h2>
-    <div class="flex gap-2">
-      <a href="/productos?genero=Mujer" class="flex-1 text-center text-sm py-2 rounded-lg border border-gray-300 hover:border-gray-900">Mujer</a>
-      <a href="/productos?genero=Hombre" class="flex-1 text-center text-sm py-2 rounded-lg border border-gray-300 hover:border-gray-900">Hombre</a>
-    </div>
-  </div>
-)}
+        {/* Género */}
+        {!genero && (
+          <div class="mb-6">
+            <h2 class="font-bold text-xs uppercase tracking-widest text-gray-400 mb-2">Género</h2>
+            <ul class="flex flex-col gap-1">
+              <li><a href="/productos?genero=Mujer" class="text-sm py-1 block hover:text-blue-600">Mujer</a></li>
+              <li><a href="/productos?genero=Hombre" class="text-sm py-1 block hover:text-blue-600">Hombre</a></li>
+            </ul>
+          </div>
+        )}
 
-        {/* Tipo (solo mujer) */}
+        {/* Tipo */}
         {tipos.length > 0 && (
           <div class="mb-6">
             <h2 class="font-bold text-xs uppercase tracking-widest text-gray-400 mb-2">Tipo</h2>
@@ -150,10 +176,65 @@ function buildUrl(overrides: Record<string, string | null>) {
           </ul>
         </div>
 
-        {/* Limpiar filtros */}
-        {(marca || categoria || tipo) && (
-          <a href={`/productos?genero=${genero}`} class="text-sm text-red-500 hover:underline">
-            ✕ Limpiar filtros
+        {/* Colores — filtro dinámico */}
+        {coloresUnicos.length > 0 && (
+          <div class="mb-6">
+            <h2 class="font-bold text-xs uppercase tracking-widest text-gray-400 mb-2">Color</h2>
+            <div class="flex flex-wrap gap-2">
+              {coloresUnicos.map(color => {
+                const hex = colorMap[color] ?? '#CBD5E1';
+                const esClaro = color === 'Blanco' || color === 'Beige';
+                return (
+                  <button
+                    class="filtro-color flex flex-col items-center gap-1 group"
+                    data-color={color}
+                    title={color}
+                  >
+                    <span
+                      class="w-7 h-7 rounded-full border-2 border-gray-300 group-hover:scale-110 transition-transform"
+                      style={`background-color: ${hex}${esClaro ? '; box-shadow: inset 0 0 0 1px #ccc' : ''}`}
+                    />
+                    <span class="text-xs text-gray-600">{color}</span>
+                  </button>
+                );
+              })}
+            </div>
+            <button id="limpiar-color" class="text-xs text-red-400 hover:underline mt-2 hidden">✕ Quitar color</button>
+          </div>
+        )}
+
+        {/* Precio — filtro dinámico */}
+        <div class="mb-6">
+          <h2 class="font-bold text-xs uppercase tracking-widest text-gray-400 mb-2">Precio (L.)</h2>
+          <div class="flex gap-2 items-center">
+            <input
+              id="precio-min"
+              type="number"
+              placeholder={String(precioMin)}
+              class="w-full border rounded px-2 py-1 text-sm"
+              min={precioMin}
+              max={precioMax}
+            />
+            <span class="text-gray-400 text-sm">—</span>
+            <input
+              id="precio-max"
+              type="number"
+              placeholder={String(precioMax)}
+              class="w-full border rounded px-2 py-1 text-sm"
+              min={precioMin}
+              max={precioMax}
+            />
+          </div>
+          <button id="aplicar-precio" class="mt-2 text-xs bg-gray-900 text-white px-3 py-1 rounded hover:bg-gray-700 transition-colors">
+            Aplicar
+          </button>
+          <button id="limpiar-precio" class="text-xs text-red-400 hover:underline mt-1 ml-2 hidden">✕ Quitar</button>
+        </div>
+
+        {/* Limpiar filtros URL */}
+        {(genero || marca || categoria || tipo) && (
+          <a href="/productos" class="text-sm text-red-500 hover:underline block mt-2">
+            ✕ Limpiar todos los filtros
           </a>
         )}
 
@@ -161,18 +242,103 @@ function buildUrl(overrides: Record<string, string | null>) {
 
       {/* GRID */}
       <div class="flex-1">
-        <p class="text-sm text-gray-500 mb-4">{productos.length} producto{productos.length !== 1 ? 's' : ''}</p>
+        <p class="text-sm text-gray-500 mb-4">
+          <span id="contador">{productos.length}</span> producto{productos.length !== 1 ? 's' : ''}
+        </p>
         {productos.length === 0 ? (
           <p class="text-gray-500">No se encontraron productos con los filtros seleccionados.</p>
         ) : (
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div id="grid-productos" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {productos.map(producto => (
-              <ProductCard producto={producto} slug={producto.slug} />
+              <div class="producto-card" data-slug={producto.slug} data-colores={JSON.stringify(producto.colores ?? [])} data-precio={producto.precio}>
+                <ProductCard producto={producto} slug={producto.slug} />
+              </div>
             ))}
           </div>
         )}
+        <p id="sin-resultados" class="text-gray-500 hidden">No se encontraron productos con los filtros seleccionados.</p>
       </div>
 
     </div>
   </main>
 </Layout>
+
+<script define:vars={{ productosJSON }}>
+  const productos = JSON.parse(productosJSON);
+
+  let colorActivo = null;
+  let precioMinActivo = null;
+  let precioMaxActivo = null;
+
+  const cards = document.querySelectorAll('.producto-card');
+  const contador = document.getElementById('contador');
+  const sinResultados = document.getElementById('sin-resultados');
+  const limpiarColor = document.getElementById('limpiar-color');
+  const limpiarPrecio = document.getElementById('limpiar-precio');
+
+  function aplicarFiltros() {
+    let visibles = 0;
+
+    cards.forEach(card => {
+      const colores = JSON.parse(card.dataset.colores ?? '[]');
+      const precio = parseFloat(card.dataset.precio ?? '0');
+
+      const pasaColor = !colorActivo || colores.includes(colorActivo);
+      const pasaMin = precioMinActivo === null || precio >= precioMinActivo;
+      const pasaMax = precioMaxActivo === null || precio <= precioMaxActivo;
+
+      if (pasaColor && pasaMin && pasaMax) {
+        card.classList.remove('hidden');
+        visibles++;
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+
+    if (contador) contador.textContent = String(visibles);
+    if (sinResultados) sinResultados.classList.toggle('hidden', visibles > 0);
+  }
+
+  // Filtro de color
+  document.querySelectorAll('.filtro-color').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (colorActivo === btn.dataset.color) {
+        colorActivo = null;
+        btn.querySelector('span').classList.remove('ring-2', 'ring-blue-500', 'ring-offset-1');
+        limpiarColor?.classList.add('hidden');
+      } else {
+        colorActivo = btn.dataset.color;
+        document.querySelectorAll('.filtro-color span:first-child').forEach(s => s.classList.remove('ring-2', 'ring-blue-500', 'ring-offset-1'));
+        btn.querySelector('span').classList.add('ring-2', 'ring-blue-500', 'ring-offset-1');
+        limpiarColor?.classList.remove('hidden');
+      }
+      aplicarFiltros();
+    });
+  });
+
+  limpiarColor?.addEventListener('click', () => {
+    colorActivo = null;
+    document.querySelectorAll('.filtro-color span:first-child').forEach(s => s.classList.remove('ring-2', 'ring-blue-500', 'ring-offset-1'));
+    limpiarColor.classList.add('hidden');
+    aplicarFiltros();
+  });
+
+  // Filtro de precio
+  document.getElementById('aplicar-precio')?.addEventListener('click', () => {
+    const minVal = document.getElementById('precio-min').value;
+    const maxVal = document.getElementById('precio-max').value;
+    precioMinActivo = minVal ? parseFloat(minVal) : null;
+    precioMaxActivo = maxVal ? parseFloat(maxVal) : null;
+    limpiarPrecio?.classList.toggle('hidden', !minVal && !maxVal);
+    aplicarFiltros();
+  });
+
+  limpiarPrecio?.addEventListener('click', () => {
+    precioMinActivo = null;
+    precioMaxActivo = null;
+    document.getElementById('precio-min').value = '';
+    document.getElementById('precio-max').value = '';
+    limpiarPrecio.classList.add('hidden');
+    aplicarFiltros();
+  });
+</script>

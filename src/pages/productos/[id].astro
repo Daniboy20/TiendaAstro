@@ -11,6 +11,8 @@ if (!producto) {
   return Astro.redirect("/404");
 }
 
+const colorInicial = Astro.url.searchParams.get('color') ?? '';
+
 const colorMap: Record<string, string> = {
   'Azul': '#2563EB',
   'Negro': '#1F2937',
@@ -26,7 +28,6 @@ const colorMap: Record<string, string> = {
   'Beige': '#D4B896',
 };
 
-// Fix error ts(2352): extraer imagenes como unknown primero
 const imagenesObj = (producto.imagenes as unknown as Record<string, string[]>) ?? {};
 
 const coloresConHex = (producto.colores ?? []).map(color => ({
@@ -50,6 +51,9 @@ const piezas = (producto.piezas ?? []).map(
 const coloresJSON = JSON.stringify(
   coloresConHex.map(c => ({ nombre: c.nombre, imagenes: c.imagenes }))
 );
+
+// Color del producto actual para pasar a las piezas
+const colorProducto = producto.colores?.[0] ?? '';
 ---
 
 <Layout title={`${producto.nombre} - TiendaAstro`}>
@@ -135,12 +139,16 @@ const coloresJSON = JSON.stringify(
           Agregar al carrito
         </button>
 
+        {/* Piezas individuales con color del conjunto */}
         {piezas.length > 0 && (
           <div class="mt-6 p-4 bg-gray-50 rounded-lg border">
             <p class="font-bold mb-2">¿Solo quieres una pieza?</p>
             <div class="flex flex-col gap-2">
               {piezas.map((pieza) => pieza && (
-                <a href={`/productos/${pieza.slug}`} class="text-blue-600 hover:underline">
+                <a
+                  href={`/productos/${pieza.slug}?color=${encodeURIComponent(colorProducto)}`}
+                  class="text-blue-600 hover:underline"
+                >
                   → {pieza.nombre} — L. {pieza.precio.toFixed(2)}
                 </a>
               ))}
@@ -154,7 +162,7 @@ const coloresJSON = JSON.stringify(
   </main>
 </Layout>
 
-<script define:vars={{ coloresJSON }}>
+<script define:vars={{ coloresJSON, colorInicial }}>
   const colores = JSON.parse(coloresJSON);
   const imagenPrincipal = document.getElementById('imagen-principal');
   const contenedorMiniaturas = document.getElementById('miniaturas');
@@ -215,7 +223,9 @@ const coloresJSON = JSON.stringify(
     });
   });
 
-  // Auto-seleccionar primer color al cargar
-  const primerColorBtn = document.querySelector('.color-btn');
-  if (primerColorBtn) primerColorBtn.click();
+  // Auto-seleccionar color de URL o primer color disponible
+  const btnObjetivo = colorInicial
+    ? Array.from(colorBtns).find(b => b.dataset.color === colorInicial)
+    : colorBtns[0];
+  if (btnObjetivo) btnObjetivo.click();
 </script>
