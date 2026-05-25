@@ -5,12 +5,18 @@ import ValoracionEstrellas from '../../components/catalogo/ValoracionEstrellas.a
 import ListaReviews from '../../components/catalogo/Reviews.astro';
 import { AddToCart } from "@/layouts/functional-components/cart/AddToCart";
 
-const { id } = Astro.params;
-const producto = productosData.productos.find(p => p.slug === id);
-
-if (!producto) {
-  return Astro.redirect("/404");
+export async function getStaticPaths() {
+  return productosData.productos.map((producto) => ({
+    params: {
+      id: producto.slug,
+    },
+    props: {
+      producto,
+    },
+  }));
 }
+
+const { producto } = Astro.props;
 
 const colorInicial = Astro.url.searchParams.get('color') ?? '';
 
