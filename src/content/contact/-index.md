@@ -1,5 +1,5 @@
 ---
-title: "Contactanos"
+title: "Contáctanos"
 meta_title: ""
 description: "this is meta description"
 image: ""
@@ -7,15 +7,15 @@ draft: false
 
 #Contact Options
 contact_meta:
-  - name: "Direccion"
-    contact: "123 Main Street, Anytown, </br> CA 12335 - USA"
+  - name: "Dirección"
+    contact: "Tienda online con entregas gratis en UNAH CU"
 
   - name: "Correo"
     contact: "WearFit@gmail.com"
 
-  - name: "Telefono"
-    contact: "Mobil: (08) 123 456 789 </br> Linea: 1009 678 456"
+  - name: "Teléfono"
+    contact: "Mobil: (504) 1234-5678 </br> Fijo: 2212-3456"
 
   - name: "Tiempo de Apertura"
-    contact: "Disponible desde: 10am-8pm </br>"
+    contact: "Lunes - Sábado: 10am-8pm </br>"
 ---

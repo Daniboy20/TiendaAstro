@@ -1,60 +1,61 @@
 ---
-title: "Privacy Policy"
-meta_title: ""
-description: "this is meta description"
+title: "Políticas de WearFit"
+meta_title: "Políticas de compra, envío y privacidad - WearFit"
+description: "Conoce nuestras políticas de envío gratis en UNAH, entregas a domicilio, cambios, privacidad y términos de compra en WearFit."
 image: ""
 draft: false
 ---
 
-## This Privacy policy was published on 04 May 2023
+## Políticas de WearFit
 
-### GDPR Compliance
+En **WearFit** queremos que compres ropa deportiva de marcas que no encuentras fácilmente en Honduras, al mismo precio que en sus mercados de origen, con total transparencia. Esto es lo que necesitas saber.
 
-We collect certain identifying personal data when you sign up to our Service such as your name, email address, PayPal address (if different from email address), and telephone number. The personal data we collect from you is disclosed only in accordance with our Terms of Service and/or this Privacy Policy.Conclude collects Slack account and access information from Users for the purposes of connecting to the Slack API and to authenticate access to information on the Conclude website. Whenever you visit our Site, we may
-
-collect non-identifying information from you, such as referring URL, browser, operating system, cookie information, and Internet Service Provider. Without a subpoena, voluntary compliance on the part of your Internet Service Provider, or additional records from a third party, this information alone cannot usually be used to identify you.The term "personal data" does not include any anonymized and aggregated data made on the basis of personal data, which are wholly owned by Conclude.
 <br/>
 
-### About Storeplate
+### Envíos
 
-#### Service Provided As
+- Hacemos entregas a **domicilio** en todo Honduras (costo según ubicación, se calcula al finalizar la compra).
+- **Envío GRATIS** en todo el campus de la **UNAH** (Ciudad Universitaria, Tegucigalpa). Solo selecciona "Retiro en UNAH" como método de entrega y coordina con nosotros por WhatsApp.
+- Los pedidos se entregan en **2 a 5 días hábiles** después de confirmar tu pago.
 
-The discovery was made by Richard McClintock , a professor of Latin at Hampden-Sydney College in Virginia, who faced the impetuous recurrence of the dark word consectetur in the text Lorem ipsum researched its origins to identify them in sections 1.10.32 and 1.10.33 of the aforementioned Cicero's
-
-When referring to Lorem ipsum, different expressions are used, namely fill text , fictitious text , blind text or placeholder text : in short, its meaning can also be zero, but its usefulness is so clear as to go
 <br/>
 
-#### Company Liability
+### Cambios y devoluciones
 
-The choice of font and font size with which Lorem ipsum is reproduced answers to specific needs that go beyond the simple and simple filling of spaces dedicated to accepting real texts and allowing to have hands an advertising/publishing product, both web and paper, true to reality.
+- Tienes **7 días después de recibir tu pedido** para solicitar un cambio o devolución.
+- El producto debe estar sin usar, con etiquetas y en su empaque original.
+- Los cambios por talla o color son **gratis** (primer cambio). Para devoluciones, el costo de envío de retorno corre por tu cuenta, excepto si el producto llegó dañado o incorrecto.
+- Para solicitar un cambio o devolución, escríbenos a **soporte.wearfit@gmail.com** con tu número de pedido.
 
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
 <br/>
 
-#### When we collect personal data about you
+### Privacidad
 
-In order to use our Service, you must meet a number of conditions, including but not limited to:
+- Solo recopilamos tu nombre, correo, teléfono y dirección para procesar tus pedidos y enviarte actualizaciones.
+- No compartimos, vendemos ni alquilamos tus datos a nadie.
+- Tus datos de pago son manejados de forma segura por pasarelas externas; nosotros no los almacenamos.
+- Puedes pedir que eliminemos tus datos en cualquier momento escribiendo a **privacidad.wearfit@gmail.com**.
 
-- Enhance or improve User experience, our Site, or our Service.
-- Send emails and updates about Conclude, Process transactions.
-- Send emails about our Site or respond to inquiries.
-- Including news and requests for agreement to amended legal documents such as this
-  Privacy Policy and our Terms of Service.
-  <br/>
+<br/>
 
-#### Why we collect and use personal data
+### Términos de compra
 
-Users of Conclude (i) must keep passwords secure and confidential; (ii) are solely responsible for User Data and all activity in their account while using the Service; (iii) must use commercially reasonable efforts access to their account, and notify Conclude promptly
+- Los precios están en **Lempiras (HNL)** e incluyen el ISV.
+- Aceptamos **tarjetas, transferencias y efectivo contraentrega** (solo en zonas seleccionadas).
+- Tu pedido se confirma cuando recibes un correo nuestro. Si un producto no está disponible, te avisamos en 24 horas para reembolsarte o cambiarlo.
+- WearFit no se hace responsable por retrasos por causas externas (clima, problemas con mensajería, etc.), pero haremos todo lo posible por mantenerte informado.
 
-- Enhance or improve User experience, our Site, or our Service.
-- Send emails and updates about Conclude, Process transactions.
-- Send emails about our Site or respond to inquiries.
-- Including news and requests for agreement to amended legal documents such as this
-  Privacy Policy and our Terms of Service.
-  <br/>
+<br/>
 
-#### Type of personal data collected
+### Contacto
 
-Your information may be transferred to — and maintained on — computers located outside of your state, province, country or other governmental jurisdiction where the privacy laws may not be as protective as those in your jurisdiction. If you choose to provide information to us, Conclude transfers Personal Information to Google Cloud Platform and processes it there. Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.
+¿Dudas? Escríbenos por WhatsApp o correo:
 
-Your information may be transferred to — and maintained on — computers located outside of your state, province, country or other governmental jurisdiction where the privacy laws may not be as protective as those in your jurisdiction. If you choose to provide information to us, Conclude transfers Personal Information to Google Cloud Platform and processes it there. Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.
+- **Teléfono:** +504 1234-5678  
+- **Correo general:** info.wearfit@gmail.com
+- **Devoluciones y cambios:** soporte.wearfit@gmail.com
+
+---
+
+**WearFit**  
+*Última actualización: 24 de mayo de 2026*

@@ -18,13 +18,11 @@ const colorMap: Record<string, string> = {
 
 const imagenesObj = (producto.imagenes ?? {}) as Record<string, string[]>;
 
-// Primera imagen disponible de cualquier color
 const imagenPortada: string = (() => {
   for (const color of (producto.colores ?? [])) {
     const imgs = imagenesObj[color];
     if (imgs && imgs.length > 0) return imgs[0];
   }
-  // fallback por si aún tiene campo imagen antiguo
   return (producto as any).imagen ?? '';
 })();
 
@@ -54,7 +52,7 @@ const coloresPreview = (producto.colores ?? []).slice(0, 4).map((color: string) 
 
   {coloresPreview.length > 0 && (
     <div class="flex gap-1 mt-2 items-center">
-      {coloresPreview.map(({ nombre, hex, esClaro }) => (
+      {coloresPreview.map(({ nombre, hex, esClaro }: { nombre: string; hex: string; esClaro: boolean }) => (
         <span
           class="w-4 h-4 rounded-full border border-gray-300"
           style={`background-color: ${hex}${esClaro ? '; box-shadow: inset 0 0 0 1px #ccc' : ''}`}
@@ -67,5 +65,5 @@ const coloresPreview = (producto.colores ?? []).slice(0, 4).map((color: string) 
     </div>
   )}
 
-  <p class="text-blue-600 font-bold mt-3 text-lg">L. {producto.precio.toFixed(2)}</p>
+  <p class="text-slate-900 font-bold mt-3 text-lg">L. {producto.precio.toFixed(2)}</p>
 </a>

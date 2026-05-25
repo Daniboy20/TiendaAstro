@@ -9,15 +9,15 @@ draft: false
 about_us:
   - title: "Nuestra empresa"
     image: "/images/dyfne-mujer/conjunto-azul-2.webp"
-    content: "Bienvenido a <strong>WearFit</strong>, donde el estilo, la calidad y la confianza se unen. Nos apasiona ofrecerte las mejores marcas de ropa con calidad premium al mejor precio. Nuestra misión es ayudarte a expresar tu personalidad a través de la moda sin sacrificar comodidad ni accesibilidad. En <strong>WearFit</strong>, cada colección es cuidadosamente seleccionada para brindarte tendencias modernas, diseños auténticos y prendas duraderas para cualquier estilo de vida. Ya sea que busques ropa casual, deportiva o prendas esenciales para el día a día, estamos comprometidos en ofrecerte una experiencia de compra excepcional con productos que destacan tanto por su estilo como por su valor. Descubre tu próximo outfit favorito y eleva tu estilo con <strong>WearFit</strong>."
+    content: "Bienvenido a <strong>WearFit</strong>, donde el estilo, la calidad y la comodidad se encuentran para acompañarte en cada entrenamiento. Nos apasiona ofrecerte ropa deportiva que se siente auténtica, con diseños que marcan tendencia y una calidad que dura. Sabemos lo que buscas: marcas reconocidas, prendas que rinden como esperas y un precio justo. Por eso trabajamos para que tengas acceso a lo mejor del mercado fitness, sin sorpresas ni condiciones. En <strong>WearFit</strong>, cada colección está pensada para quienes entrenan con ganas, viven activos y valoran tanto el rendimiento como el estilo. Ya sea para ir al gimnasio, salir a correr o usar en tu día a día, aquí encuentras piezas que destacan por su durabilidad, diseño y valor real. Descubre cómo elevar tu entrenamiento sin complicar tu bolsillo."
 
   - title: "Quienes somos?"
     image: "/images/dyfne-mujer/conjunto-beige-1.webp"
-    content: "En <strong>WearFit</strong> nos dedicamos a ofrecer las mejores marcas de ropa con la combinación perfecta entre estilo, calidad y precio. Nacimos con la visión de brindar a nuestros clientes una experiencia de compra moderna y confiable, ofreciendo prendas auténticas, cómodas y alineadas con las últimas tendencias de la moda. Creemos que vestir bien no debería ser un lujo, por eso trabajamos para acercarte productos de excelente calidad a precios accesibles. <br/><br/> Nuestro compromiso es garantizar satisfacción en cada compra, seleccionando cuidadosamente cada colección para adaptarse a diferentes estilos y necesidades. Ya sea ropa casual, deportiva o urbana, en <strong>WearFit</strong> encontrarás piezas que destacan por su diseño, durabilidad y comodidad. Bienvenido a <strong>WearFit</strong>, donde la moda y la confianza brillan juntas."
+    content: "En <strong>WearFit</strong> nos dedicamos a ofrecer ropa deportiva con el equilibrio perfecto entre estilo, calidad y precio. Nacimos pensando en quienes buscan prendas auténticas, cómodas y alineadas con las tendencias globales del fitness, pero sin tener que pagar de más ni buscar fuera del país. Creemos que vestir bien para entrenar no debería ser un lujo, por eso trabajamos para acercarte productos que se sienten igual de bien que las grandes marcas internacionales, con la tranquilidad de saber que pagas lo justo. Nuestro compromiso es que cada prenda que lleves te dé confianza, rendimiento y durabilidad. Ya sea para entrenamiento intenso, uso diario o look urbano, en <strong>WearFit</strong> encuentras piezas que realmente valen la pena. Bienvenido a <strong>WearFit</strong>, donde el esfuerzo y el estilo van de la mano."
 
 # Frequently Asked Questions
 faq_section_title: "Preguntas mas frecuentes"
-faq_section_subtitle: "Nuestra sección de preguntas frecuentes está diseñada para ayudarte a resolver dudas sobre envíos, pagos, tallas, devoluciones y todo lo relacionado con tu experiencia de compra en <strong>WearFit</strong>. Queremos brindarte información clara y rápida para que compres con total confianza."
+faq_section_subtitle: "Nuestra sección de preguntas frecuentes está diseñada para ayudarte a resolver dudas sobre envíos, pagos, devoluciones y todo lo relacionado con tu experiencia de compra en <strong>WearFit</strong>. Queremos brindarte información clara y rápida para que compres con total confianza."
 button:
   enable: true
   label: "Contactanos"
@@ -25,9 +25,6 @@ button:
 faqs:
   - title: "¿Qué marcas de ropa venden?"
     content: "En WearFit ofrecemos ropa de marcas reconocidas, seleccionadas por su calidad, estilo y durabilidad."
-
-  - title: "¿Cómo puedo saber mi talla?"
-    content: "Puedes revisar la guía de tallas de cada producto o contactarnos para ayudarte a elegir la mejor opción."
 
   - title: "¿Realizan envíos?"
     content: "Sí, realizamos envíos según la zona disponible. Al momento de comprar te brindamos la información del tiempo y costo de entrega."

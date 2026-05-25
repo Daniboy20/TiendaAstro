@@ -133,7 +133,7 @@ const colorProducto = producto.colores?.[0] ?? '';
         <p class="mb-4"><span class="font-bold">Categoría:</span> {producto.categoria}</p>
 
         <p class={`mb-4 ${producto.stock > 0 ? 'text-green-600' : 'text-red-600'}`}>
-          {producto.stock > 0 ? `✅ Stock disponible: ${producto.stock} unidades` : '❌ Sin stock'}
+          {producto.stock > 0 ? `Stock disponible: ${producto.stock} unidades` : 'Sin stock'}
         </p>
 
         <AddToCart
@@ -160,7 +160,7 @@ const colorProducto = producto.colores?.[0] ?? '';
                   href={`/productos/${pieza.slug}?color=${encodeURIComponent(colorProducto)}`}
                   class="text-blue-600 hover:underline"
                 >
-                  → {pieza.nombre} — L. {pieza.precio.toFixed(2)}
+                  {pieza.nombre} — L. {pieza.precio.toFixed(2)}
                 </a>
               ))}
             </div>

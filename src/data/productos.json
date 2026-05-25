@@ -24,8 +24,23 @@
       "marca": "GymShark",
       "categoria": "Buzos",
       "genero": "Mujer",
-      "reviews": [],
-      "promedioCalificacion": 4.5,
+      "reviews": [
+        {
+          "id": "rev1",
+          "autor": "Sofía R.",
+          "calificacion": 4,
+          "comentario": "Perfecto para entrenar, muy cómodo.",
+          "fecha": "2026-01-15"
+        },
+        {
+          "id": "rev2",
+          "autor": "Laura G.",
+          "calificacion": 4,
+          "comentario": "Perfecto para entrenar, muy cómodo.",
+          "fecha": "2026-04-18"
+        }
+      ],
+      "promedioCalificacion": 4.0,
       "stock": 10,
       "destacado": false,
       "tipo": "Inferior"
@@ -53,8 +68,23 @@
       "marca": "GymShark",
       "categoria": "Leggings",
       "genero": "Mujer",
-      "reviews": [],
-      "promedioCalificacion": 5,
+      "reviews": [
+        {
+          "id": "rev3",
+          "autor": "Isabella C.",
+          "calificacion": 4,
+          "comentario": "Perfecto para entrenar, muy cómodo.",
+          "fecha": "2026-04-04"
+        },
+        {
+          "id": "rev4",
+          "autor": "Camila F.",
+          "calificacion": 4,
+          "comentario": "El material es de primera calidad.",
+          "fecha": "2026-02-06"
+        }
+      ],
+      "promedioCalificacion": 4.0,
       "stock": 18,
       "destacado": false,
       "tipo": "Inferior"
@@ -84,7 +114,7 @@
       "categoria": "Camisas",
       "genero": "Mujer",
       "reviews": [],
-      "promedioCalificacion": 4.7,
+      "promedioCalificacion": 4.4,
       "stock": 9,
       "destacado": true,
       "tipo": "Superior"
@@ -111,8 +141,23 @@
       "marca": "GymShark",
       "categoria": "Shorts",
       "genero": "Mujer",
-      "reviews": [],
-      "promedioCalificacion": 4.8,
+      "reviews": [
+        {
+          "id": "rev5",
+          "autor": "Camila F.",
+          "calificacion": 4,
+          "comentario": "La tela es muy suave y duradera.",
+          "fecha": "2026-01-05"
+        },
+        {
+          "id": "rev6",
+          "autor": "Valentina L.",
+          "calificacion": 5,
+          "comentario": "Buena calidad por el precio.",
+          "fecha": "2026-01-15"
+        }
+      ],
+      "promedioCalificacion": 4.5,
       "stock": 13,
       "destacado": false,
       "tipo": "Inferior"
@@ -141,7 +186,15 @@
       "marca": "GymShark",
       "categoria": "Tops",
       "genero": "Mujer",
-      "reviews": [],
+      "reviews": [
+        {
+          "id": "rev7",
+          "autor": "Sofía R.",
+          "calificacion": 4,
+          "comentario": "Está bien, pero el color es un poco diferente a la foto.",
+          "fecha": "2026-04-07"
+        }
+      ],
       "promedioCalificacion": 4.0,
       "stock": 6,
       "destacado": false,
@@ -171,8 +224,16 @@
       "marca": "GymShark",
       "categoria": "Calzonetas",
       "genero": "Hombre",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev8",
+          "autor": "Mateo V.",
+          "calificacion": 5,
+          "comentario": "Buena prenda en general, el talle es exacto.",
+          "fecha": "2026-01-04"
+        }
+      ],
+      "promedioCalificacion": 5.0,
       "stock": 20,
       "destacado": false,
       "tipo": "Inferior"
@@ -202,8 +263,16 @@
       "marca": "GymShark",
       "categoria": "Camisas",
       "genero": "Hombre",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev9",
+          "autor": "Diego P.",
+          "calificacion": 5,
+          "comentario": "La tela es muy suave y duradera.",
+          "fecha": "2026-03-15"
+        }
+      ],
+      "promedioCalificacion": 5.0,
       "stock": 25,
       "destacado": false,
       "tipo": "Superior"
@@ -232,8 +301,16 @@
       "marca": "GymShark",
       "categoria": "Camisas",
       "genero": "Hombre",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev10",
+          "autor": "Alejandro B.",
+          "calificacion": 5,
+          "comentario": "La tela es muy suave y duradera.",
+          "fecha": "2026-05-14"
+        }
+      ],
+      "promedioCalificacion": 5.0,
       "stock": 18,
       "destacado": true,
       "tipo": "Superior"
@@ -263,8 +340,23 @@
       "marca": "GymShark",
       "categoria": "Hoodies",
       "genero": "Hombre",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev11",
+          "autor": "Fernando O.",
+          "calificacion": 5,
+          "comentario": "Buena calidad por el precio.",
+          "fecha": "2026-01-06"
+        },
+        {
+          "id": "rev12",
+          "autor": "Carlos M.",
+          "calificacion": 5,
+          "comentario": "Muy cómodo y bonito, llegó rápido.",
+          "fecha": "2026-02-03"
+        }
+      ],
+      "promedioCalificacion": 5.0,
       "stock": 15,
       "destacado": false,
       "tipo": "Superior"
@@ -293,8 +385,23 @@
       "marca": "GymShark",
       "categoria": "Suéteres",
       "genero": "Hombre",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev13",
+          "autor": "Carlos M.",
+          "calificacion": 5,
+          "comentario": "Buena calidad por el precio.",
+          "fecha": "2026-05-16"
+        },
+        {
+          "id": "rev14",
+          "autor": "Diego P.",
+          "calificacion": 4,
+          "comentario": "La tela es muy suave y duradera.",
+          "fecha": "2026-04-08"
+        }
+      ],
+      "promedioCalificacion": 4.5,
       "stock": 12,
       "destacado": false,
       "tipo": "Superior"
@@ -323,8 +430,23 @@
       "marca": "Old Navy",
       "categoria": "Camisas",
       "genero": "Mujer",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev15",
+          "autor": "Camila F.",
+          "calificacion": 5,
+          "comentario": "Perfecto para entrenar, muy cómodo.",
+          "fecha": "2026-01-01"
+        },
+        {
+          "id": "rev16",
+          "autor": "Camila F.",
+          "calificacion": 4,
+          "comentario": "Me encantó el color y el ajuste.",
+          "fecha": "2026-03-08"
+        }
+      ],
+      "promedioCalificacion": 4.5,
       "stock": 20,
       "destacado": false,
       "tipo": "Superior"
@@ -347,8 +469,16 @@
       "marca": "Old Navy",
       "categoria": "Camisas",
       "genero": "Mujer",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev17",
+          "autor": "Andrea P.",
+          "calificacion": 4,
+          "comentario": "El material es de primera calidad.",
+          "fecha": "2026-05-19"
+        }
+      ],
+      "promedioCalificacion": 4.0,
       "stock": 15,
       "destacado": false,
       "imagenes": {
@@ -377,8 +507,23 @@
       "marca": "Old Navy",
       "categoria": "Tops",
       "genero": "Mujer",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev18",
+          "autor": "Gabriela M.",
+          "calificacion": 5,
+          "comentario": "Lo usé en el gym y se ve increíble.",
+          "fecha": "2026-03-02"
+        },
+        {
+          "id": "rev19",
+          "autor": "Laura G.",
+          "calificacion": 4,
+          "comentario": "Buena prenda en general, el talle es exacto.",
+          "fecha": "2026-02-07"
+        }
+      ],
+      "promedioCalificacion": 4.5,
       "stock": 22,
       "destacado": false,
       "imagenes": {
@@ -415,8 +560,16 @@
       "marca": "Old Navy",
       "categoria": "Faldas",
       "genero": "Mujer",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev20",
+          "autor": "Andrea P.",
+          "calificacion": 4,
+          "comentario": "Está bien, pero el color es un poco diferente a la foto.",
+          "fecha": "2026-01-17"
+        }
+      ],
+      "promedioCalificacion": 4.0,
       "stock": 18,
       "destacado": false,
       "tipo": "Inferior"
@@ -445,8 +598,16 @@
       "marca": "Old Navy",
       "categoria": "Leggings",
       "genero": "Mujer",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev21",
+          "autor": "Camila F.",
+          "calificacion": 5,
+          "comentario": "Justo como en la foto, muy satisfecha.",
+          "fecha": "2026-01-02"
+        }
+      ],
+      "promedioCalificacion": 5.0,
       "stock": 25,
       "destacado": false,
       "tipo": "Inferior"
@@ -469,8 +630,16 @@
       "marca": "Old Navy",
       "categoria": "Suéteres",
       "genero": "Mujer",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev22",
+          "autor": "Andrea P.",
+          "calificacion": 4,
+          "comentario": "Buena calidad por el precio.",
+          "fecha": "2026-05-24"
+        }
+      ],
+      "promedioCalificacion": 4.0,
       "stock": 14,
       "destacado": false,
       "imagenes": {
@@ -498,8 +667,16 @@
       "marca": "Old Navy",
       "categoria": "Buzos",
       "genero": "Mujer",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev23",
+          "autor": "Daniela V.",
+          "calificacion": 5,
+          "comentario": "La calidad es buena, aunque esperaba más.",
+          "fecha": "2026-01-18"
+        }
+      ],
+      "promedioCalificacion": 5.0,
       "stock": 14,
       "destacado": false,
       "imagenes": {
@@ -533,9 +710,9 @@
         "falda-mujer-on"
       ],
       "reviews": [],
-      "promedioCalificacion": 0,
+      "promedioCalificacion": 4.6,
       "stock": 12,
-      "destacado": true,
+      "destacado": false,
       "imagenes": {
         "Café": [
           "/images/oldnavy/mujer/conjunto-cafe.avif"
@@ -572,7 +749,7 @@
         "buzo-mujer-on"
       ],
       "reviews": [],
-      "promedioCalificacion": 0,
+      "promedioCalificacion": 4.9,
       "stock": 10,
       "destacado": true,
       "tipo": "Completo"
@@ -603,7 +780,7 @@
       "categoria": "Buzos",
       "genero": "Hombre",
       "reviews": [],
-      "promedioCalificacion": 0,
+      "promedioCalificacion": 4.5,
       "stock": 16,
       "destacado": false,
       "tipo": "Inferior"
@@ -633,8 +810,23 @@
       "marca": "Old Navy",
       "categoria": "Calzonetas",
       "genero": "Hombre",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev24",
+          "autor": "Miguel A.",
+          "calificacion": 5,
+          "comentario": "Justo como en la foto, muy satisfecha.",
+          "fecha": "2026-03-05"
+        },
+        {
+          "id": "rev25",
+          "autor": "Sebastián R.",
+          "calificacion": 5,
+          "comentario": "La calidad es buena, aunque esperaba más.",
+          "fecha": "2026-05-20"
+        }
+      ],
+      "promedioCalificacion": 5.0,
       "stock": 20,
       "destacado": false,
       "tipo": "Inferior"
@@ -664,8 +856,23 @@
       "marca": "Old Navy",
       "categoria": "Camisas",
       "genero": "Hombre",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev26",
+          "autor": "Alejandro B.",
+          "calificacion": 5,
+          "comentario": "Excelente calidad, la recomiendo totalmente.",
+          "fecha": "2026-01-06"
+        },
+        {
+          "id": "rev27",
+          "autor": "José H.",
+          "calificacion": 5,
+          "comentario": "Me encantó el color y el ajuste.",
+          "fecha": "2026-04-17"
+        }
+      ],
+      "promedioCalificacion": 5.0,
       "stock": 30,
       "destacado": false,
       "tipo": "Superior"
@@ -699,8 +906,16 @@
       "marca": "Old Navy",
       "categoria": "Shorts",
       "genero": "Hombre",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev28",
+          "autor": "Carlos M.",
+          "calificacion": 5,
+          "comentario": "La tela es muy suave y duradera.",
+          "fecha": "2026-03-06"
+        }
+      ],
+      "promedioCalificacion": 5.0,
       "stock": 24,
       "destacado": false,
       "tipo": "Inferior"
@@ -730,8 +945,23 @@
       "marca": "Old Navy",
       "categoria": "Suéteres",
       "genero": "Hombre",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev29",
+          "autor": "Andrés T.",
+          "calificacion": 4,
+          "comentario": "Justo como en la foto, muy satisfecha.",
+          "fecha": "2026-05-28"
+        },
+        {
+          "id": "rev30",
+          "autor": "Fernando O.",
+          "calificacion": 5,
+          "comentario": "Lo usé en el gym y se ve increíble.",
+          "fecha": "2026-03-04"
+        }
+      ],
+      "promedioCalificacion": 4.5,
       "stock": 18,
       "destacado": false,
       "tipo": "Superior"
@@ -757,8 +987,16 @@
       "marca": "YoungLA",
       "categoria": "Camisetas",
       "genero": "Hombre",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev31",
+          "autor": "Roberto S.",
+          "calificacion": 4,
+          "comentario": "La calidad es buena, aunque esperaba más.",
+          "fecha": "2026-03-05"
+        }
+      ],
+      "promedioCalificacion": 4.0,
       "stock": 20,
       "destacado": true,
       "imagenes": {
@@ -797,8 +1035,23 @@
       "marca": "YoungLA",
       "categoria": "Buzos",
       "genero": "Hombre",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev32",
+          "autor": "José H.",
+          "calificacion": 4,
+          "comentario": "El material es de primera calidad.",
+          "fecha": "2026-01-27"
+        },
+        {
+          "id": "rev33",
+          "autor": "Andrés T.",
+          "calificacion": 5,
+          "comentario": "Excelente calidad, la recomiendo totalmente.",
+          "fecha": "2026-01-25"
+        }
+      ],
+      "promedioCalificacion": 4.5,
       "stock": 18,
       "destacado": false,
       "tipo": "Inferior"
@@ -832,8 +1085,16 @@
       "marca": "YoungLA",
       "categoria": "Buzos",
       "genero": "Hombre",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev34",
+          "autor": "Miguel A.",
+          "calificacion": 5,
+          "comentario": "Me encantó el color y el ajuste.",
+          "fecha": "2026-03-09"
+        }
+      ],
+      "promedioCalificacion": 5.0,
       "stock": 16,
       "destacado": false,
       "tipo": "Inferior"
@@ -867,8 +1128,16 @@
       "marca": "YoungLA",
       "categoria": "Camisas",
       "genero": "Hombre",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev35",
+          "autor": "Roberto S.",
+          "calificacion": 4,
+          "comentario": "Muy buena compra, lo recomiendo.",
+          "fecha": "2026-05-26"
+        }
+      ],
+      "promedioCalificacion": 4.0,
       "stock": 22,
       "destacado": false,
       "tipo": "Superior"
@@ -902,8 +1171,23 @@
       "marca": "YoungLA",
       "categoria": "Camisas",
       "genero": "Hombre",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev36",
+          "autor": "Diego P.",
+          "calificacion": 5,
+          "comentario": "La tela es muy suave y duradera.",
+          "fecha": "2026-03-06"
+        },
+        {
+          "id": "rev37",
+          "autor": "Diego P.",
+          "calificacion": 4,
+          "comentario": "Muy buena compra, lo recomiendo.",
+          "fecha": "2026-01-07"
+        }
+      ],
+      "promedioCalificacion": 4.5,
       "stock": 25,
       "destacado": false,
       "tipo": "Superior"
@@ -936,8 +1220,16 @@
       "marca": "YoungLA",
       "categoria": "Tops",
       "genero": "Hombre",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev38",
+          "autor": "Fernando O.",
+          "calificacion": 4,
+          "comentario": "Buena prenda en general, el talle es exacto.",
+          "fecha": "2026-01-21"
+        }
+      ],
+      "promedioCalificacion": 4.0,
       "stock": 20,
       "destacado": false,
       "tipo": "Superior"
@@ -966,8 +1258,23 @@
       "marca": "YoungLA",
       "categoria": "Buzos",
       "genero": "Mujer",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev39",
+          "autor": "Sofía R.",
+          "calificacion": 4,
+          "comentario": "Está bien, pero el color es un poco diferente a la foto.",
+          "fecha": "2026-05-16"
+        },
+        {
+          "id": "rev40",
+          "autor": "María J.",
+          "calificacion": 4,
+          "comentario": "El material es de primera calidad.",
+          "fecha": "2026-02-08"
+        }
+      ],
+      "promedioCalificacion": 4.0,
       "stock": 16,
       "destacado": false,
       "tipo": "Inferior"
@@ -996,8 +1303,23 @@
       "marca": "YoungLA",
       "categoria": "Tops",
       "genero": "Mujer",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev41",
+          "autor": "María J.",
+          "calificacion": 4,
+          "comentario": "Está bien, pero el color es un poco diferente a la foto.",
+          "fecha": "2026-05-11"
+        },
+        {
+          "id": "rev42",
+          "autor": "Gabriela M.",
+          "calificacion": 4,
+          "comentario": "Muy cómodo y bonito, llegó rápido.",
+          "fecha": "2026-03-02"
+        }
+      ],
+      "promedioCalificacion": 4.0,
       "stock": 20,
       "destacado": false,
       "tipo": "Superior"
@@ -1027,7 +1349,7 @@
       "categoria": "Monos",
       "genero": "Mujer",
       "reviews": [],
-      "promedioCalificacion": 0,
+      "promedioCalificacion": 4.2,
       "stock": 14,
       "destacado": true,
       "tipo": "Completo"
@@ -1057,7 +1379,7 @@
       "categoria": "Vestidos",
       "genero": "Mujer",
       "reviews": [],
-      "promedioCalificacion": 0,
+      "promedioCalificacion": 4.0,
       "stock": 12,
       "destacado": true,
       "tipo": "Completo"
@@ -1089,8 +1411,16 @@
       "marca": "YoungLA",
       "categoria": "Chaquetas",
       "genero": "Mujer",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev43",
+          "autor": "Isabella C.",
+          "calificacion": 5,
+          "comentario": "La tela es muy suave y duradera.",
+          "fecha": "2026-03-02"
+        }
+      ],
+      "promedioCalificacion": 5.0,
       "stock": 15,
       "destacado": false,
       "tipo": "Superior"
@@ -1119,8 +1449,16 @@
       "marca": "Oner Active",
       "categoria": "Camisas",
       "genero": "Mujer",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev44",
+          "autor": "Laura G.",
+          "calificacion": 4,
+          "comentario": "Muy cómodo y bonito, llegó rápido.",
+          "fecha": "2026-02-18"
+        }
+      ],
+      "promedioCalificacion": 4.0,
       "stock": 18,
       "destacado": false,
       "tipo": "Superior"
@@ -1149,8 +1487,16 @@
       "marca": "Oner Active",
       "categoria": "Tops",
       "genero": "Mujer",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev45",
+          "autor": "Lucía N.",
+          "calificacion": 5,
+          "comentario": "Justo como en la foto, muy satisfecha.",
+          "fecha": "2026-02-05"
+        }
+      ],
+      "promedioCalificacion": 5.0,
       "stock": 20,
       "destacado": false,
       "tipo": "Superior"
@@ -1173,8 +1519,16 @@
       "marca": "Oner Active",
       "categoria": "Leggings",
       "genero": "Mujer",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev46",
+          "autor": "Andrea P.",
+          "calificacion": 5,
+          "comentario": "Muy cómodo y bonito, llegó rápido.",
+          "fecha": "2026-04-07"
+        }
+      ],
+      "promedioCalificacion": 5.0,
       "stock": 22,
       "destacado": false,
       "imagenes": {
@@ -1202,8 +1556,23 @@
       "marca": "Oner Active",
       "categoria": "Tops",
       "genero": "Mujer",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev47",
+          "autor": "Sofía R.",
+          "calificacion": 4,
+          "comentario": "Cumple con lo esperado.",
+          "fecha": "2026-01-03"
+        },
+        {
+          "id": "rev48",
+          "autor": "Daniela V.",
+          "calificacion": 4,
+          "comentario": "La tela es muy suave y duradera.",
+          "fecha": "2026-03-05"
+        }
+      ],
+      "promedioCalificacion": 4.0,
       "stock": 18,
       "destacado": false,
       "imagenes": {
@@ -1231,8 +1600,23 @@
       "marca": "Oner Active",
       "categoria": "Faldas",
       "genero": "Mujer",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev49",
+          "autor": "Sofía R.",
+          "calificacion": 5,
+          "comentario": "Muy buena compra, lo recomiendo.",
+          "fecha": "2026-05-12"
+        },
+        {
+          "id": "rev50",
+          "autor": "Andrea P.",
+          "calificacion": 4,
+          "comentario": "Lo usé en el gym y se ve increíble.",
+          "fecha": "2026-01-08"
+        }
+      ],
+      "promedioCalificacion": 4.5,
       "stock": 16,
       "destacado": false,
       "imagenes": {
@@ -1260,8 +1644,23 @@
       "marca": "Oner Active",
       "categoria": "Tops",
       "genero": "Mujer",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev51",
+          "autor": "Isabella C.",
+          "calificacion": 5,
+          "comentario": "Perfecto para entrenar, muy cómodo.",
+          "fecha": "2026-02-10"
+        },
+        {
+          "id": "rev52",
+          "autor": "Gabriela M.",
+          "calificacion": 5,
+          "comentario": "Muy buena compra, lo recomiendo.",
+          "fecha": "2026-04-14"
+        }
+      ],
+      "promedioCalificacion": 5.0,
       "stock": 20,
       "destacado": false,
       "imagenes": {
@@ -1289,8 +1688,23 @@
       "marca": "Oner Active",
       "categoria": "Shorts",
       "genero": "Mujer",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev53",
+          "autor": "María J.",
+          "calificacion": 5,
+          "comentario": "La calidad es buena, aunque esperaba más.",
+          "fecha": "2026-05-07"
+        },
+        {
+          "id": "rev54",
+          "autor": "Gabriela M.",
+          "calificacion": 5,
+          "comentario": "Me encantó el color y el ajuste.",
+          "fecha": "2026-03-17"
+        }
+      ],
+      "promedioCalificacion": 5.0,
       "stock": 18,
       "destacado": false,
       "imagenes": {
@@ -1324,8 +1738,16 @@
       "marca": "Oner Active",
       "categoria": "Monos",
       "genero": "Mujer",
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev55",
+          "autor": "Camila F.",
+          "calificacion": 5,
+          "comentario": "Cumple con lo esperado.",
+          "fecha": "2026-03-07"
+        }
+      ],
+      "promedioCalificacion": 5.0,
       "stock": 14,
       "destacado": false,
       "tipo": "Completo"
@@ -1352,8 +1774,23 @@
         "camisa-rosa-mujer-oa",
         "leggins-rosa-mujer-oa"
       ],
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev56",
+          "autor": "Sofía R.",
+          "calificacion": 5,
+          "comentario": "Me encantó el color y el ajuste.",
+          "fecha": "2026-02-24"
+        },
+        {
+          "id": "rev57",
+          "autor": "Laura G.",
+          "calificacion": 4,
+          "comentario": "La tela es muy suave y duradera.",
+          "fecha": "2026-02-04"
+        }
+      ],
+      "promedioCalificacion": 4.5,
       "stock": 12,
       "destacado": true,
       "imagenes": {
@@ -1385,8 +1822,23 @@
         "top-amarillo-mujer-oa",
         "falda-short-amarillo-mujer-oa"
       ],
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev58",
+          "autor": "Camila F.",
+          "calificacion": 4,
+          "comentario": "Bonita pero tardó un poco en llegar.",
+          "fecha": "2026-01-16"
+        },
+        {
+          "id": "rev59",
+          "autor": "Isabella C.",
+          "calificacion": 4,
+          "comentario": "Perfecto para entrenar, muy cómodo.",
+          "fecha": "2026-01-03"
+        }
+      ],
+      "promedioCalificacion": 4.0,
       "stock": 14,
       "destacado": true,
       "imagenes": {
@@ -1424,8 +1876,16 @@
         "top-gris-mujer-oa",
         "short-gris-mujer-oa"
       ],
-      "reviews": [],
-      "promedioCalificacion": 0,
+      "reviews": [
+        {
+          "id": "rev60",
+          "autor": "Sofía R.",
+          "calificacion": 5,
+          "comentario": "Buena prenda en general, el talle es exacto.",
+          "fecha": "2026-01-28"
+        }
+      ],
+      "promedioCalificacion": 5.0,
       "stock": 10,
       "destacado": true,
       "tipo": "Completo"
