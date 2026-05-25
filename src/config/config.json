@@ -1,20 +1,20 @@
 {
   "site": {
-    "title": "Brightness",
+    "title": "WearFit",
     "base_url": "https://storeplate.vercel.app/",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
     "logo_darkmode": "/images/logo-darkmode.png",
-    "logo_width": "150",
-    "logo_height": "33",
-    "logo_text": "Brightness"
+    "logo_width": "185",
+    "logo_height": "42",
+    "logo_text": "WearFit"
   },
 
   "announcement": {
     "enable": true,
-    "content": "<span class='text-center block'>♥️ Loving Brightness? <a class='underline' href='https://github.com/zeon-studio/storeplate' target='_blank' rel='noopener'>Please ⭐️ on Github</a></span>",
+    "content": "<span class='text-center block'>♥️ Loving WearFit? <a class='underline' href='https://github.com/zeon-studio/storeplate' target='_blank' rel='noopener'>Please ⭐️ on Github</a></span>",
     "expire_days": 7
   },
 

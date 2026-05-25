@@ -11,7 +11,7 @@ contact_meta:
     contact: "123 Main Street, Anytown, </br> CA 12335 - USA"
 
   - name: "Correo"
-    contact: "brightness@gmail.com"
+    contact: "WearFit@gmail.com"
 
   - name: "Telefono"
     contact: "Mobil: (08) 123 456 789 </br> Linea: 1009 678 456"

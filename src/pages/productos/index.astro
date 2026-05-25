@@ -191,7 +191,7 @@ const productosJSON = JSON.stringify(productos.map(p => ({
                     title={color}
                   >
                     <span
-                      class="w-7 h-7 rounded-full border-2 border-gray-300 group-hover:scale-110 transition-transform"
+                      class="circulo-color w-7 h-7 rounded-full border-2 border-gray-300 group-hover:scale-110 transition-transform"
                       style={`background-color: ${hex}${esClaro ? '; box-shadow: inset 0 0 0 1px #ccc' : ''}`}
                     />
                     <span class="text-xs text-gray-600">{color}</span>
@@ -301,20 +301,42 @@ const productosJSON = JSON.stringify(productos.map(p => ({
 
   // Filtro de color
   document.querySelectorAll('.filtro-color').forEach(btn => {
-    btn.addEventListener('click', () => {
-      if (colorActivo === btn.dataset.color) {
-        colorActivo = null;
-        btn.querySelector('span').classList.remove('ring-2', 'ring-blue-500', 'ring-offset-1');
-        limpiarColor?.classList.add('hidden');
-      } else {
-        colorActivo = btn.dataset.color;
-        document.querySelectorAll('.filtro-color span:first-child').forEach(s => s.classList.remove('ring-2', 'ring-blue-500', 'ring-offset-1'));
-        btn.querySelector('span').classList.add('ring-2', 'ring-blue-500', 'ring-offset-1');
-        limpiarColor?.classList.remove('hidden');
-      }
-      aplicarFiltros();
-    });
+  btn.addEventListener('click', () => {
+    const circulo = btn.querySelector('.circulo-color');
+
+    if (colorActivo === btn.dataset.color) {
+      colorActivo = null;
+
+      circulo?.classList.remove(
+        'ring-2',
+        'ring-blue-500',
+        'ring-offset-1'
+      );
+
+      limpiarColor?.classList.add('hidden');
+    } else {
+      colorActivo = btn.dataset.color;
+
+      document.querySelectorAll('.circulo-color').forEach(c => {
+        c.classList.remove(
+          'ring-2',
+          'ring-blue-500',
+          'ring-offset-1'
+        );
+      });
+
+      circulo?.classList.add(
+        'ring-2',
+        'ring-blue-500',
+        'ring-offset-1'
+      );
+
+      limpiarColor?.classList.remove('hidden');
+    }
+
+    aplicarFiltros();
   });
+});
 
   limpiarColor?.addEventListener('click', () => {
     colorActivo = null;
